@@ -1,1 +1,1 @@
-Novo Sistema para Igrejas
+Sistema para Igrejas
