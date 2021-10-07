@@ -1,3 +1,6 @@
 Sistema para Igreja.
 
-Tentado mas so lembra que tem que ser como ADM.
+OBS. Em desenvolvimento.
+distribuição de Páginas
+
+Tentado mas só lembra que tem que ser como ADM.

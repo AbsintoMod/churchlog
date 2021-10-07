@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Secretaria</title>
+    <title>Almoxarifado Central</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -39,7 +39,7 @@
                 </li>
                 
                 <li class="nav-item d-none d-sm-inline-block">
-                    <p class="nav-link">Secretaria</p>
+                    <p class="nav-link">Almoxarifado</p>
                 </li>
             </ul>
 
@@ -337,7 +337,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-1">Secretaria</h1>
+                            <h1 class="m-1">Almoxarifado</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->

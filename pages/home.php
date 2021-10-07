@@ -210,21 +210,33 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Secretária</p>
+                                    <a href="admin/secretaria/home.php" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Secretaria</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                    <a href="admin/financeiro/home.php" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
                                         <p>Financeiro</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                    <a href="admin/coordenacao/home.php" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
                                         <p>Coordenação</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Ação Social</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>E.B.D</p>
                                     </a>
                                 </li>
                             </ul>
@@ -239,37 +251,6 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa-solid fa-address-card"></i>
-                                <p>
-                                    Carteira
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Cracha</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Membro</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fa-solid fa-clipboard-list"></i>
-                                <p>
-                                    Relatório
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
                                 <i class="nav-icon fa-solid fa-earth-americas"></i>
                                 <p>
                                     Filiações
@@ -279,13 +260,13 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
                                         <p>Setor</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa-regular fa-circle-right nav-icon"></i> 
                                         <p>Congregação</p>
                                     </a>
                                 </li>
@@ -304,14 +285,6 @@
                                 <i class="nav-icon fa-solid fa-image"></i>
                                 <p>
                                     Galeria
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-columns"></i>
-                                <p>
-                                    Patrimônio
                                 </p>
                             </a>
                         </li>
@@ -384,6 +357,26 @@
                                             <i class="fas fa-angle-left right"></i>
                                         </p>
                                     </a>
+                                    <ul class="nav nav-treeview">
+                                        <div class="nav-item">
+                                            <div class="nav-link">
+                                                <i class="nav-icon fa-solid fa-phone-volume"></i>
+                                                <p>Administração</p>
+                                            </div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link">
+                                                <i class="nav-icon fa-solid fa-phone-volume"></i>
+                                                <p>Secretaria</p>
+                                            </div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-link">
+                                                <i class="nav-icon fa-solid fa-phone-volume"></i>
+                                                <p>Financeiro</p>
+                                            </div>
+                                        </div>
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
@@ -403,7 +396,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-header">Recado</li>
+                        <li class="nav-header">Recados do Setor</li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon far fa-circle text-danger"></i>

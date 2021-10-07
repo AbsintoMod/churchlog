@@ -237,6 +237,35 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
+                                <i class="nav-icon fa-solid fa-coins"></i>
+                                <p>
+                                    Tesouraria
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Cadastro</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Carteira de Membro</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Recem Convertidos</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fa-solid fa-calendar-days"></i>
                                 <p>
                                     Calendário
@@ -284,26 +313,54 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fa-solid fa-phone-volume"></i>
+                                        <p>
+                                            Gabinete
+                                            <i class="fas fa-angle-left right"></i>
+                                        </p>
+                                    </a>    
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Pastor</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Secretária</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
                                     <span class="nav-link">
                                         <i class="nav-icon fa-solid fa-phone-volume"></i>
-                                        <p>Ramal</p>
+                                        <p>Secretaria</p>
                                     </span>
                                 </li>
                                 <li class="nav-item">
                                     <span class="nav-link">
                                         <i class="nav-icon fa-solid fa-phone-volume"></i>
-                                        <p>Ramal</p>
+                                        <p>Tesouraria</p>
                                     </span>
                                 </li>
                                 <li class="nav-item">
                                     <span class="nav-link">
                                         <i class="nav-icon fa-solid fa-phone-volume"></i>
-                                        <p>Ramal</p>
+                                        <p>Cozinha</p>
+                                    </span>
+                                </li>
+                                <li class="nav-item">
+                                    <span class="nav-link">
+                                        <i class="nav-icon fa-solid fa-phone-volume"></i>
+                                        <p>Tecnica</p>
                                     </span>
                                 </li>
                             </ul>
                         </li>
-
                         <li class="nav-header">Recados do Setor</li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
