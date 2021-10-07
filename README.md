@@ -1,3 +1,1 @@
-Sistema para Igrejas...
-
-Tentando atualizar novamente.
+tentado mas so lembra que tem que ser como ADM.
