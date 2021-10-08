@@ -7,8 +7,7 @@
     <title>Secretaria</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons 6.0_beta-->
     <link rel="stylesheet" href="../../../plugins/fontawesome-free/css/all.min.css">
     <!-- IonIcons -->
@@ -37,7 +36,7 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="../../home.php" class="nav-link">Home</a>
                 </li>
-                
+
                 <li class="nav-item d-none d-sm-inline-block">
                     <p class="nav-link">Secretaria</p>
                 </li>
@@ -53,8 +52,7 @@
                     <div class="navbar-search-block">
                         <form class="form-inline">
                             <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Procurar"
-                                    aria-label="Search">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Procurar" aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit">
                                         <i class="fas fa-search"></i>
@@ -78,8 +76,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="../../../dist/img/user1-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 mr-3 img-circle">
+                                <img src="../../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Brad
@@ -95,8 +92,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="../../../dist/img/user8-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
+                                <img src="../../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         John Pierce
@@ -112,13 +108,11 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="../../../dist/img/user3-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
+                                <img src="../../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i
-                                                class="fas fa-star"></i></span>
+                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
                                     </h3>
                                     <p class="text-sm">The subject goes here</p>
                                     <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
@@ -170,8 +164,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="home.php" class="brand-link">
-                <img src="../../../dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
+                <img src="../../../dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Church Admin</span>
             </a>
 
@@ -190,8 +183,7 @@
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Procurar"
-                            aria-label="Search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Procurar" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-sidebar">
                                 <i class="fas fa-search fa-fw"></i>
@@ -202,8 +194,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -233,6 +224,12 @@
                                         <p>Recem Convertidos</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Relatório</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -247,22 +244,87 @@
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="fa-regular fa-circle-right nav-icon"></i>
-                                        <p>Cadastro</p>
+                                        <p>Gastos Mensais</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="fa-regular fa-circle-right nav-icon"></i>
-                                        <p>Carteira de Membro</p>
+                                        <p>Requisição de Compra</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="fa-regular fa-circle-right nav-icon"></i>
-                                        <p>Recem Convertidos</p>
+                                        <p>Dizimo</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Oferta</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Relatório</p>
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa-solid fa-building"></i>
+                                <p>
+                                    Congregações
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Novo Cadastro</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Consulta</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Relatório</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa-solid fa-menorah"></i>
+                                <p>
+                                    Cultos
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa-solid fa-icons"></i>
+                                <p>
+                                    Eventos
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa-solid fa-cake-candles"></i>
+                                <p>
+                                    Aniversariantes
+                                </p>
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -291,21 +353,21 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
                                         <p>Caixa de E-Mail</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Time Line</p>
+                                        <i class="fa-regular fa-circle-right nav-icon"></i>
+                                        <p>Comunidade</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa-solid fa-square-phone"></i>
+                                <i class="nav-icon fa-solid fa-address-book"></i>
                                 <p>
                                     Ramais
                                     <i class="fas fa-angle-left right"></i>
@@ -314,48 +376,48 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        <i class="nav-icon fa-solid fa-phone-volume"></i>
+                                    <i class="nav-icon fa-solid fa-square-phone"></i>
                                         <p>
                                             Gabinete
                                             <i class="fas fa-angle-left right"></i>
                                         </p>
-                                    </a>    
+                                    </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Pastor</p>
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Pastor</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Secretária</p>
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Secretária</p>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
                                     <span class="nav-link">
-                                        <i class="nav-icon fa-solid fa-phone-volume"></i>
+                                    <i class="nav-icon fa-solid fa-square-phone"></i>
                                         <p>Secretaria</p>
                                     </span>
                                 </li>
                                 <li class="nav-item">
                                     <span class="nav-link">
-                                        <i class="nav-icon fa-solid fa-phone-volume"></i>
+                                    <i class="nav-icon fa-solid fa-square-phone"></i>
                                         <p>Tesouraria</p>
                                     </span>
                                 </li>
                                 <li class="nav-item">
                                     <span class="nav-link">
-                                        <i class="nav-icon fa-solid fa-phone-volume"></i>
+                                    <i class="nav-icon fa-solid fa-square-phone"></i>
                                         <p>Cozinha</p>
                                     </span>
                                 </li>
                                 <li class="nav-item">
                                     <span class="nav-link">
-                                        <i class="nav-icon fa-solid fa-phone-volume"></i>
+                                    <i class="nav-icon fa-solid fa-square-phone"></i>
                                         <p>Tecnica</p>
                                     </span>
                                 </li>
@@ -420,7 +482,7 @@
     <!-- REQUIRED SCRIPTS -->
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-    $.widget.bridge('uibutton', $.ui.button)
+        $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- jQuery -->
     <script src="../../../plugins/jquery/jquery.min.js"></script>
