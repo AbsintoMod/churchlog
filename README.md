@@ -1,6 +1,5 @@
 Sistema para Igreja.
 
-OBS. Em desenvolvimento.
-distribuição de Páginas
+OBS. em casa
 
 Tentado mas só lembra que tem que ser como ADM.
