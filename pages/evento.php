@@ -7,14 +7,14 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../../dist/css/adminlte.css">
+    <link rel="stylesheet" href="../dist/css/adminlte.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Carregamento -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="../../../dist/img/logo.png" alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="../dist/img/logo.png" alt="AdminLTELogo" height="60" width="60">
         </div>
 
         <!-- Content Wrapper. Contains page content -->
@@ -24,7 +24,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-1">Patrimônio</h1>
+                            <h1 class="m-1">Eventos</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -44,13 +44,13 @@
         $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- jQuery -->
-    <script src="../../../plugins/jquery/jquery.min.js"></script>
+    <script src="../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
-    <script src="../../../dist/js/adminlte.js"></script>
+    <script src="../dist/js/adminlte.js"></script>
     <!-- AdminLTE dashboard -->
-    <script src="../../../dist/js/pages/dashboard3.js"></script>
+    <script src="../dist/js/pages/dashboard3.js"></script>
 </body>
 
 </html>
