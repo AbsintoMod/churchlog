@@ -1,4 +1,6 @@
-        //Gerando GetDate  
+function mostraData() {
+     
+       //Gerando GetDate  
         const data = new Date();
 
         //Tratando Data
@@ -64,3 +66,8 @@
 
         
         document.getElementById('mostra_data').innerHTML = saudacao;
+
+        setTimeout("mostraData()",1000);
+};
+
+mostraData();
