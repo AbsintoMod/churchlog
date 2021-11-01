@@ -421,7 +421,7 @@
       </div>
       <div class="tab-content">
         <div class="tab-empty">
-          <h2 class="display-4">(Mostrar saudação e data)</h2>
+          <h2><span id="mostra_data" class="badge bg-dark"></span></h2>
         </div>
       </div>
     </div>
@@ -458,6 +458,8 @@
   <script src="../dist/js/adminlte.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="../dist/js/demo.js"></script>
+  <!-- Mostra Saudação -->
+  <script src='../Data.js'></script>
 </body>
 
 </html>
