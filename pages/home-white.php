@@ -382,7 +382,7 @@
               </ul>
             </li>
 
-            <li class="nav-header">Recados do Setor</li>
+            <li class="nav-header">Informativos</li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon far fa-circle text-danger"></i>
@@ -392,13 +392,13 @@
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon far fa-circle text-warning"></i>
-                <p>Avisos</p>
+                <p>Setor</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon far fa-circle text-info"></i>
-                <p>Informações</p>
+                <p>Avisos Gerais</p>
               </a>
             </li>
           </ul>
