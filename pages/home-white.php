@@ -459,7 +459,7 @@
   <!-- AdminLTE for demo purposes -->
   <script src="../dist/js/demo.js"></script>
   <!-- Mostra Saudação -->
-  <script src='../Data.js'></script>
+  <script src='../dist/js/pages/data.js'></script>
 </body>
 
 </html>

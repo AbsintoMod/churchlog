@@ -390,7 +390,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="erro/404/index.html" class="nav-link">
                 <i class="nav-icon far fa-circle text-warning"></i>
                 <p>Avisos</p>
               </a>
@@ -460,7 +460,7 @@
   <!-- AdminLTE for demo purposes -->
   <script src="../dist/js/demo.js"></script>
     <!-- Mostra Saudação -->
-    <script src='../Data.js'></script>
+    <script src='../dist/js/pages/data.js'></script>
 </body>
 
 </html>
