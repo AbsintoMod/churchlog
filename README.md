@@ -5,30 +5,29 @@ OBS. em casa
 Tentado mas só lembra que tem que ser como ADM.
 
 Criar Menu do Perfil Pessoal
-    Perfil {Atualização Cadastral,Endereço,Foto}
-    Cartão de Membro (Pessoal)
+    Perfil {Cadastro,Endereço,Foto .abas}
+    Credenciais{Cartão de Membro,Cargo .card}
     Pedidos de Oração
-    Configuração de Tema
-    Cargo (Informativo)
+    Configuração de Theme
 
 Criar Aba para {DEPARTAMENTO[
 Menu GRUPOS 
-    Cadastro{Nome,Tipo,Lider,Membros{Funções}}
     Lista{para Acessar GRUPOS}
-    Reunioes
-    Mensagens
-    Requisição de Materiais
+    GRUPO.Membros+GRUPO.Cadastro {Membros,Funções.botão}
+    GRUPO.Reunioes
+    GRUPO.Mensagens
+    GRUPO.Requisição de Materiais
 Menu SETORES
-    Cadastro{Nome,Tipo,Lider,Membros{Funções}}
     Lista{para Acessar SETORES}
-    Pessoas
-    Voluntarios
-    Requisição de Materiais
+    SETORES.Pessoas+SETORES.Cadastro Novo{Membros{Funções}.botão}
+    SETORES.Voluntarios
+    SETORES.Requisição de Materiais
 ]}
 
 {INSTITUIÇÃO[
 Menu SECRETARIA
     Membros {Cadastrar, Pesquisar{Busca{Nome,Congregação,Cartão,Cargo,Inform. Pessoais},Atualização,Impressão{Carteira,Carta de Recomendação,Certificados}}}
+    DEPARTAMENTO.Cadastro Novo{Nome,(Lider-Responsavel),Tipo{SETOR,GRUPO{Musical,Dança,etc}}}
     Carteirinha {Tipos,Confecção,Renovação}
     Agendamento para Eventos {Agendamento,Aprovados,À Aprovar,Relatório{Mensal,BuscaPorData}}
     Patrimônio {Bens{Valor,DataCompra,Setor Responsavel},Categorias,Registro de  Movimentação{Origem-Destino,Descarte,Doação}}
