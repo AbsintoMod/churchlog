@@ -13,7 +13,7 @@ Criar Menu do Perfil Pessoal
 Criar Aba para {DEPARTAMENTO[
 Menu GRUPOS 
     Lista{para Acessar GRUPOS}
-    GRUPO.Membros+GRUPO.Cadastro {Membros,Funções.botão}
+    GRUPO.Membros+GRUPO.Cadastro{Membros,Funções.botão}
     GRUPO.Reunioes
     GRUPO.Mensagens
     GRUPO.Requisição de Materiais
