@@ -14,9 +14,9 @@ Criar Aba para {DEPARTAMENTO[
 Menu GRUPOS 
     Lista{para Acessar GRUPOS}
     GRUPO.Membros+GRUPO.Cadastro{Membros,Funções.botão}
-    GRUPO.Reunioes
-    GRUPO.Mensagens
-    GRUPO.Requisição de Materiais
+    GRUPO.Reunioes //pages/forms/editors.html || DataMask || ColorPick
+    GRUPO.Mensagens //pages/forms/general.html || General Elements
+    GRUPO.Requisição de Materiais 
 Menu SETORES
     Lista{para Acessar SETORES}
     SETORES.Pessoas+SETORES.Cadastro Novo{Membros{Funções}.botão}
