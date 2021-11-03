@@ -24,7 +24,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-1">Vista Grupos</h1>
+                            <h1 class="m-1">Vista Setores</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -40,18 +40,18 @@
                             <div class="card card-widget widget-user shadow">
                                 <!-- Add the bg color to the header using any of the bg-* classes -->
                                 <div class="widget-user-header bg-info">
-                                    <h3 class="widget-user-username">Grupo de Música</h3>
-                                    <h5 class="widget-user-desc">Musical</h5>
+                                    <h3 class="widget-user-username">Biblioteca</h3>
+                                    <h5 class="widget-user-desc">Setor</h5>
                                 </div>
                                 <div class="widget-user-image">
-                                    <img class="img-circle elevation-2" src="../../../dist/img/user1-128x128.jpg" alt="Emblema">
+                                    <img class="img-circle elevation-2" src="../../../dist/img/user1-128x128.jpg" alt="emblema_128*128">
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
                                         <div class="col-sm-4 border-right">
                                             <div class="description-block">
                                                 <h5 class="description-header">10</h5>
-                                                <span class="description-text">MEMBROS</span>
+                                                <span class="description-text">PESSOAS</span>
                                             </div>
                                             <!-- /.description-block -->
                                         </div>
@@ -84,18 +84,18 @@
                             <div class="card card-widget widget-user shadow-lg">
                                 <!-- Add the bg color to the header using any of the bg-* classes -->
                                 <div class="widget-user-header text-white" style="background: url('../../../dist/img/photo1.png') center center;">
-                                    <h3 class="widget-user-username text-right">Grupo de Música</h3>
-                                    <h5 class="widget-user-desc text-right">Musical</h5>
+                                    <h3 class="widget-user-username text-right">Cantina</h3>
+                                    <h5 class="widget-user-desc text-right">Setor</h5>
                                 </div>
                                 <div class="widget-user-image">
-                                    <img class="img-circle" src="../../../dist/img/user3-128x128.jpg" alt="Emblema">
+                                    <img class="img-circle" src="../../../dist/img/user3-128x128.jpg" alt="emblema_128*128">
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
                                         <div class="col-sm-4 border-right">
                                             <div class="description-block">
                                                 <h5 class="description-header">6</h5>
-                                                <span class="description-text">MEMBROS</span>
+                                                <span class="description-text">PESSOAS</span>
                                             </div>
                                             <!-- /.description-block -->
                                         </div>
@@ -128,18 +128,18 @@
                             <div class="card card-widget widget-user shadow-lg">
                                 <!-- Add the bg color to the header using any of the bg-* classes -->
                                 <div class="widget-user-header text-white" style="background: url('../../../dist/img/photo1.png') center center;">
-                                    <h3 class="widget-user-username text-right">Grupo de Dança</h3>
-                                    <h5 class="widget-user-desc text-right">Dança</h5>
+                                    <h3 class="widget-user-username text-right">Limpeza</h3>
+                                    <h5 class="widget-user-desc text-right">Setor</h5>
                                 </div>
                                 <div class="widget-user-image">
-                                    <img class="img-circle" src="../../../dist/img/user3-128x128.jpg" alt="Emblema">
+                                    <img class="img-circle" src="../../../dist/img/user3-128x128.jpg" alt="emblema_128*128">
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
                                         <div class="col-sm-4 border-right">
                                             <div class="description-block">
                                                 <h5 class="description-header">20</h5>
-                                                <span class="description-text">MEMBROS</span>
+                                                <span class="description-text">PESSOAS</span>
                                             </div>
                                             <!-- /.description-block -->
                                         </div>

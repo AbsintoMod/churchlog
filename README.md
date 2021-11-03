@@ -4,9 +4,13 @@ OBS. em casa
 
 Tentado mas só lembra que tem que ser como ADM.
 
+
+https://www.pngwing.com/pt/search?q=perfil+de+usu%C3%A1rio
+
+
 Criar Menu do Perfil Pessoal
     Perfil {Cadastro,Endereço,Foto .abas}
-    Credenciais{Cartão de Membro,Cargo .card}
+    Certificados{Cartão de Membro,Cargo .card}
     Pedidos de Oração
     Configuração de Theme
 
@@ -18,10 +22,9 @@ Menu GRUPOS
     GRUPO.Mensagens //pages/forms/general.html || General Elements
     GRUPO.Requisição de Materiais 
 Menu SETORES
-    Lista{para Acessar SETORES}
-    SETORES.Pessoas+SETORES.Cadastro Novo{Membros{Funções}.botão}
+    Lista{para Visualizar SETORES}
+    SETORES.Pessoas {Membros{Funções}}
     SETORES.Voluntarios
-    SETORES.Requisição de Materiais
 ]}
 
 {INSTITUIÇÃO[
