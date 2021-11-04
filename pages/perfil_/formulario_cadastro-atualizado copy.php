@@ -33,13 +33,15 @@
                                 <input type="text" class="form-control cpf" id="cpf" placeholder="..." name="cpf" value="">
                             </div>
                         </div>
-                        <div class="form-group col-md-4">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-5">
                             <label for="nome" class="col-md-10 control-label">*Nome:</label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control" id="nome" placeholder="..." name="nome" value="">
                             </div>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-7">
                             <label for="nome" class="col-md-10 control-label">*Sobrenome:</label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control" id="nome" placeholder="..." name="nome" value="">
@@ -346,6 +348,7 @@
     <script src="busca_cep.js"></script>
     <script src="jquery.mask.min.js"></script>
     <script src="mascara.js"></script>
+    <script src="teste.js"></script>
 </body>
 
 </html>
