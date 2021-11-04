@@ -26,26 +26,40 @@
             <section class="content">
                 <!-- container-fluid -->
                 <div class="container-fluid">
-                    <div class="row flex-column">
-                        <div class="d-inline-flex justify-content-sm-end justify-content-center">
-                            <img src="../../dist/img/boxed-bg.jpg" alt="foto" class="img-thumbnail" style=" width: 250px; height: 250px;">
+                    <div class="row align-items-center">
+                        <div class="d-none d-sm-block col-12 col-sm-6 align-self-center">
+                            <img src="../../dist/img/boxed-bg.jpg" alt="foto" class="img-thumbnail" style=" max-width: 250px; height: 300px;">
                         </div>
-                        <div class="d-inline-flex justify-content-sm-start justify-content-center">
-                            <div class="form-group col-md-4">
-                                <label for="cpf" class="col-md-2 control-label">*Matricula:</label>
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group col-sm-6">
+                                <label for="cpf" class="col-md-4 control-label">*Matricula:</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" id="matricula" name="matricula" readonly value="">
+                                    <input type="text" class="form-control" id="matricula" name="matricula" readonly>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="cpf" class="col-md-2 control-label">*CPF:</label>
+                            <div class="form-group col-sm-6">
+                                <label for="cpf" class="col-md-4 control-label">*CPF:</label>
                                 <div class="col-md-12">
                                     <input type="text" class="form-control cpf" id="cpf" placeholder="..." name="cpf" value="">
                                 </div>
-                            </div>                           
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="form-group col-sm-12">
+                                <label for="nome" class="col-md-10 control-label">*Nome:</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" id="nome" placeholder="..." name="nome" value="">
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label for="nome" class="col-md-10 control-label">*Sobrenome:</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" id="nome" placeholder="..." name="nome" value="">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!--<div class="row">
+                        <img src="../../dist/img/boxed-bg.jpg" alt="foto" class="img-thumbnail" style=" width: 250px; height: 250px;">
                         <div class="form-group col-md-6">
                             <label for="cpf" class="col-md-2 control-label">*Matricula:</label>
                             <div class="col-md-12">
@@ -58,6 +72,7 @@
                                 <input type="text" class="form-control cpf" id="cpf" placeholder="..." name="cpf" value="">
                             </div>
                         </div>
+                        <div class="w-100"></div>
                         <div class="form-group col-md-6">
                             <label for="nome" class="col-md-10 control-label">*Nome:</label>
                             <div class="col-md-12">
