@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+      <!-- Checkboxes e Radio Inputs -->
+    <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.css">
 </head>
@@ -27,20 +29,14 @@
                 <!-- container-fluid -->
                 <div class="container-fluid">
                     <div class="row align-items-center">
-                        <div class="d-none d-sm-block col-12 col-sm-6 align-self-center">
-                            <img src="../../dist/img/boxed-bg.jpg" alt="foto" class="img-thumbnail" style=" max-width: 250px; height: 300px;">
+                        <div class="d-none d-sm-block col-12 col-sm-6">
+                            <img src="../../dist/img/boxed-bg.jpg" alt="foto" class="img-thumbnail" style="max-width: 250px; height: 300px;">
                         </div>
                         <div class="col-12 col-sm-6">
                             <div class="form-group col-sm-6">
                                 <label for="cpf" class="col-md-4 control-label">*Matricula:</label>
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" id="matricula" name="matricula" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label for="cpf" class="col-md-4 control-label">*CPF:</label>
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control cpf" id="cpf" placeholder="..." name="cpf" value="">
                                 </div>
                             </div>
                             <div class="w-100"></div>
@@ -58,35 +54,6 @@
                             </div>
                         </div>
                     </div>
-                    <!--<div class="row">
-                        <img src="../../dist/img/boxed-bg.jpg" alt="foto" class="img-thumbnail" style=" width: 250px; height: 250px;">
-                        <div class="form-group col-md-6">
-                            <label for="cpf" class="col-md-2 control-label">*Matricula:</label>
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" id="matricula" name="matricula" readonly value="">
-                            </div>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="cpf" class="col-md-2 control-label">*CPF:</label>
-                            <div class="col-md-12">
-                                <input type="text" class="form-control cpf" id="cpf" placeholder="..." name="cpf" value="">
-                            </div>
-                        </div>
-                        <div class="w-100"></div>
-                        <div class="form-group col-md-6">
-                            <label for="nome" class="col-md-10 control-label">*Nome:</label>
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" id="nome" placeholder="..." name="nome" value="">
-                            </div>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="nome" class="col-md-10 control-label">*Sobrenome:</label>
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" id="nome" placeholder="..." name="nome" value="">
-                            </div>
-                        </div>
-                    </div>-->
-
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="pai" class="col-sm-4 control-label">*Nome do Pai:</label>
@@ -101,11 +68,68 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                                <label for="sexo" class="col-sm-12 control-label">*Sexo:</label>
+                                <div class="col-sm-12">
+                                    <select name="sexo" class="form-control" id="sexo">
+                                        <option value="">...</option>
+                                        <option value="1">Masculino</option>
+                                        <option value="2">Feminino</option>
+                                    </select>
+                                </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="naturalidade" class="col-sm-12 control-label">*Escolaridade:</label>
+                            <div class="col-sm-12">
+                                <select name="cod_escolaridade" class="form-control" id="cod_escolaridade">
+                                    <option value="">...</option>
+                                    <option value="1">Alfabetizado</option>
+                                    <option value="2">4ª Série do Ensino Fundamental</option>
+                                    <option value="3">Ensino Fundamental</option>
+                                    <option value="4">Ensino Médio</option>
+                                    <option value="5">Ensino Técnico</option>
+                                    <option value="6">Ensino Superior</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cod_estado_civil" class="col-sm-12 control-label">*Estado Civil:</label>
+                            <div class="col-sm-12">
+                                <select name="cod_estado_civil" class="form-control" id="cod_estado_civil">
+                                    <option value="">...</option>
+                                    <option value="1">Solteiro</option>
+                                    <option value="2">Casado</option>
+                                    <option value="3">Viúva</option>
+                                    <option value="4">Separado Judicialmente</option>
+                                    <option value="5">Divorciado</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group clearfix col-md-6">
+                            <label for="" class="col-sm-4 control-label">Tem Filho (s)?</label>
+                                <div class="icheck-primary d-inline col-sm-4">
+                                    <input type="radio" id="possui_filho_sim" class="mostra" name="possui_filho">
+                                    <label for="possui_filho_sim">Sim</label>
+                                </div>
+                                <div class="icheck-primary d-inline col-sm-4">
+                                    <input type="radio" id="possui_filho-não" class="esconde" name="possui_filho">
+                                    <label for="possui_filho-não">Não</label>
+                                </div>
+                        </div>
+                        <div class="form-group col-md-6 muda-vista">
+                            <label for="filho" class="col-sm-12 control-label">*Qtde Filhos:</label>
+                            <div class="col-sm-12">
+                                <input name="filho" type="text" class="form-control" id="filho">
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="title-form">Documentação</h2>
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label for="identidade" class="col-sm-2 control-label">*Identidade:</label>
-
                             <div class="col-sm-12">
                                 <input name="rg" type="text" class="form-control" id="identidade" placeholder="..." value="">
                             </div>
@@ -159,16 +183,6 @@
                             <label for="data_expd" class="col-sm-12 control-label">*Data Expedição:</label>
                             <div class="col-sm-12">
                                 <input name="rg_expedicao" type="date" class="form-control" id="data_expd" placeholder="..." value="">
-                            </div>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="sexo" class="col-sm-12 control-label">*Sexo:</label>
-                            <div class="col-sm-12">
-                                <select name="sexo" class="form-control" id="sexo">
-                                    <option value="">...</option>
-                                    <option value="1">Masculino</option>
-                                    <option value="2">Feminino</option>
-                                </select>
                             </div>
                         </div>
                         <div class="form-group col-md-4">
@@ -237,34 +251,12 @@
                                 <input name="data_nascimento" type="date" class="form-control" id="nascimento" placeholder="..." value="">
                             </div>
                         </div>
-                        <div class="form-group col-md-4">
-                            <label for="naturalidade" class="col-sm-12 control-label">*Escolaridade:</label>
-                            <div class="col-sm-12">
-                                <select name="cod_escolaridade" class="form-control" id="cod_escolaridade">
-                                    <option value="">...</option>
-                                    <option value="1">Alfabetizado</option>
-                                    <option value="2">4ª Série do Ensino Fundamental</option>
-                                    <option value="3">Ensino Fundamental</option>
-                                    <option value="4">Ensino Médio</option>
-                                    <option value="5">Ensino Técnico</option>
-                                    <option value="6">Ensino Superior</option>
-                                </select>
+                        <div class="form-group col-sm-4">
+                                <label for="cpf" class="col-md-4 control-label">*CPF:</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control cpf" id="cpf" placeholder="..."  name="cpf" value="">
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label for="naturalidade" class="col-sm-12 control-label">*Estado Civil:</label>
-                            <div class="col-sm-12">
-                                <select name="cod_estado_civil" class="form-control" id="cod_estado_civil">
-                                    <option value="">...</option>
-                                    <option value="1">Solteiro</option>
-                                    <option value="2">Casado</option>
-                                    <option value="3">Viúva</option>
-                                    <option value="4">Separado Judicialmente</option>
-                                    <option value="5">Divorciado</option>
-                                </select>
-                            </div>
-                        </div>
                     </div>
 
                     <h2 class="title-form">Endereço</h2>
@@ -317,6 +309,7 @@
                             </div>
                         </div>
                     </div>
+                    <h2 class="title-form">Contato</h2>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="telefone" class="col-sm-12 control-label">Telefone:</label>
@@ -361,8 +354,6 @@
                         <button style="margin-top: 10px;" onclick="enviaform" type="button" class="btn btn-block btn-success btn_form_continue">Cadastrar
                         </button>
                     </div>
-
-
                     </form>
                 </div>
         </div>
@@ -381,11 +372,12 @@
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
     <script src="../../dist/js/adminlte.js"></script>
-
     <!--JS Busca CEP-->
-    <script src="busca_cep.js"></script>
-    <script src="jquery.mask.min.js"></script>
-    <script src="mascara.js"></script>
+    <script src="../../dist/js/pages/busca_cep.js"></script>
+    <!--JS Mask-->
+    <script src="../../dist/js/pages/jquery.mask.min.js"></script>
+    <script src="../../dist/js/pages/mascara.js"></script>
+    <script src="../../dist/js/pages/formulario.js"></script>
 </body>
 
 </html>
