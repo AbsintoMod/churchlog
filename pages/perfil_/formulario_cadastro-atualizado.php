@@ -44,7 +44,7 @@
                             <div class="form-group col-sm-12">
                                 <label for="nome" class="col-md-10 control-label">*Nome:</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" id="nome" placeholder="..." name="nome" value="">
+                                    <input type="text" class="form-control" id="nome" placeholder="..." name="nome" autofocus value="">
                                 </div>
                             </div>
                             <div class="form-group col-sm-12">
@@ -99,11 +99,11 @@
                             <div class="col-sm-12">
                                 <select name="cod_estado_civil" class="form-control" id="cod_estado_civil">
                                     <option value="">...</option>
-                                    <option value="1">Solteiro</option>
-                                    <option value="2">Casado</option>
-                                    <option value="3">Viúva</option>
-                                    <option value="4">Separado Judicialmente</option>
-                                    <option value="5">Divorciado</option>
+                                    <option value="1">Solteiro (a)</option>
+                                    <option value="2">Casado (a)</option>
+                                    <option value="3">Viúvo (a)</option>
+                                    <option value="4">Separado (a) Judicialmente</option>
+                                    <option value="5">Divorciado (a)</option>
                                 </select>
                             </div>
                         </div>
@@ -135,11 +135,11 @@
                         <div class="form-group col-md-4">
                             <label for="identidade" class="col-sm-2 control-label">*Identidade:</label>
                             <div class="col-sm-12">
-                                <input name="rg" type="text" class="form-control" id="identidade" placeholder="..." value="">
+                                <input name="rg" type="text" class="form-control numero" id="identidade" placeholder="..." value="">
                             </div>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="orgao_expd" class="col- sm-12 control-label">*Orgão expedidor:</label>
+                            <label for="orgao_expd" class="col- sm-12 control-label">*Órgão Expedidor:</label>
                             <div class="col-sm-12">
                                 <input name="rg_orgao" type="text" class="form-control" id="orgao_expd" placeholder="..." value="">
                             </div>
@@ -147,7 +147,7 @@
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label for="estado_expd" class="col-sm-12 control-label">*Estado expedidor:</label>
+                            <label for="estado_expd" class="col-sm-12 control-label">*Estado Expedidor:</label>
                             <div class="col-sm-12">
                                 <select name="rg_estado" class="form-control" id="estado_expd">
                                     <option value="">...</option>

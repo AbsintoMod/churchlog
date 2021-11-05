@@ -3,6 +3,27 @@ $('.numero').keyup(function() {
     $(this).val(this.value.replace(/\D/g, ''));
   });*/
 
+
+//Setar campo com ENTER!
+/**
+NÃO ESTA FUNCIONANDO
+*/
+$("input", "select", "form") // Busca input e select no form
+.keypress(function(e){ // Evento ao pressionar uma tecla válida keypress
+   
+   var k = e.which || e.keyCode; // Pega o código do evento
+   
+   if(k == 13){ // se for ENTER
+      e.preventDefault(); // Cancela o Submit
+      $(this)
+      .closest('tr') // Seleciona a linha atual
+      .next() // Seleciona a Próxima linha
+      .find('input, select') // Busca input ou select
+      .first() // Seleciona o primeiro que encontrar
+      .focus(); // Foca no elemento
+   }
+
+}); 
   
 //função mostra campo
 $('.mostra').click(function() {
