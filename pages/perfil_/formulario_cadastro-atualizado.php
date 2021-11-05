@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-      <!-- Checkboxes e Radio Inputs -->
+    <!-- Checkboxes e Radio Inputs -->
     <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -70,14 +71,14 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-md-4">
-                                <label for="sexo" class="col-sm-12 control-label">*Sexo:</label>
-                                <div class="col-sm-12">
-                                    <select name="sexo" class="form-control" id="sexo">
-                                        <option value="">...</option>
-                                        <option value="1">Masculino</option>
-                                        <option value="2">Feminino</option>
-                                    </select>
-                                </div>
+                            <label for="sexo" class="col-sm-12 control-label">*Sexo:</label>
+                            <div class="col-sm-12">
+                                <select name="sexo" class="form-control" id="sexo">
+                                    <option value="">...</option>
+                                    <option value="1">Masculino</option>
+                                    <option value="2">Feminino</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="naturalidade" class="col-sm-12 control-label">*Escolaridade:</label>
@@ -108,23 +109,26 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group clearfix col-md-6">
-                            <label for="" class="col-sm-4 control-label">Tem Filho (s)?</label>
-                                <div class="icheck-primary d-inline col-sm-4">
-                                    <input type="radio" id="possui_filho_sim" class="mostra" name="possui_filho">
-                                    <label for="possui_filho_sim">Sim</label>
-                                </div>
-                                <div class="icheck-primary d-inline col-sm-4">
-                                    <input type="radio" id="possui_filho-não" class="esconde" name="possui_filho">
-                                    <label for="possui_filho-não">Não</label>
-                                </div>
-                        </div>
-                        <div class="form-group col-md-6 mostra-tag">
-                            <label for="filho" class="col-sm-12 control-label">*Qtde Filhos:</label>
-                            <div class="col-sm-12">
-                                <input name="filho" type="text" class="form-control" id="filho">
+                        <div class="form-group col-12 col-md-6">
+                            <div class="col-sm-12 btn-group">
+                                <button class="btn  btn-primary col active"><span>Tem filho(s)?</span></button>
+                                <button class="btn  btn-outline-primary col mostra"><span>Sim</span></button>
+                                <button class="btn  btn-outline-primary col esconde"><span>Não</span></button>
                             </div>
                         </div>
+
+                        <div class="form-group col-12 col-md-2 campo-de-efeito">
+                            <div class="col-sm-12 input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-primary">Qtde:</span>
+                                </div>
+                                <input type="text" class="form-control numero">
+                                <div class="input-group-append">
+                                    <a type="button" class="input-group-text bg-success adicionar">Add</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <h2 class="title-form">Documentação</h2>
                     <div class="row">
@@ -252,11 +256,11 @@
                             </div>
                         </div>
                         <div class="form-group col-sm-4">
-                                <label for="cpf" class="col-md-4 control-label">*CPF:</label>
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control cpf" id="cpf" placeholder="..."  name="cpf" value="">
-                                </div>
+                            <label for="cpf" class="col-md-4 control-label">*CPF:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control cpf" id="cpf" placeholder="..." name="cpf" value="">
                             </div>
+                        </div>
                     </div>
 
                     <h2 class="title-form">Endereço</h2>
