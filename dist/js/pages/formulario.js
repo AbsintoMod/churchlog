@@ -67,17 +67,31 @@ $('.esconde').click(function() {
   z[0].style.display = "none";
 });
 
+//função ADD INPUT
 $('.adicionar').click(function() {
-//ADD Variavel
-  var valor = '';
-//ADD Valor a variavel
-  $(this).val(valor);
-
-  if (valor === '') {
-    console.log('Valor vazio');
+//Recupera quantidade de elementos
+  var val = document.getElementById('filho').value; //ADD Valor a variavel
+  if (val > 6) {
+    alert('Número maximo de Filhos é 6');
+    document.getElementById('filho').value = '';
   } else {
-    console.log(valor);  
+    if (val != '') { //Verifica se campo é vazio
+      for (var i = 1; i <= val; i++) { // Imprime Qtde de campos
+        var para = document.createElement("INPUT"); //Cria o Elemento
+        //ATRIBUTOS DO ELEMENTO 
+          para.id = 'filho'+i;
+          para.type = 'text'; 
+          para.className = 'form-control';
+          para.placeholder ='Nome do filho'+i; 
+        //para.innerHTML = "Nome do Filho";
+        document.getElementById("area-criacao").appendChild(para);//Imprime Elemento n DIV  
+      }
+    } else {
+      console.log('qtde filho vazia');  
+    }    
   }
+
+
   
 });
 //document.createElement(element) 	Create an HTML element document.createElement(nodename)

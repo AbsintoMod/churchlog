@@ -112,3 +112,8 @@ Menu Comunidade
 {RAMAIS[
     Exibição de Telefones por Setor
 ]}
+
+PAGINA
+
+404 OK
+500 OK

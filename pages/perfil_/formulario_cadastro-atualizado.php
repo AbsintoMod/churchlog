@@ -117,18 +117,21 @@
                             </div>
                         </div>
 
-                        <div class="form-group col-12 col-md-2 campo-de-efeito">
+                        <div class="form-group col-12 col-md-3 campo-de-efeito">
                             <div class="col-sm-12 input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-primary">Qtde:</span>
                                 </div>
-                                <input type="text" class="form-control numero">
+                                <input type="text" id="filho" placeholder="Max 6 Filhos" class="form-control numero">
                                 <div class="input-group-append">
                                     <a type="button" class="input-group-text bg-success adicionar">Add</a>
                                 </div>
                             </div>
                         </div>
 
+                        <div id="area-criacao" class="form-group col-12 col-md-3">
+                            <!--Area de criação dos INPUT do filho-->
+                        </div>
                     </div>
                     <h2 class="title-form">Documentação</h2>
                     <div class="row">
@@ -255,7 +258,7 @@
                                 <input name="data_nascimento" type="date" class="form-control" id="nascimento" placeholder="..." value="">
                             </div>
                         </div>
-                        <div class="form-group col-sm-4">
+                        <div class="form-group col-md-4">
                             <label for="cpf" class="col-md-4 control-label">*CPF:</label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control cpf" id="cpf" placeholder="..." name="cpf" value="">
