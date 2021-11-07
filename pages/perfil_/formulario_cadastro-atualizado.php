@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-12 col-sm-6">
                             <div class="form-group col-sm-6">
-                                <label for="cpf" class="col-md-4 control-label">*Matricula:</label>
+                                <label for="matricula" class="col-md-4 control-label">*Matricula:</label>
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" id="matricula" name="matricula" readonly>
                                 </div>
@@ -48,9 +48,9 @@
                                 </div>
                             </div>
                             <div class="form-group col-sm-12">
-                                <label for="nome" class="col-md-10 control-label">*Sobrenome:</label>
+                                <label for="sobrenome" class="col-md-10 control-label">*Sobrenome:</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" id="nome" placeholder="..." name="nome" value="">
+                                    <input type="text" class="form-control" id="sobrenome" placeholder="..." name="sobrenome" value="">
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="naturalidade" class="col-sm-12 control-label">*Escolaridade:</label>
+                            <label for="cod_escolaridade" class="col-sm-12 control-label">*Escolaridade:</label>
                             <div class="col-sm-12">
                                 <select name="cod_escolaridade" class="form-control" id="cod_escolaridade">
                                     <option value="">...</option>
@@ -122,7 +122,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-primary">Qtde:</span>
                                 </div>
-                                <input type="text" id="filho" placeholder="Max 6 Filhos" class="form-control numero">
+                                <input type="text" id="filho" placeholder="Max 6" class="form-control numero">
                                 <div class="input-group-append">
                                     <a type="button" class="input-group-text bg-success adicionar">Add</a>
                                 </div>
@@ -333,7 +333,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="telefone" class="col-sm-12 control-label">*Email:</label>
+                            <label for="email" class="col-sm-12 control-label">*Email:</label>
                             <div class="col-sm-12">
                                 <input name="email" type="email" class="form-control" id="email" placeholder="..." value="">
                             </div>

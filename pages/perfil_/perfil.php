@@ -61,35 +61,119 @@
                                     <div class="tab-content" id="custom-tabs-one-tabContent">
                                         <div class="tab-pane fade show active" id="tab-perfil-tab" role="tabpanel" aria-labelledby="tab-perfil">
                                             <div class="row">
-                                                <!-- cadastro de Membro -->
-                                                <div class="col-lg-3 col-6">
-                                                    <a href="#">
-                                                        <div class="small-box bg-info">
-                                                            <div class="inner">
-                                                                <h4>Cadastrar</h4>
-                                                                <p>Membro</p>
-                                                            </div>
-                                                            <div class="icon">
-                                                                <i class="fas fa-user-plus"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
+                                                <div class="col-5 col-sm-3">
+                                                    <div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab" role="tablist" aria-orientation="vertical">
+                                                        <a class="nav-link active" id="vert-tabs-informacao-tab" data-toggle="pill" href="#vert-tabs-informacao" role="tab" aria-controls="vert-tabs-informacao" aria-selected="true">Informações</a>
+                                                        <a class="nav-link" id="vert-tabs-documento-tab" data-toggle="pill" href="#vert-tabs-documento" role="tab" aria-controls="vert-tabs-documento" aria-selected="false">Documentos</a>
+                                                        <a class="nav-link" id="vert-tabs-endereco-tab" data-toggle="pill" href="#vert-tabs-endereco" role="tab" aria-controls="vert-tabs-endereco" aria-selected="false">Endereço</a>
+                                                        <a class="nav-link" id="vert-tabs-foto-tab" data-toggle="pill" href="#vert-tabs-foto" role="tab" aria-controls="vert-tabs-foto" aria-selected="false">Foto</a>
+                                                    </div>
                                                 </div>
-                                                <!-- /cadastro de Membro -->
-                                                <!-- total de Membro -->
-                                                <div class="col-lg-3 col-6">
-                                                    <!-- small card -->
-                                                    <div class="small-box bg-success">
-                                                        <div class="inner">
-                                                            <h4>53</h4>
-                                                            <p>Total Membros</p>
+                                                <div class="col-7 col-sm-9">
+                                                    <div class="tab-content" id="vert-tabs-tabContent">
+                                                        <div class="tab-pane text-left fade show active" id="vert-tabs-informacao" role="tabpanel" aria-labelledby="vert-tabs-informacao-tab">
+                                                            <div class="row">
+                                                                <div class="col-12 col-sm-6">
+                                                                    <div class="form-group col-sm-12">
+                                                                        <label for="matricula" class="col-md-12 control-label">Matricula:</label>
+                                                                        <div class="col-md-12">
+                                                                            <input type="text" class="form-control" id="matricula" name="matricula" value="" readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="w-100"></div>
+                                                                    <div class="form-group col-sm-12">
+                                                                        <label for="nome" class="col-md-12 control-label">Nome:</label>
+                                                                        <div class="col-md-12">
+                                                                            <input type="text" class="form-control" id="nome" name="nome" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group col-sm-12">
+                                                                        <label for="sobrenome" class="col-md-12 control-label">Sobrenome:</label>
+                                                                        <div class="col-md-12">
+                                                                            <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-none d-sm-block col-sm-6">
+                                                                    <div class="text-center">
+                                                                        <img src="../../dist/img/boxed-bg.jpg" alt="foto" class="img-thumbnail rounded" style="max-width: 200px; height: 200px; margin-top:8%;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="pai" class="col-sm-12 control-label">Nome do Pai:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="nome_pai" type="text" class="form-control" id="pai" value="" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="mae" class="col-sm-12 control-label">Nome da Mãe:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input type="text" name="nome_mae" class="form-control" id="mae" value="" readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="sexo" class="col-sm-12 control-label">Sexo:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input type="text" name="sexo" class="form-control" id="sexo" value="" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="cod_escolaridade" class="col-sm-12 control-label">Escolaridade:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input type="text" name="cod_escolaridade" class="form-control" id="cod_escolaridade" value="" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="cod_estado_civil" class="col-sm-12 control-label">Estado Civil:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input type="text" name="cod_estado_civil" class="form-control" id="cod_estado_civil" value="" readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--DIV para impressão de FILHOS-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="telefone" class="col-sm-12 control-label">Telefone 1:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="telefone_1" type="text" class="form-control phone_with_ddd" id="telefone_1" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="telefone_2" class="col-sm-12 control-label">Telefone 2:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="telefone_2" type="text" class="form-control phone_with_ddd" id="telefone_2" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--DIV para selecionar numero principal-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="email" class="col-sm-12 control-label">Email:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="email" type="email" class="form-control" id="email" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="icon">
-                                                            <i class="fas fa-user-group"></i>
+                                                        <div class="tab-pane fade" id="vert-tabs-documento" role="tabpanel" aria-labelledby="vert-tabs-documento-tab">
+                                                            <p>Aba Documentos</p>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="vert-tabs-endereco" role="tabpanel" aria-labelledby="vert-tabs-endereco-tab">
+                                                            <p>Aba Endereço</p>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="vert-tabs-foto" role="tabpanel" aria-labelledby="vert-tabs-foto-tab">
+                                                            <p>Aba Foto</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- /total de Membro -->
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab-certificado-tab" role="tabpanel" aria-labelledby="tab-certificado">
@@ -124,6 +208,12 @@
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
     <script src="../../dist/js/adminlte.js"></script>
+    <!--JS Busca CEP-->
+    <script src="../../dist/js/pages/busca_cep.js"></script>
+    <!--JS Mask-->
+    <script src="../../dist/js/pages/jquery.mask.min.js"></script>
+    <script src="../../dist/js/pages/mascara.js"></script>
+    <script src="../../dist/js/pages/formulario.js"></script>
 </body>
 
 </html>
