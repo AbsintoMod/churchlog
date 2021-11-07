@@ -9,7 +9,7 @@ https://www.pngwing.com/pt/search?q=perfil+de+usu%C3%A1rio
 https://www.imagensempng.com.br/tag/vetor/page/2/
 
 Criar Menu do Perfil Pessoal
-    Perfil {Informações + Contato,Documentos,Endereço,Foto .ABAS}
+    Perfil {Informações + Contato,Documentos,Endereço .ABAS}
     Certificados{Cartão de Membro,Cargo .CARD}
     Pedidos de Oração {.CARD}
     Configuração de Theme {.FORMULARIO}

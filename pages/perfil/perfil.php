@@ -164,10 +164,121 @@
                                                             </div>
                                                         </div>
                                                         <div class="tab-pane fade" id="vert-tabs-documento" role="tabpanel" aria-labelledby="vert-tabs-documento-tab">
-                                                            <p>Aba Documentos</p>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="identidade" class="col-sm-12 control-label">Identidade:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="rg" type="text" class="form-control" id="identidade" readonly value="">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="orgao_expd" class="col- sm-12 control-label">Órgão Expedidor:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="orgao_expd" type="text" class="form-control" readonly id="orgao_expd" value="">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="estado_expd" class="col-sm-12 control-label">Estado Expedidor:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="estado_expd" type="text" class="form-control" readonly id="estado_expd" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="data_expd" class="col-sm-12 control-label">Data Expedição:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="rg_expedicao" type="text" class="form-control" id="data_expd" readonly value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="cpf" class="col-md-4 control-label">CPF:</label>
+                                                                    <div class="col-md-12">
+                                                                        <input type="text" class="form-control" id="cpf" readonly name="cpf" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="nascimento" class="col-sm-12 control-label">Data Nascimento:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="nascimento" type="text" class="form-control" id="nascimento" readonly value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="naturalidade" class="col-sm-12 control-label">Naturalidade:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="naturalidade" type="text" class="form-control" id="naturalidade" readonly value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="uf_nascimento" class="col-sm-12 control-label">UF Nascimento:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="uf_nascimento" type="text" class="form-control" id="uf_nascimento" readonly value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="nacionalidade" class="col-sm-12 control-label">Nacionalidade:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="nacionalidade" type="text" class="form-control" id="nacionalidade" readonly value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="tab-pane fade" id="vert-tabs-endereco" role="tabpanel" aria-labelledby="vert-tabs-endereco-tab">
-                                                            <p>Aba Endereço</p>
+                                                            <div class="row">
+                                                                <!--CEP-->
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="cep" class="col-md-12 control-label">CEP:</label>
+                                                                    <div class="col-md-12">
+                                                                        <input name="cep" type="text" class="form-control cep" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" placeholder="...">
+                                                                    </div>
+                                                                </div>
+                                                                <!--NUMERO-->
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="numero" class="col-md-12 control-label">Número:</label>
+                                                                    <div class="col-md-12">
+                                                                        <input name="numero" type="text" class="form-control" id="numero" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <!--COMPLEMENTO-->
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="complemento" class="col-md-12 control-label">Complemento:</label>
+                                                                    <div class="col-md-12">
+                                                                        <input name="complemento" type="text" class="form-control" id="complemento" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-12">
+                                                                    <label for="rua" class="col-md-6 control-label">Rua:</label>
+                                                                    <div class="col-md-12">
+                                                                        <input name="rua" type="text" class="form-control" id="rua" size="60" readonly value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-12">
+                                                                    <label for="bairro" class="col-md-6 control-label">Bairro:</label>
+                                                                    <div class="col-md-12">
+                                                                        <input name="bairro" type="text" class="form-control" id="bairro" size="40" readonly value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="estado" class="col-sm-12 control-label">Estado:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="uf" type="text" id="uf" size="2" class="form-control" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-md-8">
+                                                                    <label for="cidade" class="col-sm-12 control-label">Cidade:</label>
+                                                                    <div class="col-sm-12">
+                                                                        <input name="cidade" class="form-control" type="text" id="cidade" size="40" readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="tab-pane fade" id="vert-tabs-foto" role="tabpanel" aria-labelledby="vert-tabs-foto-tab">
                                                             <p>Aba Foto</p>
@@ -183,17 +294,52 @@
                                             <p>Pedido de Oração.CARDS</p>
                                         </div>
                                         <div class="tab-pane fade" id="tab-configuracao-tab" role="tabpanel" aria-labelledby="tab-configuracao">
-                                            <p>Configuração</p>
+                                            <div class="card">
+                                                <div class="card-body login-card-body">
+                                                    <p class="login-box-msg">Você deve digitar sua senha atual para confirmar a alteração.</p>
+
+                                                    <form action="login.html" method="post">
+                                                        <div class="input-group mb-3">
+                                                            <input type="password" class="form-control" placeholder="Senha Atual">
+                                                            <div class="input-group-append">
+                                                                <div class="input-group-text">
+                                                                    <span class="fas fa-lock"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group mb-3">
+                                                            <input type="password" class="form-control" placeholder="Nova senha">
+                                                            <div class="input-group-append">
+                                                                <div class="input-group-text">
+                                                                    <span class="fas fa-lock"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group mb-3">
+                                                            <input type="password" class="form-control" placeholder="Confirmar nova senha">
+                                                            <div class="input-group-append">
+                                                                <div class="input-group-text">
+                                                                    <span class="fas fa-lock"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <button type="submit" class="btn btn-primary btn-block">Alterar Senha</button>
+                                                            </div>
+                                                            <!-- /.col -->
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <!-- /.card -->
                                     </div>
                                 </div>
-                                <!-- /.card -->
                             </div>
+                            <!-- /.row -->
                         </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.container-fluid -->
+                        <!-- /.container-fluid -->
             </section>
             <!-- /.Main content -->
             <!-- /.conteudo -->
