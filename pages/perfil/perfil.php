@@ -77,7 +77,7 @@
                                                                     <div class="form-group col-sm-12">
                                                                         <label for="matricula" class="col-md-12 control-label">Matricula:</label>
                                                                         <div class="col-md-12">
-                                                                            <input type="text" class="form-control" id="matricula" name="matricula" value="" readonly>
+                                                                            <input type="text" class="form-control" id="matricula" name="matricula" value="1234" readonly>
                                                                         </div>
                                                                     </div>
                                                                     <div class="w-100"></div>

@@ -1,3 +1,8 @@
 {
-    "editor.bracketPairColorization.enabled": true
+    "editor.bracketPairColorization.enabled": true,
+    "cSpell.words": [
+        "adminlte",
+        "fontawesome",
+        "treeview"
+    ]
 }

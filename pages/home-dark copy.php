@@ -168,8 +168,8 @@
           <div class="image">
             <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
-          <div class="nav-item">
-            <a href="perfil/perfil.php" class="nav-link">Usuario</a>
+          <div class="info">
+            <a href="perfil/perfil.php" class="d-block">Usuario</a>
           </div>
         </div>
 
@@ -420,7 +420,7 @@
         <a class="nav-link bg-dark" href="#" data-widget="iframe-fullscreen"><i class="fas fa-expand"></i></a>
       </div>
       <div class="tab-content">
-        <div class="tab-empty">
+      <div class="tab-empty">
           <h2><span id="mostra_data" class="badge bg-dark"></span></h2>
         </div>
       </div>
@@ -458,8 +458,8 @@
   <script src="../dist/js/adminlte.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="../dist/js/demo.js"></script>
-  <!-- Mostra Saudação -->
-  <script src='../dist/js/pages/data.js'></script>
+    <!-- Mostra Saudação -->
+    <script src='../dist/js/pages/data.js'></script>
 </body>
 
 </html>
