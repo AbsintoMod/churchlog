@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!--Add CSS Change-Theme-->
+    <link rel='stylesheet' type='text/css' media='screen' href='../../dist/css/pages/change-theme.css'>
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.css">
 </head>
@@ -16,7 +18,7 @@
     <div class="wrapper">
         <!-- Carregamento -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="../../dist/img/logo.png" alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="../../dist/img/logo.png" alt="ChurchLogLogo" height="60" width="60">
         </div>
 
         <!-- Content Wrapper. Contains page content -->
@@ -66,7 +68,6 @@
                                                         <a class="nav-link active" id="vert-tabs-informacao-tab" data-toggle="pill" href="#vert-tabs-informacao" role="tab" aria-controls="vert-tabs-informacao" aria-selected="true">Informações</a>
                                                         <a class="nav-link" id="vert-tabs-documento-tab" data-toggle="pill" href="#vert-tabs-documento" role="tab" aria-controls="vert-tabs-documento" aria-selected="false">Documentos</a>
                                                         <a class="nav-link" id="vert-tabs-endereco-tab" data-toggle="pill" href="#vert-tabs-endereco" role="tab" aria-controls="vert-tabs-endereco" aria-selected="false">Endereço</a>
-                                                        <a class="nav-link" id="vert-tabs-foto-tab" data-toggle="pill" href="#vert-tabs-foto" role="tab" aria-controls="vert-tabs-foto" aria-selected="false">Foto</a>
                                                     </div>
                                                 </div>
                                                 <div class="col-7 col-sm-9">
@@ -280,9 +281,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="tab-pane fade" id="vert-tabs-foto" role="tabpanel" aria-labelledby="vert-tabs-foto-tab">
-                                                            <p>Aba Foto</p>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -300,26 +298,26 @@
 
                                                     <form action="login.html" method="post">
                                                         <div class="input-group mb-3">
-                                                            <input type="password" class="form-control" placeholder="Senha Atual">
+                                                            <input type="password" id="senha1" class="form-control" placeholder="Senha Atual">
                                                             <div class="input-group-append">
                                                                 <div class="input-group-text">
-                                                                    <i class="fa-solid fa-lock-open"></i>
+                                                                    <i id="1" onclick="mudarType(this.id)" class="fa-solid fa-lock"></i>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="input-group mb-3">
-                                                            <input type="password" class="form-control" placeholder="Nova senha">
+                                                            <input type="password" id="senha2" class="form-control" placeholder="Nova senha">
                                                             <div class="input-group-append">
                                                                 <div class="input-group-text">
-                                                                    <i class="fa-solid fa-lock"></i>
+                                                                    <i id="2" onclick="mudarType(this.id)" class="fa-solid fa-lock"></i>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="input-group mb-3">
-                                                            <input type="password" class="form-control" placeholder="Confirmar nova senha">
+                                                            <input type="password" id="senha3" class="form-control" placeholder="Confirmar nova senha">
                                                             <div class="input-group-append">
                                                                 <div class="input-group-text">
-                                                                    <i class="fa-solid fa-lock" onclick="mudarClass()"></i>    
+                                                                    <i class="fa-solid fa-lock" id="3" onclick="mudarType(this.id)"></i>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -330,6 +328,44 @@
                                                             <!-- /.col -->
                                                         </div>
                                                     </form>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-body theme-card-body">
+                                                    <div id="theme">
+                                                        <div class="section">
+                                                            <p id="info"></p>
+                                                            <div class="time-circle">
+                                                                <div class="sun"></div>
+                                                                <div class="moon">
+                                                                    <div></div>
+                                                                    <div></div>
+                                                                    <div></div>
+                                                                </div>
+                                                                <div class="stars">
+                                                                    <div></div>
+                                                                    <div></div>
+                                                                    <div></div>
+                                                                    <div></div>
+                                                                    <div></div>
+                                                                    <div></div>
+                                                                    <div></div>
+                                                                </div>
+                                                                <div class="water"></div>
+                                                            </div>
+                                                            <div id="intro-text">
+                                                                <h1 id="texto"></h1>
+                                                            </div>
+                                                            <div id="switch">
+                                                                <div id="circle" onclick="mudar()"></div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <button type="button" onclick='' class="btn btn-primary btn-block">Salvar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -360,6 +396,8 @@
     <script src="../../dist/js/pages/jquery.mask.min.js"></script>
     <script src="../../dist/js/pages/mascara.js"></script>
     <script src="../../dist/js/pages/formulario.js"></script>
+    <!--Add JS Change-Theme-->
+    <script src='../../dist/js/pages/change-theme.js'></script>
 </body>
 
 </html>

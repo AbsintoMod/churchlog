@@ -253,6 +253,29 @@
               </ul>
             </li>
             <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa-solid fa-earth-americas"></i>
+                <p>
+                  Departamento
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="departamento/setor/selecao_setores.php" class="nav-link">
+                    <i class="fa-regular fa-circle-right nav-icon"></i>
+                    <p>Setores</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="departamento//grupo/selecao_grupos.php" class="nav-link">
+                    <i class="fa-regular fa-circle-right nav-icon"></i>
+                    <p>Grupos</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
               <a href="calendario.php" class="nav-link">
                 <i class="nav-icon fa-solid fa-calendar-days"></i>
                 <p>
