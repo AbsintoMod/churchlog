@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../../../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../../dist/css/adminlte.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="../../../plugins/summernote/summernote-bs4.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -141,7 +143,12 @@
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab-reuniao-tab" role="tabpanel" aria-labelledby="tab-reuniao">
-                                            <p>Reunião .CARDS</p>
+                                            <div class="card-body">
+                                                <textarea id="summernote">
+                                                    Place <em>some</em> <u>text</u> <strong>here</strong>
+                                                </textarea>
+                                            </div>
+                                            <button onclick='pega()'>mostra</button>
                                         </div>
                                         <div class="tab-pane fade" id="tab-mensagem-tab" role="tabpanel" aria-labelledby="tab-mensagem">
                                             <p>Mensagem .CARDS</p>
@@ -173,6 +180,27 @@
     <script src="../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
     <script src="../../../dist/js/adminlte.js"></script>
+    <!-- Summernote -->
+    <script src="../../../plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- Page specific script -->
+<script>
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+
+   /* // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+      mode: "htmlmixed",
+      theme: "monokai"
+    });*/
+  });
+
+
+  function pega(){
+    var texto = document.getElementById('summernote').value;
+    console.log(texto);
+  };
+</script>
 </body>
 
 </html>
