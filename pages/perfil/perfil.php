@@ -303,7 +303,7 @@
                                                             <input type="password" class="form-control" placeholder="Senha Atual">
                                                             <div class="input-group-append">
                                                                 <div class="input-group-text">
-                                                                    <span class="fas fa-lock"></span>
+                                                                    <i class="fa-solid fa-lock-open"></i>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -311,7 +311,7 @@
                                                             <input type="password" class="form-control" placeholder="Nova senha">
                                                             <div class="input-group-append">
                                                                 <div class="input-group-text">
-                                                                    <span class="fas fa-lock"></span>
+                                                                    <i class="fa-solid fa-lock"></i>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -319,7 +319,7 @@
                                                             <input type="password" class="form-control" placeholder="Confirmar nova senha">
                                                             <div class="input-group-append">
                                                                 <div class="input-group-text">
-                                                                    <span class="fas fa-lock"></span>
+                                                                    <i class="fa-solid fa-lock" onclick="mudarClass()"></i>    
                                                                 </div>
                                                             </div>
                                                         </div>

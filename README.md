@@ -10,19 +10,19 @@ https://www.imagensempng.com.br/tag/vetor/page/2/
 
 Criar Menu do Perfil Pessoal
     Perfil {Informações + Contato,Documentos,Endereço .ABAS}
-    Certificados{Cartão de Membro,Cargo .CARD}
+    Certificados {Cartão de Membro,Cargo .CARD}
     Pedidos de Oração {.CARD}
     Configuração de Theme {.FORMULARIO}
 
 Criar Aba para {DEPARTAMENTO[
 Menu GRUPOS 
-    Lista{para Acessar GRUPOS}
-    GRUPO.Membros+GRUPO.Cadastro{Membros,Funções.botão}
+    Lista {para Acessar GRUPOS}
+    GRUPO.Membros+GRUPO.Cadastro {Membros,Funções.botão}
     GRUPO.Reunioes //pages/forms/editors.html || DataMask || ColorPick
     GRUPO.Mensagens //pages/forms/general.html || General Elements
     GRUPO.Requisição de Materiais 
 Menu SETORES
-    Lista{para Visualizar SETORES}
+    Lista {para Visualizar SETORES}
     SETORES.Pessoas {Membros{Funções}}
     SETORES.Voluntarios
 ]}
