@@ -333,7 +333,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="mensagem/caixa_email/mailbox.html" class="nav-link">
+                  <a href="mensagem/caixa_email/caixa_e-mail.php" class="nav-link">
                     <i class="fa-regular fa-circle-right nav-icon"></i>
                     <p>Caixa de E-Mail</p>
                   </a>
@@ -406,7 +406,7 @@
             </li>
             <li class="nav-header">Informativos</li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="erro/500/index.html" class="nav-link">
                 <i class="nav-icon far fa-circle text-danger"></i>
                 <p class="text">Importante</p>
               </a>
@@ -414,7 +414,7 @@
             <li class="nav-item">
               <a href="erro/404/index.html" class="nav-link">
                 <i class="nav-icon far fa-circle text-warning"></i>
-                <p>Setor</p>
+                <p>Setorial</p>
               </a>
             </li>
             <li class="nav-item">
