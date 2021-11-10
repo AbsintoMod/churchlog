@@ -174,7 +174,7 @@
                                             <div class="table-responsive mailbox-messages">
                                                 <table class="table table-hover table-striped">
                                                     <tbody>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
                                                                     <input type="checkbox" value="" id="check1">
@@ -182,13 +182,13 @@
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"></td>
                                                             <td class="mailbox-date">5 mins ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
                                                                     <input type="checkbox" value="" id="check2">
@@ -196,13 +196,13 @@
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
                                                             <td class="mailbox-date">28 mins ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
                                                                     <input type="checkbox" value="" id="check3">
@@ -210,13 +210,13 @@
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
                                                             <td class="mailbox-date">11 hours ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
                                                                     <input type="checkbox" value="" id="check4">
@@ -224,13 +224,13 @@
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"></td>
                                                             <td class="mailbox-date">15 hours ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
                                                                     <input type="checkbox" value="" id="check5">
@@ -238,81 +238,11 @@
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
                                                             <td class="mailbox-date">Yesterday</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check6">
-                                                                    <label for="check6"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check7">
-                                                                    <label for="check7"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check8">
-                                                                    <label for="check8"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check9">
-                                                                    <label for="check9"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check10">
-                                                                    <label for="check10"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a ()">Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"></td>
-                                                            <td class="mailbox-date">2 days ago</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -362,7 +292,7 @@
                                 <div class="tab-pane fade" id="vert-tabs-enviado" role="tabpanel" aria-labelledby="vert-tabs-enviado-tab">
                                     <div class="card card-primary card-outline">
                                         <div class="card-header">
-                                            <h3 class="card-title">Enviados</h3>
+                                            <h3 class="card-title">Caixa de Enviados</h3>
 
                                             <div class="card-tools">
                                                 <div class="input-group input-group-sm">
@@ -414,95 +344,75 @@
                                             <div class="table-responsive mailbox-messages">
                                                 <table class="table table-hover table-striped">
                                                     <tbody>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check1">
-                                                                    <label for="check1"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject">
-                                                                <p>AdminLTE 3.0 Issue</p> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"></td>
-                                                            <td class="mailbox-date">5 mins ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check2">
-                                                                    <label for="check2"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject">
-                                                                <p>AdminLTE 3.0 Issue</p> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
-                                                            <td class="mailbox-date">28 mins ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check3">
-                                                                    <label for="check3"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject">
-                                                                <p>AdminLTE 3.0 Issue</p> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
-                                                            <td class="mailbox-date">11 hours ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check4">
-                                                                    <label for="check4"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject">
-                                                                <p>AdminLTE 3.0 Issue</p> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"></td>
-                                                            <td class="mailbox-date">15 hours ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check5">
-                                                                    <label for="check5"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject">
-                                                                <p>AdminLTE 3.0 Issue</p> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
-                                                            <td class="mailbox-date">Yesterday</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
                                                                     <input type="checkbox" value="" id="check6">
                                                                     <label for="check6"></label>
                                                                 </div>
                                                             </td>
+                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
+                                                            </td>
+                                                            <td class="mailbox-attachment"></td>
+                                                            <td class="mailbox-date">5 mins ago</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="icheck-primary">
+                                                                    <input type="checkbox" value="" id="check7">
+                                                                    <label for="check7"></label>
+                                                                </div>
+                                                            </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject">
-                                                                <p>AdminLTE 3.0 Issue</p> - Trying to find a solution to this problem...
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
-                                                            <td class="mailbox-date">2 days ago</td>
+                                                            <td class="mailbox-date">28 mins ago</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="icheck-primary">
+                                                                    <input type="checkbox" value="" id="check8">
+                                                                    <label for="check8"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
+                                                            </td>
+                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
+                                                            <td class="mailbox-date">11 hours ago</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="icheck-primary">
+                                                                    <input type="checkbox" value="" id="check9">
+                                                                    <label for="check9"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
+                                                            </td>
+                                                            <td class="mailbox-attachment"></td>
+                                                            <td class="mailbox-date">15 hours ago</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="icheck-primary">
+                                                                    <input type="checkbox" value="" id="check10">
+                                                                    <label for="check10"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
+                                                            </td>
+                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
+                                                            <td class="mailbox-date">Yesterday</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -602,147 +512,77 @@
                                                 <!-- /.float-right -->
                                             </div>
                                             <div class="table-responsive mailbox-messages">
-                                                <table class="table table-hover table-striped">
+                                            <table class="table table-hover table-striped">
                                                     <tbody>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check1">
-                                                                    <label for="check1"></label>
+                                                                    <input type="checkbox" value="" id="check11">
+                                                                    <label for="check11"></label>
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"></td>
                                                             <td class="mailbox-date">5 mins ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check2">
-                                                                    <label for="check2"></label>
+                                                                    <input type="checkbox" value="" id="check12">
+                                                                    <label for="check12"></label>
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
                                                             <td class="mailbox-date">28 mins ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check3">
-                                                                    <label for="check3"></label>
+                                                                    <input type="checkbox" value="" id="check13">
+                                                                    <label for="check13"></label>
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
                                                             <td class="mailbox-date">11 hours ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check4">
-                                                                    <label for="check4"></label>
+                                                                    <input type="checkbox" value="" id="check14">
+                                                                    <label for="check14"></label>
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"></td>
                                                             <td class="mailbox-date">15 hours ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check5">
-                                                                    <label for="check5"></label>
+                                                                    <input type="checkbox" value="" id="check15">
+                                                                    <label for="check15"></label>
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
                                                             <td class="mailbox-date">Yesterday</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check6">
-                                                                    <label for="check6"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check7">
-                                                                    <label for="check7"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check8">
-                                                                    <label for="check8"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check9">
-                                                                    <label for="check9"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check10">
-                                                                    <label for="check10"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><i>AdminLTE 3.0 Issue</i> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"></td>
-                                                            <td class="mailbox-date">2 days ago</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -842,147 +682,77 @@
                                                 <!-- /.float-right -->
                                             </div>
                                             <div class="table-responsive mailbox-messages">
-                                                <table class="table table-hover table-striped">
+                                            <table class="table table-hover table-striped">
                                                     <tbody>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check1">
-                                                                    <label for="check1"></label>
+                                                                    <input type="checkbox" value="" id="check16">
+                                                                    <label for="check16"></label>
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"></td>
                                                             <td class="mailbox-date">5 mins ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check2">
-                                                                    <label for="check2"></label>
+                                                                    <input type="checkbox" value="" id="check17">
+                                                                    <label for="check17"></label>
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
                                                             <td class="mailbox-date">28 mins ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check3">
-                                                                    <label for="check3"></label>
+                                                                    <input type="checkbox" value="" id="check18">
+                                                                    <label for="check18"></label>
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
                                                             <td class="mailbox-date">11 hours ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check4">
-                                                                    <label for="check4"></label>
+                                                                    <input type="checkbox" value="" id="check19">
+                                                                    <label for="check19"></label>
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"></td>
                                                             <td class="mailbox-date">15 hours ago</td>
                                                         </tr>
-                                                        <tr onclick="modalLer()" type="button">
+                                                        <tr>
                                                             <td>
                                                                 <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check5">
-                                                                    <label for="check5"></label>
+                                                                    <input type="checkbox" value="" id="check20">
+                                                                    <label for="check20"></label>
                                                                 </div>
                                                             </td>
                                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
                                                             <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
                                                             </td>
                                                             <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
                                                             <td class="mailbox-date">Yesterday</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check6">
-                                                                    <label for="check6"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check7">
-                                                                    <label for="check7"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check8">
-                                                                    <label for="check8"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check9">
-                                                                    <label for="check9"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"></td>
-                                                            <td class="mailbox-date">2 days ago</td>
-                                                        </tr>
-                                                        <tr onclick="modalLer()" type="button">
-                                                            <td>
-                                                                <div class="icheck-primary">
-                                                                    <input type="checkbox" value="" id="check10">
-                                                                    <label for="check10"></label>
-                                                                </div>
-                                                            </td>
-                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                                                            <td class="mailbox-name"><a>Alexander Pierce</a></td>
-                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
-                                                            </td>
-                                                            <td class="mailbox-attachment"></td>
-                                                            <td class="mailbox-date">2 days ago</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -1030,7 +800,166 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="vert-tabs-lixeira" role="tabpanel" aria-labelledby="vert-tabs-lixeira-tab">
-                                    Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
+                                <div class="card card-primary card-outline">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Lixeira</h3>
+
+                                            <div class="card-tools">
+                                                <div class="input-group input-group-sm">
+                                                    <input type="text" class="form-control" placeholder="Buscar E-Mail">
+                                                    <div class="input-group-append">
+                                                        <div class="btn btn-primary">
+                                                            <i class="fas fa-search"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.card-tools -->
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <div class="card-body p-0">
+                                            <div class="mailbox-controls">
+                                                <!-- Check all button -->
+                                                <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="far fa-square"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-default btn-sm">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-default btn-sm">
+                                                    <i class="fas fa-sync-alt"></i>
+                                                </button>
+                                                <!-- /.check all button -->
+                                                <div class="float-right">
+                                                    1-50/200
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default btn-sm">
+                                                            <i class="fas fa-chevron-left"></i>
+                                                        </button>
+                                                        <button type="button" class="btn btn-default btn-sm">
+                                                            <i class="fas fa-chevron-right"></i>
+                                                        </button>
+                                                    </div>
+                                                    <!-- /.btn-group -->
+                                                </div>
+                                                <!-- /.float-right -->
+                                            </div>
+                                            <div class="table-responsive mailbox-messages">
+                                            <table class="table table-hover table-striped">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="icheck-primary">
+                                                                    <input type="checkbox" value="" id="check21">
+                                                                    <label for="check21"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
+                                                            </td>
+                                                            <td class="mailbox-attachment"></td>
+                                                            <td class="mailbox-date">5 mins ago</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="icheck-primary">
+                                                                    <input type="checkbox" value="" id="check22">
+                                                                    <label for="check22"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
+                                                            </td>
+                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
+                                                            <td class="mailbox-date">28 mins ago</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="icheck-primary">
+                                                                    <input type="checkbox" value="" id="check23">
+                                                                    <label for="check23"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
+                                                            </td>
+                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
+                                                            <td class="mailbox-date">11 hours ago</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="icheck-primary">
+                                                                    <input type="checkbox" value="" id="check24">
+                                                                    <label for="check24"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
+                                                            </td>
+                                                            <td class="mailbox-attachment"></td>
+                                                            <td class="mailbox-date">15 hours ago</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="icheck-primary">
+                                                                    <input type="checkbox" value="" id="check25">
+                                                                    <label for="check25"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                                                            <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
+                                                            </td>
+                                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
+                                                            <td class="mailbox-date">Yesterday</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- /.table -->
+                                            </div>
+                                            <!-- /.mail-box-messages -->
+                                        </div>
+                                        <!-- /.card-body -->
+                                        <div class="card-footer p-0">
+                                            <div class="mailbox-controls">
+                                                <!-- Check all button -->
+                                                <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                                    <i class="far fa-square"></i>
+                                                </button>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-default btn-sm">
+                                                        <i class="far fa-trash-alt"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-default btn-sm">
+                                                        <i class="fas fa-reply"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-default btn-sm">
+                                                        <i class="fas fa-share"></i>
+                                                    </button>
+                                                </div>
+                                                <!-- /.btn-group -->
+                                                <button type="button" class="btn btn-default btn-sm">
+                                                    <i class="fas fa-sync-alt"></i>
+                                                </button>
+                                                <div class="float-right">
+                                                    1-50/200
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default btn-sm">
+                                                            <i class="fas fa-chevron-left"></i>
+                                                        </button>
+                                                        <button type="button" class="btn btn-default btn-sm">
+                                                            <i class="fas fa-chevron-right"></i>
+                                                        </button>
+                                                    </div>
+                                                    <!-- /.btn-group -->
+                                                </div>
+                                                <!-- /.float-right -->
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- /.card -->
@@ -1086,31 +1015,121 @@
                     <div class="float-right">
                         <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Enviar</button>
                     </div>
-                    <button type="reset" class="btn btn-default" data-dismiss="modal"><i class="fas fa-times"></i> Fechar</button>
+
                 </div>
             </div>
         </div>
     </div>
     <!-- Modal Ler-->
-<div class="modal fade" id="modalLer" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="TituloModalLongoExemplo">Ler E-mail</h5>
-        <div class="card-tools">
-          <a href="#" class="btn btn-tool" title="Previous"><i class="fas fa-chevron-left"></i></a>
-          <a href="#" class="btn btn-tool" title="Next"><i class="fas fa-chevron-right"></i></a>
+    <div class="modal fade" id="modalLer" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalLongoExemplo">Ler E-mail</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="mailbox-read-info">
+                        <h5>Message Subject Is Placed Here</h5>
+                        <h6>From: support@driko.corp
+                            <span class="mailbox-read-time float-right">15 Feb. 2015 11:03 PM</span>
+                        </h6>
+                    </div>
+                    <!-- /.mailbox-read-info -->
+                    <div class="mailbox-controls with-border text-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-sm" data-container="body" title="Deletar">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" data-container="body" title="Responder">
+                                <i class="fas fa-reply"></i>
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" data-container="body" title="Encaminhar">
+                                <i class="fas fa-share"></i>
+                            </button>
+                        </div>
+                        <!-- /.btn-group -->
+                        <button type="button" class="btn btn-default btn-sm" title="Imprimir">
+                            <i class="fas fa-print"></i>
+                        </button>
+                    </div>
+                    <!-- /.mailbox-controls -->
+                    <div class="mailbox-read-message">
+                        <p>Hello John,</p>
+
+                        <p>Keffiyeh blog actually fashion axe vegan, irony biodiesel. Cold-pressed hoodie chillwave put a bird
+                            on it aesthetic, bitters brunch meggings vegan iPhone. Dreamcatcher vegan scenester mlkshk. Ethical
+                            master cleanse Bushwick, occupy Thundercats banjo cliche ennui farm-to-table mlkshk fanny pack
+                            gluten-free. Marfa butcher vegan quinoa, bicycle rights disrupt tofu scenester chillwave 3 wolf moon
+                            asymmetrical taxidermy pour-over. Quinoa tote bag fashion axe, Godard disrupt migas church-key tofu
+                            blog locavore. Thundercats cronut polaroid Neutra tousled, meh food truck selfies narwhal American
+                            Apparel.</p>
+                        <p>Thanks,<br>Jane</p>
+                        <div class="bg-white">
+                            <ul class="mailbox-attachments d-flex align-items-stretch clearfix">
+                                <li>
+                                    <span class="mailbox-attachment-icon"><i class="far fa-file-pdf"></i></span>
+
+                                    <div class="mailbox-attachment-info">
+                                        <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Sep2014-report.pdf</a>
+                                        <span class="mailbox-attachment-size clearfix mt-1">
+                                            <span>1,245 KB</span>
+                                            <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="mailbox-attachment-icon"><i class="far fa-file-word"></i></span>
+
+                                    <div class="mailbox-attachment-info">
+                                        <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> App Description.docx</a>
+                                        <span class="mailbox-attachment-size clearfix mt-1">
+                                            <span>1,245 KB</span>
+                                            <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="mailbox-attachment-icon has-img"><img src="../../../dist/img/photo1.png" alt="Attachment"></span>
+
+                                    <div class="mailbox-attachment-info">
+                                        <a href="#" class="mailbox-attachment-name"><i class="fas fa-camera"></i> photo1.png</a>
+                                        <span class="mailbox-attachment-size clearfix mt-1">
+                                            <span>2.67 MB</span>
+                                            <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="mailbox-attachment-icon has-img"><img src="../../../dist/img/photo2.png" alt="Attachment"></span>
+
+                                    <div class="mailbox-attachment-info">
+                                        <a href="#" class="mailbox-attachment-name"><i class="fas fa-camera"></i> photo2.png</a>
+                                        <span class="mailbox-attachment-size clearfix mt-1">
+                                            <span>1.9 MB</span>
+                                            <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.mailbox-read-message -->
+                </div>
+                <div class="modal-footer">
+                    <div class="float-right">
+                        <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Responder</button>
+                        <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Encaminhar</button>
+                    </div>
+                    <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Deletar</button>
+                    <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Imprimir</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-      </div>
     </div>
-  </div>
-</div>
 
     <!-- jQuery -->
     <script src="../../../plugins/jquery/jquery.min.js"></script>
@@ -1118,15 +1137,13 @@
     <script src="../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
     <script src="../../../dist/js/adminlte.js"></script>
-    <!-- AdminLTE dashboard -->
-    <script src="../../../dist/js/pages/dashboard3.js"></script>
     <!-- Summernote -->
     <script src="../../../plugins/summernote/summernote-bs4.min.js"></script>
     <!-- Page specific script -->
     <script>
         function modalLer() {
             $('#modalLer').modal('show')
-        }; 
+        };
 
         $(function() {
             //Add text editor
