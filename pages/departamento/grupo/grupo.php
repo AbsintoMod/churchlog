@@ -277,8 +277,17 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                        <div class="card text-white bg-primary" style="max-width: 18rem;">
-                                                            <div class="card-header">Titulo</div>
+                                                        <div class="card card-danger shadow-lg" style="max-width: 18rem;">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Titulo</h3>
+
+                                                                <div class="card-tools">
+                                                                    <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
+                                                                    </button>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            
                                                             <div class="card-body">
                                                                 <h5 class="card-title">Chamada</h5>
                                                                 <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
@@ -286,8 +295,17 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
-                                                        <div class="card text-white bg-warning" style="max-width: 18rem;">
-                                                            <div class="card-header">Titulo</div>
+                                                        <div class="card card-purple shadow-lg" style="max-width: 18rem;">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Titulo</h3>
+
+                                                                <div class="card-tools">
+                                                                    <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
+                                                                    </button>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            
                                                             <div class="card-body">
                                                                 <h5 class="card-title">Chamada</h5>
                                                                 <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
@@ -295,8 +313,17 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
-                                                        <div class="card text-white bg-danger" style="max-width: 18rem;">
-                                                            <div class="card-header">Titulo</div>
+                                                        <div class="card card-warning shadow-lg" style="max-width: 18rem;">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Titulo</h3>
+
+                                                                <div class="card-tools">
+                                                                    <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
+                                                                    </button>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            
                                                             <div class="card-body">
                                                                 <h5 class="card-title">Chamada</h5>
                                                                 <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>

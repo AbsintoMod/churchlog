@@ -34,7 +34,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <!-- /.col -->
+                        
                         <div class="col-md-4">
                             <!-- Widget: user widget style 1 -->
                             <div class="card card-widget widget-user shadow">
@@ -43,8 +43,8 @@
                                     <h3 class="widget-user-username">Grupo de Música</h3>
                                     <h5 class="widget-user-desc">Musical</h5>
                                 </div>
-                                <div class="widget-user-image">
-                                    <img class="img-circle elevation-2" src="../../../dist/img/user1-128x128.jpg" alt="Emblema">
+                                <div class="widget-user-image">    
+                                    <img onclick="window.location.href='grupo.php'" class="img-circle elevation-2" src="../../../dist/img/user1-128x128.jpg" alt="Emblema">
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
@@ -78,7 +78,8 @@
                             </div>
                             <!-- /.widget-user -->
                         </div>
-                        <!-- /.col -->
+                        
+                        
                         <div class="col-md-4">
                             <!-- Widget: user widget style 1 -->
                             <div class="card card-widget widget-user shadow-lg">
@@ -122,7 +123,8 @@
                             </div>
                             <!-- /.widget-user -->
                         </div>
-                        <!-- /.col -->
+                        
+                        
                         <div class="col-md-4">
                             <!-- Widget: user widget style 1 -->
                             <div class="card card-widget widget-user shadow-lg">
@@ -166,7 +168,7 @@
                             </div>
                             <!-- /.widget-user -->
                         </div>
-                        <!-- /.col -->
+                        
                     </div>
                 </div>
             </section>
