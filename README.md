@@ -8,6 +8,8 @@ http://vikku.info/programming/geodata/geonames-get-country-state-city-hierarchy.
 https://www.pngwing.com/pt/search?q=perfil+de+usu%C3%A1rio
 https://www.imagensempng.com.br/tag/vetor/page/2/
 
+https://developers.facebook.com/tools/debug/
+
 Menu do Perfil Pessoal
     Perfil {Informações + Contato,Documentos,Endereço .ABAS}
     Certificados {Cartão de Membro,Cargo .CARD}
