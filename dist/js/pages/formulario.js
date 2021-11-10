@@ -2,30 +2,30 @@
 $('.numero').keyup(function() {
     $(this).val(this.value.replace(/\D/g, ''));
   });*/
-
-
-//Setar campo com ENTER!
-/**
-NÃO ESTA FUNCIONANDO
-*/
-$("input", "select", "form") // Busca input e select no form
-.keypress(function(e){ // Evento ao pressionar uma tecla válida keypress
-   
-   var k = e.which || e.keyCode; // Pega o código do evento
-   
-   if(k == 13){ // se for ENTER
-      e.preventDefault(); // Cancela o Submit
-      $(this)
-      .closest('tr') // Seleciona a linha atual
-      .next() // Seleciona a Próxima linha
-      .find('input, select') // Busca input ou select
-      .first() // Seleciona o primeiro que encontrar
-      .focus(); // Foca no elemento
-   }
-
-}); 
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2();
   
-//função mostra campo
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    });
+  
+    // Summernote
+    $('.summernote').summernote();
+    
+    $('.summernote-conteudo-reuniao').summernote({
+      height:150
+    });
+
+    $('.summernote-conteudo-aviso').summernote({
+      height:150
+    });
+
+  });
+  
+
+//Função para MOSTAR campo
 $('.mostra').click(function() {
   var x,y,z = '';
   console.log('mostra');
@@ -46,7 +46,7 @@ $('.mostra').click(function() {
   z[0].style.display = "block";
 }); 
 
-//função esconde campo
+//Função para ESCONDER campo
 $('.esconde').click(function() {
   var x,y,z = '';
   console.log('esconde');
@@ -67,7 +67,7 @@ $('.esconde').click(function() {
   z[0].style.display = "none";
 });
 
-//função ADD INPUT
+//função ADICIONAR INPUT
 $('.adicionar').click(function() {
 //Recupera quantidade de elementos
   var val = document.getElementById('filho').value; //ADD Valor a variavel
@@ -76,7 +76,7 @@ $('.adicionar').click(function() {
     document.getElementById('filho').value = '';
   } else {
     if (val != '') { //Verifica se campo é vazio
-      for (var i = 1; i <= val; i++) { // Imprime Qtde de campos
+      for (var i = 1; i <= val; i++) { // Imprime Qtde de Input
         var para = document.createElement("INPUT"); //Cria o Elemento
         //ATRIBUTOS DO ELEMENTO 
           para.id = 'filho'+i;
@@ -87,25 +87,26 @@ $('.adicionar').click(function() {
         document.getElementById("area-criacao").appendChild(para);//Imprime Elemento n DIV  
       }
     } else {
-      console.log('qtde filho vazia');  
+      //console.log('qtde filho vazia');  
     }    
   }
 });
-//document.createElement(element) 	Create an HTML element document.createElement(nodename)
-//Após a criação do elemento, use o método element .appendChild () ou element .insertBefore () para inseri-lo no documento.
+
+//criar função para deletar campo
 //document.removeChild(element) 	Remove an HTML element
 
+//usado para MOSTRAR e ESCONDER senha 
 function mudarType(id){
-     var campo = document.getElementById('senha'+id);
-     var cadeado = document.getElementById(id);
+     var campo = document.getElementById('senha'+id);//id do INPUT
+     var cadeado = document.getElementById(id);//id do CADEADO
 
      if (campo.type == 'password') {
-      campo.type = 'text';
-      cadeado.className = 'fa-solid fa-lock-open';       
+      campo.type = 'text'; //muda type do input
+      cadeado.className = 'fa-solid fa-lock-open';//muda para cadeado aberto       
      } else {
-      campo.type = 'password';
-      cadeado.className = 'fa-solid fa-lock';
+      campo.type = 'password';//muda type do input
+      cadeado.className = 'fa-solid fa-lock';//muda para cadeado fechado
      }
-      console.log(campo,cadeado);
+      //console.log(campo,cadeado);
 
-}
+};

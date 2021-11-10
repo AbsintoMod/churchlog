@@ -7,7 +7,7 @@ Tentado mas só lembra que tem que ser como ADM.
 http://vikku.info/programming/geodata/geonames-get-country-state-city-hierarchy.htm
 https://www.pngwing.com/pt/search?q=perfil+de+usu%C3%A1rio
 https://www.imagensempng.com.br/tag/vetor/page/2/
-
+https://bootswatch.com/simplex/
 https://developers.facebook.com/tools/debug/
 
 Menu do Perfil Pessoal
@@ -79,7 +79,7 @@ Menu CONGREGAÇÃO (CARD: (Dirigente,Endereço))
 {GALERIA[
     Foto {Cultos,Eventos}
     Videos {Link}
-    Docs {Ex:Certificados}
+    Docs {Ex:Certificados} RIBBONS
 ]}
 
 {CULTOS[
