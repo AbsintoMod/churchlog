@@ -10,20 +10,20 @@ https://www.imagensempng.com.br/tag/vetor/page/2/
 https://bootswatch.com/simplex/
 https://developers.facebook.com/tools/debug/
 
-Menu do Perfil Pessoal
-    Perfil {Informações + Contato,Documentos,Endereço .ABAS}
-    Certificados {Cartão de Membro,Cargo .CARD}
-    Pedidos de Oração {.CARD}
-    Configuração de Theme {.FORMULARIO}
+OK Menu do Perfil Pessoal
+    Perfil {Informações + Contato,Documentos,Endereço}.ABAS
+    Certificados {Cartão de Membro,Cargo{em forma de Patente}}.CARD
+    Pedidos de Oração {Pedido, Listagem}.CARD
+    Configuração {Senha,Theme}.FORMULARIO
 
 Aba para {DEPARTAMENTO[
 Menu GRUPOS 
     Lista {para Acessar GRUPOS}
     GRUPO.Membros+GRUPO.Cadastro {Membros,Funções.botão}
     GRUPO.Reunioes //falta botão salvar e limpar
-    GRUPO.Mensagens //pages/forms/general.html || General Elements
-    GRUPO.Requisição de Materiais 
-Menu SETORES
+    GRUPO.Avisos 
+    GRUPO.Requisição de Materiais //falta fazer formulario
+OK Menu SETORES
     Lista {para Visualizar SETORES}
     SETORES.Pessoas {Membros{Funções}}
     SETORES.Voluntarios
@@ -31,32 +31,32 @@ Menu SETORES
 
 {INSTITUIÇÃO[
 Menu SECRETARIA
-    Membros {Cadastrar, Pesquisar{Busca{Nome,Congregação,Cartão,Cargo,Inform. Pessoais},Atualização,Impressão{Carteira,Carta de Recomendação,Certificados}}}
-    DEPARTAMENTO.Cadastro Novo{Nome,(Lider-Responsavel),Tipo{SETOR,GRUPO{Musical,Dança,etc}}}
-    Carteirinha {Tipos,Confecção,Renovação}
-    Agendamento para Eventos {Agendamento,Aprovados,À Aprovar,Relatório{Mensal,BuscaPorData}}
-    Patrimônio {Bens{Valor,DataCompra,Setor Responsavel},Categorias,Registro de  Movimentação{Origem-Destino,Descarte,Doação}}
+    1 - Membros {Cadastrar, Pesquisar{Busca{Nome,Congregação,Cartão,Cargo,Inform. 		Pessoais},Atualização,Impressão{Carteira,Carta de Recomendação,Certificados}}}
+    2 - DEPARTAMENTO.Cadastro Novo{Nome,(Lider-Responsavel),Tipo{SETOR,GRUPO{Musical,Dança,etc}}}
+    3 - Carteirinha {Tipos,Confecção,Renovação}
+    4 - Agendamento para Eventos {Agendamento,Aprovados,À Aprovar,Relatório{Mensal,BuscaPorData}}
+    5 - Patrimônio {Bens{Valor,DataCompra,Setor Responsavel},Categorias,Registro de  Movimentação{Origem-Destino,Descarte,Doação}}
 Menu FINANCEIRO
-    Dizimos
-    Ofertas
-    Despesas {Contas Fixas,Fornecedores,Pessoal,Comprar,Eventos}
-    Solicitações de Compra {Solicitação por Setor{CompraDireta,},Almoxarifado}    
-    Relatório {Caixa,Despesas a Pagar,Dados por Culto,Despesa de Pessoal,Informação Bancária}
+    1 - Dizimos
+    2 - Ofertas
+    3 - Despesas {Contas Fixas,Fornecedores,Pessoal,Comprar,Eventos}
+    4 - Solicitações de Compra {Solicitação por Setor{CompraDireta,},Almoxarifado}    
+    5 - Relatório {Caixa,Despesas a Pagar,Dados por Culto,Despesa de Pessoal,Informação Bancária}
 Menu COORDENAÇÃO
-    Gabinete (Acesso Exclusivo - Pastor)
-    Pastores
-    Lideres {Grupo,Setores}
+    1 - Gabinete (Acesso Exclusivo - Pastor)
+    2 - Pastores
+    3 - Lideres {Grupo,Setores}
 Menu AÇÃO SOCIAL
-    Voluntarios
-    Doações
-    Campanhas
-    Trabalhos de Rua
+    1 - Voluntarios
+    2 - Doações
+    3 - Campanhas
+    4 - Trabalhos de Rua
 Menu ENSINO
-    EBD{Sala{Qtde. Alunos,Frequencia},Horario,Professores,Alunos{Matriculados,Sala},Relatório{Visitantes,Convidados,Oferta}}
-    Musica
-    Estudos
-    Biblioteca{Biblias,Livros,Hinarios}
-    Discipulado
+    1 - EBD{Sala{Qtde. Alunos,Frequencia},Horario,Professores,Alunos{Matriculados,Sala},Relatório{Visitantes,Convidados,Oferta}}
+    2 - Musica
+    3 - Estudos
+    4 - Biblioteca{Biblias,Livros,Hinarios}
+    5 - Discipulado
 ]}
 
 {FILIAÇÃO(aba exclusiva para Sede)[

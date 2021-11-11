@@ -12,6 +12,8 @@
     <link rel='stylesheet' type='text/css' media='screen' href='../../dist/css/pages/change-theme.css'>
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -52,7 +54,7 @@
                                             <a class="nav-link" id="tab-certificado" data-toggle="pill" href="#tab-certificado-tab" role="tab" aria-controls="tab-certificado-tab" aria-selected="false">Certificados</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="tab-mensagem" data-toggle="pill" href="#tab-mensagem-tab" role="tab" aria-controls="tab-mensagem-tab" aria-selected="false">Pedidos de Oração</a>
+                                            <a class="nav-link" id="tab-oracao" data-toggle="pill" href="#tab-oracao-tab" role="tab" aria-controls="tab-oracao-tab" aria-selected="false">Pedidos de Oração</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" id="tab-configuracao" data-toggle="pill" href="#tab-configuracao-tab" role="tab" aria-controls="tab-configuracao-tab" aria-selected="false">Configuração</a>
@@ -68,6 +70,7 @@
                                                         <a class="nav-link active" id="vert-tabs-informacao-tab" data-toggle="pill" href="#vert-tabs-informacao" role="tab" aria-controls="vert-tabs-informacao" aria-selected="true">Informações</a>
                                                         <a class="nav-link" id="vert-tabs-documento-tab" data-toggle="pill" href="#vert-tabs-documento" role="tab" aria-controls="vert-tabs-documento" aria-selected="false">Documentos</a>
                                                         <a class="nav-link" id="vert-tabs-endereco-tab" data-toggle="pill" href="#vert-tabs-endereco" role="tab" aria-controls="vert-tabs-endereco" aria-selected="false">Endereço</a>
+                                                        <a class="nav-link bg-success" id="aba-salvar" type="button" >Confirmar</a>
                                                     </div>
                                                 </div>
                                                 <div class="col-7 col-sm-9">
@@ -85,13 +88,13 @@
                                                                     <div class="form-group col-sm-12">
                                                                         <label for="nome" class="col-md-12 control-label">Nome:</label>
                                                                         <div class="col-md-12">
-                                                                            <input type="text" class="form-control" id="nome" name="nome" value="">
+                                                                            <input type="text" class="form-control" id="nome" name="nome" value="" readonly>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-sm-12">
                                                                         <label for="sobrenome" class="col-md-12 control-label">Sobrenome:</label>
                                                                         <div class="col-md-12">
-                                                                            <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="">
+                                                                            <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="" readonly>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -142,13 +145,13 @@
                                                                 <div class="form-group col-md-6">
                                                                     <label for="telefone" class="col-sm-12 control-label">Telefone 1:</label>
                                                                     <div class="col-sm-12">
-                                                                        <input name="telefone_1" type="text" class="form-control phone_with_ddd" id="telefone_1" value="">
+                                                                        <input name="telefone_1" type="text" class="form-control phone_with_ddd" id="telefone_1" placeholder="..." value="">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
                                                                     <label for="telefone_2" class="col-sm-12 control-label">Telefone 2:</label>
                                                                     <div class="col-sm-12">
-                                                                        <input name="telefone_2" type="text" class="form-control phone_with_ddd" id="telefone_2" value="">
+                                                                        <input name="telefone_2" type="text" class="form-control phone_with_ddd" id="telefone_2" placeholder="..." value="">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -156,10 +159,10 @@
                                                                 <!--DIV para selecionar numero principal-->
                                                             </div>
                                                             <div class="row">
-                                                                <div class="form-group col-md-6">
+                                                                <div class="form-group col-md-12">
                                                                     <label for="email" class="col-sm-12 control-label">Email:</label>
                                                                     <div class="col-sm-12">
-                                                                        <input name="email" type="email" class="form-control" id="email" value="">
+                                                                        <input name="email" type="email" class="form-control" id="email" placeholder="..." value="">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -239,14 +242,14 @@
                                                                 <div class="form-group col-md-4">
                                                                     <label for="numero" class="col-md-12 control-label">Número:</label>
                                                                     <div class="col-md-12">
-                                                                        <input name="numero" type="text" class="form-control" id="numero" value="">
+                                                                        <input name="numero" type="text" class="form-control" placeholder="..." id="numero" value="">
                                                                     </div>
                                                                 </div>
                                                                 <!--COMPLEMENTO-->
                                                                 <div class="form-group col-md-4">
                                                                     <label for="complemento" class="col-md-12 control-label">Complemento:</label>
                                                                     <div class="col-md-12">
-                                                                        <input name="complemento" type="text" class="form-control" id="complemento" value="">
+                                                                        <input name="complemento" type="text" class="form-control" placeholder="..." id="complemento" value="">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -286,10 +289,113 @@
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab-certificado-tab" role="tabpanel" aria-labelledby="tab-certificado">
-                                            <p>Credenciais</p>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <div class="position-relative">
+                                                        <img src="../../dist/img/photo1.png" alt="carteira-membro" class="img-fluid">
+                                                        <div class="ribbon-wrapper ribbon-xl">
+                                                            <div class="ribbon bg-success text-lg">
+                                                                <!--variavel de concluido-->
+                                                                CONCLUIDO
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="position-relative">
+                                                        <img src="../../dist/img/photo2.png" alt="certificado" class="img-fluid">
+                                                        <div class="ribbon-wrapper ribbon-xl">
+                                                            <div class="ribbon bg-warning text-lg">
+                                                                <!--variavel de cursando-->
+                                                                CURSANDO
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="tab-pane fade" id="tab-mensagem-tab" role="tabpanel" aria-labelledby="tab-mensagem">
-                                            <p>Pedido de Oração.CARDS</p>
+                                        <div class="tab-pane fade" id="tab-oracao-tab" role="tabpanel" aria-labelledby="tab-oracao">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="form-group col-12">
+                                                        <label for="titulo-aviso" class="col-12 control-label">Titulo:</label>
+                                                        <div class=" col-12">
+                                                            <input name="titulo" type="text" class="form-control" id="titulo-aviso" placeholder="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <textarea class="summernote" id="conteudo-oracao"></textarea>
+                                                <div class="row">
+                                                    <div class="form-group col-sm-6">
+                                                        <button type="button" class="btn btn-block btn-danger">Limpar</button>
+                                                    </div>
+                                                    <div class="form-group col-sm-6">
+                                                        <button type="button" class="btn btn-block btn-success ">Salvar</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 col-sm-3">
+                                                        <div class="card card-warning shadow-lg" style="max-width: 20rem;">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Titulo</h3>
+                                                                <div class="card-tools">
+                                                                    <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="card-body">
+                                                                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-3">
+                                                        <div class="card card-warning shadow-lg" style="max-width: 20rem;">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Titulo</h3>
+                                                                <div class="card-tools">
+                                                                    <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="card-body">
+                                                                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-3">
+                                                        <div class="card card-warning shadow-lg" style="max-width: 20rem;">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Titulo</h3>
+                                                                <div class="card-tools">
+                                                                    <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="card-body">
+                                                                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-3">
+                                                        <div class="card card-warning shadow-lg" style="max-width: 20rem;">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Titulo</h3>
+                                                                <div class="card-tools">
+                                                                    <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="card-body">
+                                                                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab-configuracao-tab" role="tabpanel" aria-labelledby="tab-configuracao">
                                             <div class="card">
@@ -333,9 +439,10 @@
                                             <div class="card">
                                                 <div class="card-body theme-card-body">
                                                     <div id="theme">
-                                                        <div class="section">
+                                                    <!--MOSTRA Tela Grande-->    
+                                                    <div class="section">
                                                             <p id="info"></p>
-                                                            <div class="time-circle">
+                                                            <div class="time-circle d-none d-lg-block">
                                                                 <div class="sun"></div>
                                                                 <div class="moon">
                                                                     <div></div>
@@ -365,6 +472,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -388,6 +496,8 @@
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Summernote -->
+    <script src="../../plugins/summernote/summernote-bs4.min.js"></script>
     <!-- AdminLTE -->
     <script src="../../dist/js/adminlte.js"></script>
     <!--JS Busca CEP-->
@@ -395,9 +505,16 @@
     <!--JS Mask-->
     <script src="../../dist/js/pages/jquery.mask.min.js"></script>
     <script src="../../dist/js/pages/mascara.js"></script>
+    <!--JS Formulario-->
     <script src="../../dist/js/pages/formulario.js"></script>
     <!--Add JS Change-Theme-->
     <script src='../../dist/js/pages/change-theme.js'></script>
+<script>
+    $(function (){
+    // Summernote
+   $('.summernote').summernote({});
+   });
+</script>
 </body>
 
 </html>

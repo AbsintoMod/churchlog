@@ -12,7 +12,7 @@ $('.numero').keyup(function() {
     });
   
     // Summernote
-    $('.summernote').summernote();
+    $('.summernote').summernote({});
     
     $('.summernote-conteudo-reuniao').summernote({
       height:150
