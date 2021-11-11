@@ -44,7 +44,7 @@
                                     <h5 class="widget-user-desc">Setor</h5>
                                 </div>
                                 <div class="widget-user-image">
-                                    <img class="img-circle elevation-2" src="../../../dist/img/user1-128x128.jpg" alt="emblema_128*128">
+                                    <img class="img-circle elevation-2 link-foto" onclick="window.location.href='setor.php'" src="../../../dist/img/user1-128x128.jpg" alt="emblema_128*128">
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
@@ -88,7 +88,7 @@
                                     <h5 class="widget-user-desc text-right">Setor</h5>
                                 </div>
                                 <div class="widget-user-image">
-                                    <img class="img-circle" src="../../../dist/img/user3-128x128.jpg" alt="emblema_128*128">
+                                    <img class="img-circle link-foto" onclick="window.location.href='setor.php'" src="../../../dist/img/user3-128x128.jpg" alt="emblema_128*128">
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
@@ -132,7 +132,7 @@
                                     <h5 class="widget-user-desc text-right">Setor</h5>
                                 </div>
                                 <div class="widget-user-image">
-                                    <img class="img-circle" src="../../../dist/img/user3-128x128.jpg" alt="emblema_128*128">
+                                    <img class="img-circle link-foto" onclick="window.location.href='setor.php'" src="../../../dist/img/user3-128x128.jpg" alt="emblema_128*128">
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">

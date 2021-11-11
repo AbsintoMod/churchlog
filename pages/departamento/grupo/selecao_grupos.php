@@ -44,7 +44,7 @@
                                     <h5 class="widget-user-desc">Musical</h5>
                                 </div>
                                 <div class="widget-user-image">    
-                                    <img onclick="window.location.href='grupo.php'" class="img-circle elevation-2" src="../../../dist/img/user1-128x128.jpg" alt="Emblema">
+                                    <img onclick="window.location.href='grupo.php'" class="img-circle elevation-2 link-foto" src="../../../dist/img/user1-128x128.jpg" alt="Emblema">
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
@@ -89,7 +89,7 @@
                                     <h5 class="widget-user-desc text-right">Musical</h5>
                                 </div>
                                 <div class="widget-user-image">
-                                    <img class="img-circle" src="../../../dist/img/user3-128x128.jpg" alt="Emblema">
+                                    <img onclick="window.location.href='grupo.php'" class="img-circle link-foto" src="../../../dist/img/user3-128x128.jpg" alt="Emblema">
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
@@ -134,7 +134,7 @@
                                     <h5 class="widget-user-desc text-right">Dança</h5>
                                 </div>
                                 <div class="widget-user-image">
-                                    <img class="img-circle" src="../../../dist/img/user3-128x128.jpg" alt="Emblema">
+                                    <img class="img-circle link-foto" onclick="window.location.href='grupo.php'" src="../../../dist/img/user3-128x128.jpg" alt="Emblema">
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">

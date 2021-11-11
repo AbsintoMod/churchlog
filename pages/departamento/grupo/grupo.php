@@ -67,7 +67,7 @@
                                         <div class="tab-pane fade show active" id="tab-membro-tab" role="tabpanel" aria-labelledby="tab-membro">
                                             <div class="row">
                                                 <!-- cadastro de Membro -->
-                                                <div class="col-lg-3 col-6">
+                                                <div class="col-6 col-sm-6">
                                                     <a href="#">
                                                         <div class="small-box bg-success">
                                                             <div class="inner">
@@ -82,7 +82,7 @@
                                                 </div>
                                                 <!-- /cadastro de Membro -->
                                                 <!-- total de Membro -->
-                                                <div class="col-lg-3 col-6">
+                                                <div class="col-6 col-sm-6">
                                                     <!-- small card -->
                                                     <div class="small-box bg-info">
                                                         <div class="inner">
