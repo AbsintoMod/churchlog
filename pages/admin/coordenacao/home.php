@@ -31,91 +31,45 @@
             </div>
             <!-- /.content-header -->
             <!-- conteudo -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <div id="accordion">
-                                <div class="card card-primary">
-                                    <div class="card-header">
-                                        <h4 class="card-title w-100">
-                                            <a class="d-block w-100" data-toggle="collapse" href="#menu1">
-                                                Gabinete
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="menu1" class="collapse show" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                            3
-                                            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                            laborum
-                                            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                                            nulla
-                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                            nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                                            beer
-                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                            labore sustainable VHS.
-                                        </div>
-                                    </div>
+            <section class="content">
+                <!-- container-fluid -->
+                <div class="container-fluid">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-primary card-tabs">
+                                <div class="card-header p-0 pt-1">
+                                    <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="tab-gabinete" data-toggle="pill" href="#tab-gabinete-tab" role="tab" aria-controls="tab-gabinete-tab" aria-selected="true">Gabinete</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="tab-pastores" data-toggle="pill" href="#tab-pastores-tab" role="tab" aria-controls="tab-pastores-tab" aria-selected="false">Pastores</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="tab-lideres" data-toggle="pill" href="#tab-lideres-tab" role="tab" aria-controls="tab-lideres-tab" aria-selected="false">Lideres</a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="card card-primary">
-                                    <div class="card-header">
-                                        <h4 class="card-title w-100">
-                                            <a class="d-block w-100" data-toggle="collapse" href="#menu2">
-                                              Pastores  
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="menu2" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                            3
-                                            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                            laborum
-                                            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                                            nulla
-                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                            nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                                            beer
-                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                            labore sustainable VHS.
+                                <div class="card-body">
+                                    <div class="tab-content" id="custom-tabs-one-tabContent">
+                                        <div class="tab-pane fade show active" id="tab-gabinete-tab" role="tabpanel" aria-labelledby="tab-gabinete">
+                                            <p>aba gabinete</p>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="card card-primary">
-                                    <div class="card-header">
-                                        <h4 class="card-title w-100">
-                                            <a class="d-block w-100" data-toggle="collapse" href="#menu3">
-                                                Lideres
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="menu3" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                            3
-                                            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                            laborum
-                                            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                                            nulla
-                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                            nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                                            beer
-                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                            labore sustainable VHS.
+                                        <div class="tab-pane fade" id="tab-pastores-tab" role="tabpanel" aria-labelledby="tab-pastores">
+                                            <p>aba pastores</p>
                                         </div>
+                                        <div class="tab-pane fade" id="tab-lideres-tab" role="tabpanel" aria-labelledby="tab-lideres">
+                                            <p>aba lideres</p> 
+                                        </div>
+                                        <!-- /.card -->
                                     </div>
                                 </div>
                             </div>
+                            <!-- /.row -->
                         </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
-                </div>
-            </div>
+                        <!-- /.container-fluid -->
+            </section>
             <!-- /.conteudo -->
         </div>
         <!-- /.content-wrapper -->
