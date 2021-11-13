@@ -11,7 +11,7 @@ function mostraData() {
         weekday[3] = "Quarta-feira";
         weekday[4] = "Quinta-feira";
         weekday[5] = "Sexta-feira";
-        weekday[6] = "Sabado";
+        weekday[6] = "Sábado";
 
         const month = new Array();
         month[0] = "Janeiro";
