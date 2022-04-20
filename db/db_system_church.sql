@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Abr-2022 às 02:00
+-- Tempo de geração: 20-Abr-2022 às 03:14
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `db_system_church`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `access_nivel`
+--
+
+CREATE TABLE `access_nivel` (
+  `id_nivel` int(11) NOT NULL,
+  `name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `access_nivel`
+--
+
+INSERT INTO `access_nivel` (`id_nivel`, `name`) VALUES
+(1, 'Usuario'),
+(2, 'Master'),
+(3, 'Senior');
 
 -- --------------------------------------------------------
 
@@ -46,21 +66,26 @@ CREATE TABLE `user` (
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `user` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `pass` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
-  `date_create` date NOT NULL
+  `date_create` date NOT NULL,
+  `id_nivel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `user`, `pass`, `date_create`) VALUES
-(6, 'Rodrigo', 'teste@teste.com', 'usuario', '$2y$10$6/AchxY5M.sObvhZqsqGV.2CjD1id1rH73h9VF.ASb9zyDTUycJgi', '2022-02-28'),
-(7, 'Santos', 'teste@testado.com', 'usuario1', '$2y$10$GPRR.KuyIRV1iqh1vgoZDe7AmGs20h2aI1M0dgo77pcJz9/UQbx6m', '2022-02-28'),
-(8, 'Rodrigo', 'testando@teste.com', 'novo', '$2y$10$AidABlbfuwoaolAwOb/q4e0btLuucQxkk40jG8YgxIiqJNt/25sJ2', '2022-04-18');
+INSERT INTO `user` (`id`, `name`, `email`, `user`, `pass`, `date_create`, `id_nivel`) VALUES
+(6, 'Rodrigo', 'teste@teste.com', 'usuario', '$2y$10$6/AchxY5M.sObvhZqsqGV.2CjD1id1rH73h9VF.ASb9zyDTUycJgi', '2022-02-28', 1);
 
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `access_nivel`
+--
+ALTER TABLE `access_nivel`
+  ADD PRIMARY KEY (`id_nivel`);
 
 --
 -- Índices para tabela `report_login`
@@ -79,6 +104,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT de tabela `access_nivel`
+--
+ALTER TABLE `access_nivel`
+  MODIFY `id_nivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de tabela `report_login`
 --
 ALTER TABLE `report_login`
@@ -88,7 +119,7 @@ ALTER TABLE `report_login`
 -- AUTO_INCREMENT de tabela `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

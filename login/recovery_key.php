@@ -47,9 +47,9 @@ session_start();
 						}
 					?>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Campo E-Mail vazio!">
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "E-Mail Invalido!">
 						<span class="label-input100"><?= $label_email ?></span>
-						<input class="input100" type="text" id='user' name="user" placeholder="<?= $placeholder_email ?>" autocomplete="off">
+						<input class="input100" type="email" id='email' name="email" placeholder="<?= $placeholder_email ?>" autocomplete="off">
 						<span class="focus-input100" data-symbol="&#xf15a;"></span>
 					</div>
 
@@ -71,7 +71,7 @@ session_start();
 	</div>
 
 	<script src="../plugins/jquery/jquery.min.js"></script>
-	<script src='../dist/js/pages/login.js'></script>
+	<script src='../dist/js/pages/register1.js'></script>
 
 </body>
 </html>

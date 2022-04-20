@@ -1,11 +1,12 @@
 <?php
 session_start();
 ob_start();
+require_once '../assets/lang/pt-br.php';
+require_once '../php/const_conn.php';
+$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
 $btnCadUsuario = filter_input(INPUT_POST, 'btnCadUsuario', FILTER_SANITIZE_STRING);
 if ($btnCadUsuario) {
-
-	require_once '../php/const_conn.php';
-	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
 	$dados_rc = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
@@ -27,6 +28,7 @@ if ($btnCadUsuario) {
 
 		$result_usuario = "SELECT id FROM user WHERE user='" . $dados['usuario'] . "'";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
+
 		if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
 			$erro = true;
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Este usuário já está sendo utilizado!</div>";
@@ -34,6 +36,7 @@ if ($btnCadUsuario) {
 
 		$result_usuario = "SELECT id FROM user WHERE email='" . $dados['email'] . "'";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
+
 		if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
 			$erro = true;
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Este e-mail já está cadastrado!</div>";
@@ -43,10 +46,13 @@ if ($btnCadUsuario) {
 	if (!$erro) {
 		$dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
 
-		$result_usuario = "INSERT INTO user (name, email, user, pass, date_create) VALUES (
-			'" .$dados['nome']. "','" .$dados['email']. "','" .$dados['usuario']. "','" .$dados['senha']. "',NOW())";
+		$result_usuario = "INSERT INTO user (name, email, user, pass, date_create, id_nivel) VALUES (
+			'" . $dados['nome'] . "','" . $dados['email'] . "','" . $dados['usuario'] . "','" . $dados['senha'] . "',NOW(),'" . $dados['nivel'] . "')";
 
 		$resultado_usario = mysqli_query($conn, $result_usuario);
+
+
+
 		if (mysqli_insert_id($conn)) {
 			$_SESSION['msgcad'] = "<div class='alert alert-success'>Usuário cadastrado com sucesso!</div>";
 			header("Location:./home.php");
@@ -124,10 +130,14 @@ if ($btnCadUsuario) {
 				</div>
 				<div class="form-group has-feedback">
 					<label>Nível de Acesso</label>
-					<select class="form-control select2" style="width: 100%;" name="nmNIVEL" disabled>
-						<option selected="selected" value="1">Usuário</option>
-						<option value="2">Administrador</option>
-						<option value="3">Master</option>
+					<select class="form-control" style="width: 100%;" name="nivel">
+						<?php
+						$nivel_access = "SELECT * FROM `access_nivel`";
+						$valor_busca = mysqli_query($conn, $nivel_access);
+						while ($row_nivel = mysqli_fetch_assoc($valor_busca)) {
+							echo '<option value ="' . $row_nivel['id_nivel'] . '">' . $row_nivel['name'] . '</option>';
+						}
+						?>
 					</select>
 				</div>
 				<div class="row">
