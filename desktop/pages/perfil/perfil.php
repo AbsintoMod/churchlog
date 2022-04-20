@@ -1,6 +1,13 @@
 <?php
-require_once '../../../assets/lang/pt-br.php';
 session_start();
+
+if (empty($_SESSION['id'])) {
+  $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
+  header("Location:../../../login/home.php");
+}
+
+require_once '../../../assets/lang/pt-br.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
