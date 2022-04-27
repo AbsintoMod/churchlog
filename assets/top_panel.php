@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="../../plugins/flag-icon/css/dd.css">
+<link rel="stylesheet" type="text/css" href="../../plugins/flag-icon/css/flags.css"/>
+
 <nav class="main-header navbar navbar-expand navbar-dark">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
@@ -8,28 +11,17 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <!-- Navbar Search -->
+        <!-- Navbar Flag -->
         <li class="nav-item">
-          <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-            <i class="fas fa-search"></i>
-          </a>
-          <div class="navbar-search-block">
-            <form class="form-inline">
-              <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" placeholder="Procurar" aria-label="Search">
-                <div class="input-group-append">
-                  <button class="btn btn-navbar" type="submit">
-                    <i class="fas fa-search"></i>
-                  </button>
-                  <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
+          <select class="nav-link" name="countries" id="countries" is="ms-dropdown">
+            <option value='br' data-image-css="flag br" data-title="Brazil"></option>
+            <option value='us' data-image-css="flag us" data-title="United States"></option>
+            <option value='pt' data-image-css="flag pt" data-title="Portugal"></option>
+            <option value='jp' data-image-css="flag jp" data-title="Japan"></option>
+            <option value='il' data-image-css="flag il" data-title="Israel"></option>
+          </select>
         </li>
-
+        
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
@@ -127,3 +119,4 @@
       </li>-->
       </ul>
     </nav>
+    <script src="../../plugins/flag-icon/js/dd.min.js"></script>

@@ -1,7 +1,7 @@
 <?php
-$newURL = '/../index';
+$newURL = '../index';
 
-header("Location:$newURL.php");
+header("Location:$newURL.html");
 
 die();
 ?>
