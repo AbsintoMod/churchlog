@@ -1,996 +1,1598 @@
 .flag {
-    float: left;
-    padding: 0 !important;
-    margin: 0 5px 0 0;
-    width: 16px;
-    height: 11px;
-    background: url(../flags/flagssprite_small.png) no-repeat;
+  float: left;
+  border: 1px solid white;
+  width: 35px;
+  height: 27px;
+  /* background: url(../flags/flagssprite_small.png) no-repeat; */
 }
 
+.flag.xx {
+  background-image: url(../flags/4x3/xx.svg);
+}
+.flag.xx.fis {
+  background-image: url(../flags/1x1/xx.svg);
+}
 .flag.ad {
-    background-position: 0 0
+  background-image: url(../flags/4x3/ad.svg);
 }
-
+.flag.ad.fis {
+  background-image: url(../flags/1x1/ad.svg);
+}
 .flag.ae {
-    background-position: 0 -11px
+  background-image: url(../flags/4x3/ae.svg);
 }
-
+.flag.ae.fis {
+  background-image: url(../flags/1x1/ae.svg);
+}
 .flag.af {
-    background-position: 0 -22px
+  background-image: url(../flags/4x3/af.svg);
 }
-
+.flag.af.fis {
+  background-image: url(../flags/1x1/af.svg);
+}
 .flag.ag {
-    background-position: 0 -33px
+  background-image: url(../flags/4x3/ag.svg);
 }
-
+.flag.ag.fis {
+  background-image: url(../flags/1x1/ag.svg);
+}
 .flag.ai {
-    background-position: 0 -44px
+  background-image: url(../flags/4x3/ai.svg);
 }
-
+.flag.ai.fis {
+  background-image: url(../flags/1x1/ai.svg);
+}
 .flag.al {
-    background-position: 0 -55px
+  background-image: url(../flags/4x3/al.svg);
 }
-
+.flag.al.fis {
+  background-image: url(../flags/1x1/al.svg);
+}
 .flag.am {
-    background-position: 0 -66px
+  background-image: url(../flags/4x3/am.svg);
 }
-
-.flag.an {
-    background-position: 0 -77px
+.flag.am.fis {
+  background-image: url(../flags/1x1/am.svg);
 }
-
 .flag.ao {
-    background-position: 0 -88px
+  background-image: url(../flags/4x3/ao.svg);
 }
-
+.flag.ao.fis {
+  background-image: url(../flags/1x1/ao.svg);
+}
+.flag.aq {
+  background-image: url(../flags/4x3/aq.svg);
+}
+.flag.aq.fis {
+  background-image: url(../flags/1x1/aq.svg);
+}
 .flag.ar {
-    background-position: 0 -99px
+  background-image: url(../flags/4x3/ar.svg);
 }
-
+.flag.ar.fis {
+  background-image: url(../flags/1x1/ar.svg);
+}
 .flag.as {
-    background-position: 0 -110px
+  background-image: url(../flags/4x3/as.svg);
 }
-
+.flag.as.fis {
+  background-image: url(../flags/1x1/as.svg);
+}
 .flag.at {
-    background-position: 0 -121px
+  background-image: url(../flags/4x3/at.svg);
 }
-
+.flag.at.fis {
+  background-image: url(../flags/1x1/at.svg);
+}
 .flag.au {
-    background-position: 0 -132px
+  background-image: url(../flags/4x3/au.svg);
 }
-
+.flag.au.fis {
+  background-image: url(../flags/1x1/au.svg);
+}
 .flag.aw {
-    background-position: 0 -143px
+  background-image: url(../flags/4x3/aw.svg);
 }
-
+.flag.aw.fis {
+  background-image: url(../flags/1x1/aw.svg);
+}
 .flag.ax {
-    background-position: 0 -154px
+  background-image: url(../flags/4x3/ax.svg);
 }
-
+.flag.ax.fis {
+  background-image: url(../flags/1x1/ax.svg);
+}
 .flag.az {
-    background-position: 0 -165px
+  background-image: url(../flags/4x3/az.svg);
 }
-
+.flag.az.fis {
+  background-image: url(../flags/1x1/az.svg);
+}
 .flag.ba {
-    background-position: 0 -176px
+  background-image: url(../flags/4x3/ba.svg);
 }
-
+.flag.ba.fis {
+  background-image: url(../flags/1x1/ba.svg);
+}
 .flag.bb {
-    background-position: 0 -187px
+  background-image: url(../flags/4x3/bb.svg);
 }
-
+.flag.bb.fis {
+  background-image: url(../flags/1x1/bb.svg);
+}
 .flag.bd {
-    background-position: 0 -198px
+  background-image: url(../flags/4x3/bd.svg);
 }
-
+.flag.bd.fis {
+  background-image: url(../flags/1x1/bd.svg);
+}
 .flag.be {
-    background-position: 0 -209px
+  background-image: url(../flags/4x3/be.svg);
 }
-
+.flag.be.fis {
+  background-image: url(../flags/1x1/be.svg);
+}
 .flag.bf {
-    background-position: 0 -220px
+  background-image: url(../flags/4x3/bf.svg);
 }
-
+.flag.bf.fis {
+  background-image: url(../flags/1x1/bf.svg);
+}
 .flag.bg {
-    background-position: 0 -231px
+  background-image: url(../flags/4x3/bg.svg);
 }
-
+.flag.bg.fis {
+  background-image: url(../flags/1x1/bg.svg);
+}
 .flag.bh {
-    background-position: 0 -242px
+  background-image: url(../flags/4x3/bh.svg);
 }
-
+.flag.bh.fis {
+  background-image: url(../flags/1x1/bh.svg);
+}
 .flag.bi {
-    background-position: 0 -253px
+  background-image: url(../flags/4x3/bi.svg);
 }
-
+.flag.bi.fis {
+  background-image: url(../flags/1x1/bi.svg);
+}
 .flag.bj {
-    background-position: 0 -264px
+  background-image: url(../flags/4x3/bj.svg);
 }
-
+.flag.bj.fis {
+  background-image: url(../flags/1x1/bj.svg);
+}
+.flag.bl {
+  background-image: url(../flags/4x3/bl.svg);
+}
+.flag.bl.fis {
+  background-image: url(../flags/1x1/bl.svg);
+}
 .flag.bm {
-    background-position: 0 -275px
+  background-image: url(../flags/4x3/bm.svg);
 }
-
+.flag.bm.fis {
+  background-image: url(../flags/1x1/bm.svg);
+}
 .flag.bn {
-    background-position: 0 -286px
+  background-image: url(../flags/4x3/bn.svg);
 }
-
+.flag.bn.fis {
+  background-image: url(../flags/1x1/bn.svg);
+}
 .flag.bo {
-    background-position: 0 -297px
+  background-image: url(../flags/4x3/bo.svg);
 }
-
+.flag.bo.fis {
+  background-image: url(../flags/1x1/bo.svg);
+}
+.flag.bq {
+  background-image: url(../flags/4x3/bq.svg);
+}
+.flag.bq.fis {
+  background-image: url(../flags/1x1/bq.svg);
+}
 .flag.br {
-    background-position: 0 -308px
+  background-image: url(../flags/4x3/br.svg);
 }
-
+.flag.br.fis {
+  background-image: url(../flags/1x1/br.svg);
+}
 .flag.bs {
-    background-position: 0 -319px
+  background-image: url(../flags/4x3/bs.svg);
 }
-
+.flag.bs.fis {
+  background-image: url(../flags/1x1/bs.svg);
+}
 .flag.bt {
-    background-position: 0 -330px
+  background-image: url(../flags/4x3/bt.svg);
 }
-
+.flag.bt.fis {
+  background-image: url(../flags/1x1/bt.svg);
+}
 .flag.bv {
-    background-position: 0 -341px
+  background-image: url(../flags/4x3/bv.svg);
 }
-
+.flag.bv.fis {
+  background-image: url(../flags/1x1/bv.svg);
+}
 .flag.bw {
-    background-position: 0 -352px
+  background-image: url(../flags/4x3/bw.svg);
 }
-
+.flag.bw.fis {
+  background-image: url(../flags/1x1/bw.svg);
+}
 .flag.by {
-    background-position: 0 -363px
+  background-image: url(../flags/4x3/by.svg);
 }
-
+.flag.by.fis {
+  background-image: url(../flags/1x1/by.svg);
+}
 .flag.bz {
-    background-position: 0 -374px
+  background-image: url(../flags/4x3/bz.svg);
 }
-
+.flag.bz.fis {
+  background-image: url(../flags/1x1/bz.svg);
+}
 .flag.ca {
-    background-position: 0 -385px
+  background-image: url(../flags/4x3/ca.svg);
 }
-
-.flag.catalonia {
-    background-position: 0 -396px
+.flag.ca.fis {
+  background-image: url(../flags/1x1/ca.svg);
 }
-
 .flag.cc {
-    background-position: 0 -407px
+  background-image: url(../flags/4x3/cc.svg);
 }
-
+.flag.cc.fis {
+  background-image: url(../flags/1x1/cc.svg);
+}
 .flag.cd {
-    background-position: 0 -418px
+  background-image: url(../flags/4x3/cd.svg);
 }
-
+.flag.cd.fis {
+  background-image: url(../flags/1x1/cd.svg);
+}
 .flag.cf {
-    background-position: 0 -429px
+  background-image: url(../flags/4x3/cf.svg);
 }
-
+.flag.cf.fis {
+  background-image: url(../flags/1x1/cf.svg);
+}
 .flag.cg {
-    background-position: 0 -440px
+  background-image: url(../flags/4x3/cg.svg);
 }
-
+.flag.cg.fis {
+  background-image: url(../flags/1x1/cg.svg);
+}
 .flag.ch {
-    background-position: 0 -451px
+  background-image: url(../flags/4x3/ch.svg);
 }
-
+.flag.ch.fis {
+  background-image: url(../flags/1x1/ch.svg);
+}
 .flag.ci {
-    background-position: 0 -462px
+  background-image: url(../flags/4x3/ci.svg);
 }
-
+.flag.ci.fis {
+  background-image: url(../flags/1x1/ci.svg);
+}
 .flag.ck {
-    background-position: 0 -473px
+  background-image: url(../flags/4x3/ck.svg);
 }
-
+.flag.ck.fis {
+  background-image: url(../flags/1x1/ck.svg);
+}
 .flag.cl {
-    background-position: 0 -484px
+  background-image: url(../flags/4x3/cl.svg);
 }
-
+.flag.cl.fis {
+  background-image: url(../flags/1x1/cl.svg);
+}
 .flag.cm {
-    background-position: 0 -495px
+  background-image: url(../flags/4x3/cm.svg);
 }
-
+.flag.cm.fis {
+  background-image: url(../flags/1x1/cm.svg);
+}
 .flag.cn {
-    background-position: 0 -506px
+  background-image: url(../flags/4x3/cn.svg);
 }
-
+.flag.cn.fis {
+  background-image: url(../flags/1x1/cn.svg);
+}
 .flag.co {
-    background-position: 0 -517px
+  background-image: url(../flags/4x3/co.svg);
 }
-
-.flag.cu {
-    background-position: 0 -528px
+.flag.co.fis {
+  background-image: url(../flags/1x1/co.svg);
 }
-
 .flag.cr {
-    background-position: 0 -539px
+  background-image: url(../flags/4x3/cr.svg);
 }
-
-.flag.cs {
-    background-position: 0 -550px
+.flag.cr.fis {
+  background-image: url(../flags/1x1/cr.svg);
 }
-
+.flag.cu {
+  background-image: url(../flags/4x3/cu.svg);
+}
+.flag.cu.fis {
+  background-image: url(../flags/1x1/cu.svg);
+}
 .flag.cv {
-    background-position: 0 -561px
+  background-image: url(../flags/4x3/cv.svg);
 }
-
+.flag.cv.fis {
+  background-image: url(../flags/1x1/cv.svg);
+}
+.flag.cw {
+  background-image: url(../flags/4x3/cw.svg);
+}
+.flag.cw.fis {
+  background-image: url(../flags/1x1/cw.svg);
+}
 .flag.cx {
-    background-position: 0 -572px
+  background-image: url(../flags/4x3/cx.svg);
 }
-
+.flag.cx.fis {
+  background-image: url(../flags/1x1/cx.svg);
+}
 .flag.cy {
-    background-position: -16px 0
+  background-image: url(../flags/4x3/cy.svg);
 }
-
+.flag.cy.fis {
+  background-image: url(../flags/1x1/cy.svg);
+}
 .flag.cz {
-    background-position: -16px -11px
+  background-image: url(../flags/4x3/cz.svg);
 }
-
+.flag.cz.fis {
+  background-image: url(../flags/1x1/cz.svg);
+}
 .flag.de {
-    background-position: -16px -22px
+  background-image: url(../flags/4x3/de.svg);
 }
-
+.flag.de.fis {
+  background-image: url(../flags/1x1/de.svg);
+}
 .flag.dj {
-    background-position: -16px -33px
+  background-image: url(../flags/4x3/dj.svg);
 }
-
+.flag.dj.fis {
+  background-image: url(../flags/1x1/dj.svg);
+}
 .flag.dk {
-    background-position: -16px -44px
+  background-image: url(../flags/4x3/dk.svg);
 }
-
+.flag.dk.fis {
+  background-image: url(../flags/1x1/dk.svg);
+}
 .flag.dm {
-    background-position: -16px -55px
+  background-image: url(../flags/4x3/dm.svg);
 }
-
+.flag.dm.fis {
+  background-image: url(../flags/1x1/dm.svg);
+}
 .flag.do {
-    background-position: -16px -66px
+  background-image: url(../flags/4x3/do.svg);
 }
-
+.flag.do.fis {
+  background-image: url(../flags/1x1/do.svg);
+}
 .flag.dz {
-    background-position: -16px -77px
+  background-image: url(../flags/4x3/dz.svg);
 }
-
+.flag.dz.fis {
+  background-image: url(../flags/1x1/dz.svg);
+}
 .flag.ec {
-    background-position: -16px -88px
+  background-image: url(../flags/4x3/ec.svg);
 }
-
+.flag.ec.fis {
+  background-image: url(../flags/1x1/ec.svg);
+}
 .flag.ee {
-    background-position: -16px -99px
+  background-image: url(../flags/4x3/ee.svg);
 }
-
+.flag.ee.fis {
+  background-image: url(../flags/1x1/ee.svg);
+}
 .flag.eg {
-    background-position: -16px -110px
+  background-image: url(../flags/4x3/eg.svg);
 }
-
+.flag.eg.fis {
+  background-image: url(../flags/1x1/eg.svg);
+}
 .flag.eh {
-    background-position: -16px -121px
+  background-image: url(../flags/4x3/eh.svg);
 }
-
-.flag.england {
-    background-position: -16px -132px
+.flag.eh.fis {
+  background-image: url(../flags/1x1/eh.svg);
 }
-
 .flag.er {
-    background-position: -16px -143px
+  background-image: url(../flags/4x3/er.svg);
 }
-
+.flag.er.fis {
+  background-image: url(../flags/1x1/er.svg);
+}
 .flag.es {
-    background-position: -16px -154px
+  background-image: url(../flags/4x3/es.svg);
 }
-
+.flag.es.fis {
+  background-image: url(../flags/1x1/es.svg);
+}
 .flag.et {
-    background-position: -16px -165px
+  background-image: url(../flags/4x3/et.svg);
 }
-
-.flag.eu {
-    background-position: -16px -176px
+.flag.et.fis {
+  background-image: url(../flags/1x1/et.svg);
 }
-
-.flag.fam {
-    background-position: -16px -187px
-}
-
 .flag.fi {
-    background-position: -16px -198px
+  background-image: url(../flags/4x3/fi.svg);
 }
-
+.flag.fi.fis {
+  background-image: url(../flags/1x1/fi.svg);
+}
 .flag.fj {
-    background-position: -16px -209px
+  background-image: url(../flags/4x3/fj.svg);
 }
-
+.flag.fj.fis {
+  background-image: url(../flags/1x1/fj.svg);
+}
 .flag.fk {
-    background-position: -16px -220px
+  background-image: url(../flags/4x3/fk.svg);
 }
-
+.flag.fk.fis {
+  background-image: url(../flags/1x1/fk.svg);
+}
 .flag.fm {
-    background-position: -16px -231px
+  background-image: url(../flags/4x3/fm.svg);
 }
-
+.flag.fm.fis {
+  background-image: url(../flags/1x1/fm.svg);
+}
 .flag.fo {
-    background-position: -16px -242px
+  background-image: url(../flags/4x3/fo.svg);
 }
-
+.flag.fo.fis {
+  background-image: url(../flags/1x1/fo.svg);
+}
 .flag.fr {
-    background-position: -16px -253px
+  background-image: url(../flags/4x3/fr.svg);
 }
-
+.flag.fr.fis {
+  background-image: url(../flags/1x1/fr.svg);
+}
 .flag.ga {
-    background-position: -16px -264px
+  background-image: url(../flags/4x3/ga.svg);
 }
-
+.flag.ga.fis {
+  background-image: url(../flags/1x1/ga.svg);
+}
 .flag.gb {
-    background-position: -16px -275px
+  background-image: url(../flags/4x3/gb.svg);
 }
-
+.flag.gb.fis {
+  background-image: url(../flags/1x1/gb.svg);
+}
 .flag.gd {
-    background-position: -16px -286px
+  background-image: url(../flags/4x3/gd.svg);
 }
-
+.flag.gd.fis {
+  background-image: url(../flags/1x1/gd.svg);
+}
 .flag.ge {
-    background-position: -16px -297px
+  background-image: url(../flags/4x3/ge.svg);
 }
-
+.flag.ge.fis {
+  background-image: url(../flags/1x1/ge.svg);
+}
 .flag.gf {
-    background-position: -16px -308px
+  background-image: url(../flags/4x3/gf.svg);
 }
-
+.flag.gf.fis {
+  background-image: url(../flags/1x1/gf.svg);
+}
+.flag.gg {
+  background-image: url(../flags/4x3/gg.svg);
+}
+.flag.gg.fis {
+  background-image: url(../flags/1x1/gg.svg);
+}
 .flag.gh {
-    background-position: -16px -319px
+  background-image: url(../flags/4x3/gh.svg);
 }
-
+.flag.gh.fis {
+  background-image: url(../flags/1x1/gh.svg);
+}
 .flag.gi {
-    background-position: -16px -330px
+  background-image: url(../flags/4x3/gi.svg);
 }
-
+.flag.gi.fis {
+  background-image: url(../flags/1x1/gi.svg);
+}
 .flag.gl {
-    background-position: -16px -341px
+  background-image: url(../flags/4x3/gl.svg);
 }
-
+.flag.gl.fis {
+  background-image: url(../flags/1x1/gl.svg);
+}
 .flag.gm {
-    background-position: -16px -352px
+  background-image: url(../flags/4x3/gm.svg);
 }
-
+.flag.gm.fis {
+  background-image: url(../flags/1x1/gm.svg);
+}
 .flag.gn {
-    background-position: -16px -363px
+  background-image: url(../flags/4x3/gn.svg);
 }
-
+.flag.gn.fis {
+  background-image: url(../flags/1x1/gn.svg);
+}
 .flag.gp {
-    background-position: -16px -374px
+  background-image: url(../flags/4x3/gp.svg);
 }
-
+.flag.gp.fis {
+  background-image: url(../flags/1x1/gp.svg);
+}
 .flag.gq {
-    background-position: -16px -385px
+  background-image: url(../flags/4x3/gq.svg);
 }
-
+.flag.gq.fis {
+  background-image: url(../flags/1x1/gq.svg);
+}
 .flag.gr {
-    background-position: -16px -396px
+  background-image: url(../flags/4x3/gr.svg);
 }
-
+.flag.gr.fis {
+  background-image: url(../flags/1x1/gr.svg);
+}
 .flag.gs {
-    background-position: -16px -407px
+  background-image: url(../flags/4x3/gs.svg);
 }
-
+.flag.gs.fis {
+  background-image: url(../flags/1x1/gs.svg);
+}
 .flag.gt {
-    background-position: -16px -418px
+  background-image: url(../flags/4x3/gt.svg);
 }
-
+.flag.gt.fis {
+  background-image: url(../flags/1x1/gt.svg);
+}
 .flag.gu {
-    background-position: -16px -429px
+  background-image: url(../flags/4x3/gu.svg);
 }
-
+.flag.gu.fis {
+  background-image: url(../flags/1x1/gu.svg);
+}
 .flag.gw {
-    background-position: -16px -440px
+  background-image: url(../flags/4x3/gw.svg);
 }
-
+.flag.gw.fis {
+  background-image: url(../flags/1x1/gw.svg);
+}
 .flag.gy {
-    background-position: -16px -451px
+  background-image: url(../flags/4x3/gy.svg);
 }
-
+.flag.gy.fis {
+  background-image: url(../flags/1x1/gy.svg);
+}
 .flag.hk {
-    background-position: -16px -462px
+  background-image: url(../flags/4x3/hk.svg);
 }
-
+.flag.hk.fis {
+  background-image: url(../flags/1x1/hk.svg);
+}
 .flag.hm {
-    background-position: -16px -473px
+  background-image: url(../flags/4x3/hm.svg);
 }
-
+.flag.hm.fis {
+  background-image: url(../flags/1x1/hm.svg);
+}
 .flag.hn {
-    background-position: -16px -484px
+  background-image: url(../flags/4x3/hn.svg);
 }
-
+.flag.hn.fis {
+  background-image: url(../flags/1x1/hn.svg);
+}
 .flag.hr {
-    background-position: -16px -495px
+  background-image: url(../flags/4x3/hr.svg);
 }
-
+.flag.hr.fis {
+  background-image: url(../flags/1x1/hr.svg);
+}
 .flag.ht {
-    background-position: -16px -506px
+  background-image: url(../flags/4x3/ht.svg);
 }
-
+.flag.ht.fis {
+  background-image: url(../flags/1x1/ht.svg);
+}
 .flag.hu {
-    background-position: -16px -517px
+  background-image: url(../flags/4x3/hu.svg);
 }
-
+.flag.hu.fis {
+  background-image: url(../flags/1x1/hu.svg);
+}
 .flag.id {
-    background-position: -16px -528px
+  background-image: url(../flags/4x3/id.svg);
 }
-
+.flag.id.fis {
+  background-image: url(../flags/1x1/id.svg);
+}
 .flag.ie {
-    background-position: -16px -539px
+  background-image: url(../flags/4x3/ie.svg);
 }
-
+.flag.ie.fis {
+  background-image: url(../flags/1x1/ie.svg);
+}
 .flag.il {
-    background-position: -16px -550px
+  background-image: url(../flags/4x3/il.svg);
 }
-
+.flag.il.fis {
+  background-image: url(../flags/1x1/il.svg);
+}
+.flag.im {
+  background-image: url(../flags/4x3/im.svg);
+}
+.flag.im.fis {
+  background-image: url(../flags/1x1/im.svg);
+}
 .flag.in {
-    background-position: -16px -561px
+  background-image: url(../flags/4x3/in.svg);
 }
-
+.flag.in.fis {
+  background-image: url(../flags/1x1/in.svg);
+}
 .flag.io {
-    background-position: -16px -572px
+  background-image: url(../flags/4x3/io.svg);
 }
-
+.flag.io.fis {
+  background-image: url(../flags/1x1/io.svg);
+}
 .flag.iq {
-    background-position: -32px 0
+  background-image: url(../flags/4x3/iq.svg);
 }
-
+.flag.iq.fis {
+  background-image: url(../flags/1x1/iq.svg);
+}
 .flag.ir {
-    background-position: -32px -11px
+  background-image: url(../flags/4x3/ir.svg);
 }
-
+.flag.ir.fis {
+  background-image: url(../flags/1x1/ir.svg);
+}
 .flag.is {
-    background-position: -32px -22px
+  background-image: url(../flags/4x3/is.svg);
 }
-
+.flag.is.fis {
+  background-image: url(../flags/1x1/is.svg);
+}
 .flag.it {
-    background-position: -32px -33px
+  background-image: url(../flags/4x3/it.svg);
 }
-
+.flag.it.fis {
+  background-image: url(../flags/1x1/it.svg);
+}
+.flag.je {
+  background-image: url(../flags/4x3/je.svg);
+}
+.flag.je.fis {
+  background-image: url(../flags/1x1/je.svg);
+}
 .flag.jm {
-    background-position: -32px -44px
+  background-image: url(../flags/4x3/jm.svg);
 }
-
+.flag.jm.fis {
+  background-image: url(../flags/1x1/jm.svg);
+}
 .flag.jo {
-    background-position: -32px -55px
+  background-image: url(../flags/4x3/jo.svg);
 }
-
+.flag.jo.fis {
+  background-image: url(../flags/1x1/jo.svg);
+}
 .flag.jp {
-    background-position: -32px -66px
+  background-image: url(../flags/4x3/jp.svg);
 }
-
+.flag.jp.fis {
+  background-image: url(../flags/1x1/jp.svg);
+}
 .flag.ke {
-    background-position: -32px -77px
+  background-image: url(../flags/4x3/ke.svg);
 }
-
+.flag.ke.fis {
+  background-image: url(../flags/1x1/ke.svg);
+}
 .flag.kg {
-    background-position: -32px -88px
+  background-image: url(../flags/4x3/kg.svg);
 }
-
+.flag.kg.fis {
+  background-image: url(../flags/1x1/kg.svg);
+}
 .flag.kh {
-    background-position: -32px -99px
+  background-image: url(../flags/4x3/kh.svg);
 }
-
+.flag.kh.fis {
+  background-image: url(../flags/1x1/kh.svg);
+}
 .flag.ki {
-    background-position: -32px -110px
+  background-image: url(../flags/4x3/ki.svg);
 }
-
+.flag.ki.fis {
+  background-image: url(../flags/1x1/ki.svg);
+}
 .flag.km {
-    background-position: -32px -121px
+  background-image: url(../flags/4x3/km.svg);
 }
-
+.flag.km.fis {
+  background-image: url(../flags/1x1/km.svg);
+}
 .flag.kn {
-    background-position: -32px -132px
+  background-image: url(../flags/4x3/kn.svg);
 }
-
+.flag.kn.fis {
+  background-image: url(../flags/1x1/kn.svg);
+}
 .flag.kp {
-    background-position: -32px -143px
+  background-image: url(../flags/4x3/kp.svg);
 }
-
+.flag.kp.fis {
+  background-image: url(../flags/1x1/kp.svg);
+}
 .flag.kr {
-    background-position: -32px -154px
+  background-image: url(../flags/4x3/kr.svg);
 }
-
+.flag.kr.fis {
+  background-image: url(../flags/1x1/kr.svg);
+}
 .flag.kw {
-    background-position: -32px -165px
+  background-image: url(../flags/4x3/kw.svg);
 }
-
+.flag.kw.fis {
+  background-image: url(../flags/1x1/kw.svg);
+}
 .flag.ky {
-    background-position: -32px -176px
+  background-image: url(../flags/4x3/ky.svg);
 }
-
+.flag.ky.fis {
+  background-image: url(../flags/1x1/ky.svg);
+}
 .flag.kz {
-    background-position: -32px -187px
+  background-image: url(../flags/4x3/kz.svg);
 }
-
+.flag.kz.fis {
+  background-image: url(../flags/1x1/kz.svg);
+}
 .flag.la {
-    background-position: -32px -198px
+  background-image: url(../flags/4x3/la.svg);
 }
-
+.flag.la.fis {
+  background-image: url(../flags/1x1/la.svg);
+}
 .flag.lb {
-    background-position: -32px -209px
+  background-image: url(../flags/4x3/lb.svg);
 }
-
+.flag.lb.fis {
+  background-image: url(../flags/1x1/lb.svg);
+}
 .flag.lc {
-    background-position: -32px -220px
+  background-image: url(../flags/4x3/lc.svg);
 }
-
+.flag.lc.fis {
+  background-image: url(../flags/1x1/lc.svg);
+}
 .flag.li {
-    background-position: -32px -231px
+  background-image: url(../flags/4x3/li.svg);
 }
-
-.flag.lr {
-    background-position: -32px -242px
+.flag.li.fis {
+  background-image: url(../flags/1x1/li.svg);
 }
-
 .flag.lk {
-    background-position: -32px -253px
+  background-image: url(../flags/4x3/lk.svg);
 }
-
+.flag.lk.fis {
+  background-image: url(../flags/1x1/lk.svg);
+}
+.flag.lr {
+  background-image: url(../flags/4x3/lr.svg);
+}
+.flag.lr.fis {
+  background-image: url(../flags/1x1/lr.svg);
+}
 .flag.ls {
-    background-position: -32px -264px
+  background-image: url(../flags/4x3/ls.svg);
 }
-
+.flag.ls.fis {
+  background-image: url(../flags/1x1/ls.svg);
+}
 .flag.lt {
-    background-position: -32px -275px
+  background-image: url(../flags/4x3/lt.svg);
 }
-
+.flag.lt.fis {
+  background-image: url(../flags/1x1/lt.svg);
+}
 .flag.lu {
-    background-position: -32px -286px
+  background-image: url(../flags/4x3/lu.svg);
 }
-
+.flag.lu.fis {
+  background-image: url(../flags/1x1/lu.svg);
+}
 .flag.lv {
-    background-position: -32px -297px
+  background-image: url(../flags/4x3/lv.svg);
 }
-
+.flag.lv.fis {
+  background-image: url(../flags/1x1/lv.svg);
+}
 .flag.ly {
-    background-position: -32px -308px
+  background-image: url(../flags/4x3/ly.svg);
 }
-
+.flag.ly.fis {
+  background-image: url(../flags/1x1/ly.svg);
+}
 .flag.ma {
-    background-position: -32px -319px
+  background-image: url(../flags/4x3/ma.svg);
 }
-
+.flag.ma.fis {
+  background-image: url(../flags/1x1/ma.svg);
+}
 .flag.mc {
-    background-position: -32px -330px
+  background-image: url(../flags/4x3/mc.svg);
 }
-
+.flag.mc.fis {
+  background-image: url(../flags/1x1/mc.svg);
+}
 .flag.md {
-    background-position: -32px -341px
+  background-image: url(../flags/4x3/md.svg);
 }
-
+.flag.md.fis {
+  background-image: url(../flags/1x1/md.svg);
+}
 .flag.me {
-    background-position: -32px -352px
+  background-image: url(../flags/4x3/me.svg);
 }
-
+.flag.me.fis {
+  background-image: url(../flags/1x1/me.svg);
+}
+.flag.mf {
+  background-image: url(../flags/4x3/mf.svg);
+}
+.flag.mf.fis {
+  background-image: url(../flags/1x1/mf.svg);
+}
 .flag.mg {
-    background-position: -32px -363px
+  background-image: url(../flags/4x3/mg.svg);
 }
-
+.flag.mg.fis {
+  background-image: url(../flags/1x1/mg.svg);
+}
 .flag.mh {
-    background-position: -32px -374px
+  background-image: url(../flags/4x3/mh.svg);
 }
-
+.flag.mh.fis {
+  background-image: url(../flags/1x1/mh.svg);
+}
 .flag.mk {
-    background-position: -32px -385px
+  background-image: url(../flags/4x3/mk.svg);
 }
-
+.flag.mk.fis {
+  background-image: url(../flags/1x1/mk.svg);
+}
 .flag.ml {
-    background-position: -32px -396px
+  background-image: url(../flags/4x3/ml.svg);
 }
-
+.flag.ml.fis {
+  background-image: url(../flags/1x1/ml.svg);
+}
 .flag.mm {
-    background-position: -32px -407px
+  background-image: url(../flags/4x3/mm.svg);
 }
-
+.flag.mm.fis {
+  background-image: url(../flags/1x1/mm.svg);
+}
 .flag.mn {
-    background-position: -32px -418px
+  background-image: url(../flags/4x3/mn.svg);
 }
-
+.flag.mn.fis {
+  background-image: url(../flags/1x1/mn.svg);
+}
 .flag.mo {
-    background-position: -32px -429px
+  background-image: url(../flags/4x3/mo.svg);
 }
-
+.flag.mo.fis {
+  background-image: url(../flags/1x1/mo.svg);
+}
 .flag.mp {
-    background-position: -32px -440px
+  background-image: url(../flags/4x3/mp.svg);
 }
-
+.flag.mp.fis {
+  background-image: url(../flags/1x1/mp.svg);
+}
 .flag.mq {
-    background-position: -32px -451px
+  background-image: url(../flags/4x3/mq.svg);
 }
-
+.flag.mq.fis {
+  background-image: url(../flags/1x1/mq.svg);
+}
 .flag.mr {
-    background-position: -32px -462px
+  background-image: url(../flags/4x3/mr.svg);
 }
-
+.flag.mr.fis {
+  background-image: url(../flags/1x1/mr.svg);
+}
 .flag.ms {
-    background-position: -32px -473px
+  background-image: url(../flags/4x3/ms.svg);
 }
-
+.flag.ms.fis {
+  background-image: url(../flags/1x1/ms.svg);
+}
 .flag.mt {
-    background-position: -32px -484px
+  background-image: url(../flags/4x3/mt.svg);
 }
-
+.flag.mt.fis {
+  background-image: url(../flags/1x1/mt.svg);
+}
 .flag.mu {
-    background-position: -32px -495px
+  background-image: url(../flags/4x3/mu.svg);
 }
-
+.flag.mu.fis {
+  background-image: url(../flags/1x1/mu.svg);
+}
 .flag.mv {
-    background-position: -32px -506px
+  background-image: url(../flags/4x3/mv.svg);
 }
-
+.flag.mv.fis {
+  background-image: url(../flags/1x1/mv.svg);
+}
 .flag.mw {
-    background-position: -32px -517px
+  background-image: url(../flags/4x3/mw.svg);
 }
-
+.flag.mw.fis {
+  background-image: url(../flags/1x1/mw.svg);
+}
 .flag.mx {
-    background-position: -32px -528px
+  background-image: url(../flags/4x3/mx.svg);
 }
-
+.flag.mx.fis {
+  background-image: url(../flags/1x1/mx.svg);
+}
 .flag.my {
-    background-position: -32px -539px
+  background-image: url(../flags/4x3/my.svg);
 }
-
+.flag.my.fis {
+  background-image: url(../flags/1x1/my.svg);
+}
 .flag.mz {
-    background-position: -32px -550px
+  background-image: url(../flags/4x3/mz.svg);
 }
-
+.flag.mz.fis {
+  background-image: url(../flags/1x1/mz.svg);
+}
 .flag.na {
-    background-position: -32px -561px
+  background-image: url(../flags/4x3/na.svg);
 }
-
+.flag.na.fis {
+  background-image: url(../flags/1x1/na.svg);
+}
 .flag.nc {
-    background-position: -32px -572px
+  background-image: url(../flags/4x3/nc.svg);
 }
-
+.flag.nc.fis {
+  background-image: url(../flags/1x1/nc.svg);
+}
 .flag.ne {
-    background-position: -48px 0
+  background-image: url(../flags/4x3/ne.svg);
 }
-
+.flag.ne.fis {
+  background-image: url(../flags/1x1/ne.svg);
+}
 .flag.nf {
-    background-position: -48px -11px
+  background-image: url(../flags/4x3/nf.svg);
 }
-
+.flag.nf.fis {
+  background-image: url(../flags/1x1/nf.svg);
+}
 .flag.ng {
-    background-position: -48px -22px
+  background-image: url(../flags/4x3/ng.svg);
 }
-
+.flag.ng.fis {
+  background-image: url(../flags/1x1/ng.svg);
+}
 .flag.ni {
-    background-position: -48px -33px
+  background-image: url(../flags/4x3/ni.svg);
 }
-
+.flag.ni.fis {
+  background-image: url(../flags/1x1/ni.svg);
+}
 .flag.nl {
-    background-position: -48px -44px
+  background-image: url(../flags/4x3/nl.svg);
 }
-
+.flag.nl.fis {
+  background-image: url(../flags/1x1/nl.svg);
+}
 .flag.no {
-    background-position: -48px -55px
+  background-image: url(../flags/4x3/no.svg);
 }
-
+.flag.no.fis {
+  background-image: url(../flags/1x1/no.svg);
+}
 .flag.np {
-    background-position: -48px -66px
+  background-image: url(../flags/4x3/np.svg);
 }
-
+.flag.np.fis {
+  background-image: url(../flags/1x1/np.svg);
+}
 .flag.nr {
-    background-position: -48px -77px
+  background-image: url(../flags/4x3/nr.svg);
 }
-
+.flag.nr.fis {
+  background-image: url(../flags/1x1/nr.svg);
+}
 .flag.nu {
-    background-position: -48px -88px
+  background-image: url(../flags/4x3/nu.svg);
 }
-
+.flag.nu.fis {
+  background-image: url(../flags/1x1/nu.svg);
+}
 .flag.nz {
-    background-position: -48px -99px
+  background-image: url(../flags/4x3/nz.svg);
 }
-
+.flag.nz.fis {
+  background-image: url(../flags/1x1/nz.svg);
+}
 .flag.om {
-    background-position: -48px -110px
+  background-image: url(../flags/4x3/om.svg);
 }
-
+.flag.om.fis {
+  background-image: url(../flags/1x1/om.svg);
+}
 .flag.pa {
-    background-position: -48px -121px
+  background-image: url(../flags/4x3/pa.svg);
 }
-
+.flag.pa.fis {
+  background-image: url(../flags/1x1/pa.svg);
+}
 .flag.pe {
-    background-position: -48px -132px
+  background-image: url(../flags/4x3/pe.svg);
 }
-
+.flag.pe.fis {
+  background-image: url(../flags/1x1/pe.svg);
+}
 .flag.pf {
-    background-position: -48px -143px
+  background-image: url(../flags/4x3/pf.svg);
 }
-
+.flag.pf.fis {
+  background-image: url(../flags/1x1/pf.svg);
+}
 .flag.pg {
-    background-position: -48px -154px
+  background-image: url(../flags/4x3/pg.svg);
 }
-
+.flag.pg.fis {
+  background-image: url(../flags/1x1/pg.svg);
+}
 .flag.ph {
-    background-position: -48px -165px
+  background-image: url(../flags/4x3/ph.svg);
 }
-
+.flag.ph.fis {
+  background-image: url(../flags/1x1/ph.svg);
+}
 .flag.pk {
-    background-position: -48px -176px
+  background-image: url(../flags/4x3/pk.svg);
 }
-
+.flag.pk.fis {
+  background-image: url(../flags/1x1/pk.svg);
+}
 .flag.pl {
-    background-position: -48px -187px
+  background-image: url(../flags/4x3/pl.svg);
 }
-
+.flag.pl.fis {
+  background-image: url(../flags/1x1/pl.svg);
+}
 .flag.pm {
-    background-position: -48px -198px
+  background-image: url(../flags/4x3/pm.svg);
 }
-
+.flag.pm.fis {
+  background-image: url(../flags/1x1/pm.svg);
+}
 .flag.pn {
-    background-position: -48px -209px
+  background-image: url(../flags/4x3/pn.svg);
 }
-
+.flag.pn.fis {
+  background-image: url(../flags/1x1/pn.svg);
+}
 .flag.pr {
-    background-position: -48px -220px
+  background-image: url(../flags/4x3/pr.svg);
 }
-
+.flag.pr.fis {
+  background-image: url(../flags/1x1/pr.svg);
+}
 .flag.ps {
-    background-position: -48px -231px
+  background-image: url(../flags/4x3/ps.svg);
 }
-
+.flag.ps.fis {
+  background-image: url(../flags/1x1/ps.svg);
+}
 .flag.pt {
-    background-position: -48px -242px
+  background-image: url(../flags/4x3/pt.svg);
 }
-
+.flag.pt.fis {
+  background-image: url(../flags/1x1/pt.svg);
+}
 .flag.pw {
-    background-position: -48px -253px
+  background-image: url(../flags/4x3/pw.svg);
 }
-
+.flag.pw.fis {
+  background-image: url(../flags/1x1/pw.svg);
+}
 .flag.py {
-    background-position: -48px -264px
+  background-image: url(../flags/4x3/py.svg);
 }
-
+.flag.py.fis {
+  background-image: url(../flags/1x1/py.svg);
+}
 .flag.qa {
-    background-position: -48px -275px
+  background-image: url(../flags/4x3/qa.svg);
 }
-
+.flag.qa.fis {
+  background-image: url(../flags/1x1/qa.svg);
+}
 .flag.re {
-    background-position: -48px -286px
+  background-image: url(../flags/4x3/re.svg);
 }
-
+.flag.re.fis {
+  background-image: url(../flags/1x1/re.svg);
+}
 .flag.ro {
-    background-position: -48px -297px
+  background-image: url(../flags/4x3/ro.svg);
 }
-
+.flag.ro.fis {
+  background-image: url(../flags/1x1/ro.svg);
+}
 .flag.rs {
-    background-position: -48px -308px
+  background-image: url(../flags/4x3/rs.svg);
 }
-
+.flag.rs.fis {
+  background-image: url(../flags/1x1/rs.svg);
+}
 .flag.ru {
-    background-position: -48px -319px
+  background-image: url(../flags/4x3/ru.svg);
 }
-
+.flag.ru.fis {
+  background-image: url(../flags/1x1/ru.svg);
+}
 .flag.rw {
-    background-position: -48px -330px
+  background-image: url(../flags/4x3/rw.svg);
 }
-
+.flag.rw.fis {
+  background-image: url(../flags/1x1/rw.svg);
+}
 .flag.sa {
-    background-position: -48px -341px
+  background-image: url(../flags/4x3/sa.svg);
 }
-
+.flag.sa.fis {
+  background-image: url(../flags/1x1/sa.svg);
+}
 .flag.sb {
-    background-position: -48px -352px
+  background-image: url(../flags/4x3/sb.svg);
 }
-
+.flag.sb.fis {
+  background-image: url(../flags/1x1/sb.svg);
+}
 .flag.sc {
-    background-position: -48px -363px
+  background-image: url(../flags/4x3/sc.svg);
 }
-
-.flag.scotland {
-    background-position: -48px -374px
+.flag.sc.fis {
+  background-image: url(../flags/1x1/sc.svg);
 }
-
 .flag.sd {
-    background-position: -48px -385px
+  background-image: url(../flags/4x3/sd.svg);
 }
-
+.flag.sd.fis {
+  background-image: url(../flags/1x1/sd.svg);
+}
 .flag.se {
-    background-position: -48px -396px
+  background-image: url(../flags/4x3/se.svg);
 }
-
+.flag.se.fis {
+  background-image: url(../flags/1x1/se.svg);
+}
 .flag.sg {
-    background-position: -48px -407px
+  background-image: url(../flags/4x3/sg.svg);
 }
-
+.flag.sg.fis {
+  background-image: url(../flags/1x1/sg.svg);
+}
 .flag.sh {
-    background-position: -48px -418px
+  background-image: url(../flags/4x3/sh.svg);
 }
-
+.flag.sh.fis {
+  background-image: url(../flags/1x1/sh.svg);
+}
 .flag.si {
-    background-position: -48px -429px
+  background-image: url(../flags/4x3/si.svg);
 }
-
+.flag.si.fis {
+  background-image: url(../flags/1x1/si.svg);
+}
 .flag.sj {
-    background-position: -48px -440px
+  background-image: url(../flags/4x3/sj.svg);
 }
-
+.flag.sj.fis {
+  background-image: url(../flags/1x1/sj.svg);
+}
 .flag.sk {
-    background-position: -48px -451px
+  background-image: url(../flags/4x3/sk.svg);
 }
-
+.flag.sk.fis {
+  background-image: url(../flags/1x1/sk.svg);
+}
 .flag.sl {
-    background-position: -48px -462px
+  background-image: url(../flags/4x3/sl.svg);
 }
-
+.flag.sl.fis {
+  background-image: url(../flags/1x1/sl.svg);
+}
 .flag.sm {
-    background-position: -48px -473px
+  background-image: url(../flags/4x3/sm.svg);
 }
-
+.flag.sm.fis {
+  background-image: url(../flags/1x1/sm.svg);
+}
 .flag.sn {
-    background-position: -48px -484px
+  background-image: url(../flags/4x3/sn.svg);
 }
-
+.flag.sn.fis {
+  background-image: url(../flags/1x1/sn.svg);
+}
 .flag.so {
-    background-position: -48px -495px
+  background-image: url(../flags/4x3/so.svg);
 }
-
+.flag.so.fis {
+  background-image: url(../flags/1x1/so.svg);
+}
 .flag.sr {
-    background-position: -48px -506px
+  background-image: url(../flags/4x3/sr.svg);
 }
-
+.flag.sr.fis {
+  background-image: url(../flags/1x1/sr.svg);
+}
+.flag.ss {
+  background-image: url(../flags/4x3/ss.svg);
+}
+.flag.ss.fis {
+  background-image: url(../flags/1x1/ss.svg);
+}
 .flag.st {
-    background-position: -48px -517px
+  background-image: url(../flags/4x3/st.svg);
 }
-
+.flag.st.fis {
+  background-image: url(../flags/1x1/st.svg);
+}
 .flag.sv {
-    background-position: -48px -528px
+  background-image: url(../flags/4x3/sv.svg);
 }
-
+.flag.sv.fis {
+  background-image: url(../flags/1x1/sv.svg);
+}
+.flag.sx {
+  background-image: url(../flags/4x3/sx.svg);
+}
+.flag.sx.fis {
+  background-image: url(../flags/1x1/sx.svg);
+}
 .flag.sy {
-    background-position: -48px -539px
+  background-image: url(../flags/4x3/sy.svg);
 }
-
+.flag.sy.fis {
+  background-image: url(../flags/1x1/sy.svg);
+}
 .flag.sz {
-    background-position: -48px -550px
+  background-image: url(../flags/4x3/sz.svg);
 }
-
+.flag.sz.fis {
+  background-image: url(../flags/1x1/sz.svg);
+}
 .flag.tc {
-    background-position: -48px -561px
+  background-image: url(../flags/4x3/tc.svg);
 }
-
+.flag.tc.fis {
+  background-image: url(../flags/1x1/tc.svg);
+}
 .flag.td {
-    background-position: -48px -572px
+  background-image: url(../flags/4x3/td.svg);
 }
-
+.flag.td.fis {
+  background-image: url(../flags/1x1/td.svg);
+}
 .flag.tf {
-    background-position: -64px 0
+  background-image: url(../flags/4x3/tf.svg);
 }
-
+.flag.tf.fis {
+  background-image: url(../flags/1x1/tf.svg);
+}
 .flag.tg {
-    background-position: -64px -11px
+  background-image: url(../flags/4x3/tg.svg);
 }
-
+.flag.tg.fis {
+  background-image: url(../flags/1x1/tg.svg);
+}
 .flag.th {
-    background-position: -64px -22px
+  background-image: url(../flags/4x3/th.svg);
 }
-
+.flag.th.fis {
+  background-image: url(../flags/1x1/th.svg);
+}
 .flag.tj {
-    background-position: -64px -33px
+  background-image: url(../flags/4x3/tj.svg);
 }
-
+.flag.tj.fis {
+  background-image: url(../flags/1x1/tj.svg);
+}
 .flag.tk {
-    background-position: -64px -44px
+  background-image: url(../flags/4x3/tk.svg);
 }
-
+.flag.tk.fis {
+  background-image: url(../flags/1x1/tk.svg);
+}
 .flag.tl {
-    background-position: -64px -55px
+  background-image: url(../flags/4x3/tl.svg);
 }
-
+.flag.tl.fis {
+  background-image: url(../flags/1x1/tl.svg);
+}
 .flag.tm {
-    background-position: -64px -66px
+  background-image: url(../flags/4x3/tm.svg);
 }
-
+.flag.tm.fis {
+  background-image: url(../flags/1x1/tm.svg);
+}
 .flag.tn {
-    background-position: -64px -77px
+  background-image: url(../flags/4x3/tn.svg);
 }
-
+.flag.tn.fis {
+  background-image: url(../flags/1x1/tn.svg);
+}
 .flag.to {
-    background-position: -64px -88px
+  background-image: url(../flags/4x3/to.svg);
 }
-
+.flag.to.fis {
+  background-image: url(../flags/1x1/to.svg);
+}
 .flag.tr {
-    background-position: -64px -99px
+  background-image: url(../flags/4x3/tr.svg);
 }
-
+.flag.tr.fis {
+  background-image: url(../flags/1x1/tr.svg);
+}
 .flag.tt {
-    background-position: -64px -110px
+  background-image: url(../flags/4x3/tt.svg);
 }
-
+.flag.tt.fis {
+  background-image: url(../flags/1x1/tt.svg);
+}
 .flag.tv {
-    background-position: -64px -121px
+  background-image: url(../flags/4x3/tv.svg);
 }
-
+.flag.tv.fis {
+  background-image: url(../flags/1x1/tv.svg);
+}
 .flag.tw {
-    background-position: -64px -132px
+  background-image: url(../flags/4x3/tw.svg);
 }
-
+.flag.tw.fis {
+  background-image: url(../flags/1x1/tw.svg);
+}
 .flag.tz {
-    background-position: -64px -143px
+  background-image: url(../flags/4x3/tz.svg);
 }
-
+.flag.tz.fis {
+  background-image: url(../flags/1x1/tz.svg);
+}
 .flag.ua {
-    background-position: -64px -154px
+  background-image: url(../flags/4x3/ua.svg);
 }
-
+.flag.ua.fis {
+  background-image: url(../flags/1x1/ua.svg);
+}
 .flag.ug {
-    background-position: -64px -165px
+  background-image: url(../flags/4x3/ug.svg);
 }
-
+.flag.ug.fis {
+  background-image: url(../flags/1x1/ug.svg);
+}
 .flag.um {
-    background-position: -64px -176px
+  background-image: url(../flags/4x3/um.svg);
 }
-
+.flag.um.fis {
+  background-image: url(../flags/1x1/um.svg);
+}
 .flag.us {
-    background-position: -64px -187px
+  background-image: url(../flags/4x3/us.svg);
 }
-
+.flag.us.fis {
+  background-image: url(../flags/1x1/us.svg);
+}
 .flag.uy {
-    background-position: -64px -198px
+  background-image: url(../flags/4x3/uy.svg);
 }
-
+.flag.uy.fis {
+  background-image: url(../flags/1x1/uy.svg);
+}
 .flag.uz {
-    background-position: -64px -209px
+  background-image: url(../flags/4x3/uz.svg);
 }
-
+.flag.uz.fis {
+  background-image: url(../flags/1x1/uz.svg);
+}
 .flag.va {
-    background-position: -64px -220px
+  background-image: url(../flags/4x3/va.svg);
 }
-
+.flag.va.fis {
+  background-image: url(../flags/1x1/va.svg);
+}
 .flag.vc {
-    background-position: -64px -231px
+  background-image: url(../flags/4x3/vc.svg);
 }
-
+.flag.vc.fis {
+  background-image: url(../flags/1x1/vc.svg);
+}
 .flag.ve {
-    background-position: -64px -242px
+  background-image: url(../flags/4x3/ve.svg);
 }
-
+.flag.ve.fis {
+  background-image: url(../flags/1x1/ve.svg);
+}
 .flag.vg {
-    background-position: -64px -253px
+  background-image: url(../flags/4x3/vg.svg);
 }
-
+.flag.vg.fis {
+  background-image: url(../flags/1x1/vg.svg);
+}
 .flag.vi {
-    background-position: -64px -264px
+  background-image: url(../flags/4x3/vi.svg);
 }
-
+.flag.vi.fis {
+  background-image: url(../flags/1x1/vi.svg);
+}
 .flag.vn {
-    background-position: -64px -275px
+  background-image: url(../flags/4x3/vn.svg);
 }
-
+.flag.vn.fis {
+  background-image: url(../flags/1x1/vn.svg);
+}
 .flag.vu {
-    background-position: -64px -286px
+  background-image: url(../flags/4x3/vu.svg);
 }
-
-.flag.wales {
-    background-position: -64px -297px
+.flag.vu.fis {
+  background-image: url(../flags/1x1/vu.svg);
 }
-
 .flag.wf {
-    background-position: -64px -308px
+  background-image: url(../flags/4x3/wf.svg);
 }
-
+.flag.wf.fis {
+  background-image: url(../flags/1x1/wf.svg);
+}
 .flag.ws {
-    background-position: -64px -319px
+  background-image: url(../flags/4x3/ws.svg);
 }
-
+.flag.ws.fis {
+  background-image: url(../flags/1x1/ws.svg);
+}
 .flag.ye {
-    background-position: -64px -330px
+  background-image: url(../flags/4x3/ye.svg);
 }
-
+.flag.ye.fis {
+  background-image: url(../flags/1x1/ye.svg);
+}
 .flag.yt {
-    background-position: -64px -341px
+  background-image: url(../flags/4x3/yt.svg);
 }
-
+.flag.yt.fis {
+  background-image: url(../flags/1x1/yt.svg);
+}
 .flag.za {
-    background-position: -64px -352px
+  background-image: url(../flags/4x3/za.svg);
 }
-
+.flag.za.fis {
+  background-image: url(../flags/1x1/za.svg);
+}
 .flag.zm {
-    background-position: -64px -363px
+  background-image: url(../flags/4x3/zm.svg);
 }
-
+.flag.zm.fis {
+  background-image: url(../flags/1x1/zm.svg);
+}
 .flag.zw {
-    background-position: -64px -374px
+  background-image: url(../flags/4x3/zw.svg);
+}
+.flag.zw.fis {
+  background-image: url(../flags/1x1/zw.svg);
+}
+.flag.ac {
+  background-image: url(../flags/4x3/ac.svg);
+}
+.flag.ac.fis {
+  background-image: url(../flags/1x1/ac.svg);
+}
+.flag.cp {
+  background-image: url(../flags/4x3/cp.svg);
+}
+.flag.cp.fis {
+  background-image: url(../flags/1x1/cp.svg);
+}
+.flag.dg {
+  background-image: url(../flags/4x3/dg.svg);
+}
+.flag.dg.fis {
+  background-image: url(../flags/1x1/dg.svg);
+}
+.flag.ea {
+  background-image: url(../flags/4x3/ea.svg);
+}
+.flag.ea.fis {
+  background-image: url(../flags/1x1/ea.svg);
+}
+.flag.es-ct {
+  background-image: url(../flags/4x3/es-ct.svg);
+}
+.flag.es-ct.fis {
+  background-image: url(../flags/1x1/es-ct.svg);
+}
+.flag.es-ga {
+  background-image: url(../flags/4x3/es-ga.svg);
+}
+.flag.es-ga.fis {
+  background-image: url(../flags/1x1/es-ga.svg);
+}
+.flag.eu {
+  background-image: url(../flags/4x3/eu.svg);
+}
+.flag.eu.fis {
+  background-image: url(../flags/1x1/eu.svg);
+}
+.flag.gb-eng {
+  background-image: url(../flags/4x3/gb-eng.svg);
+}
+.flag.gb-eng.fis {
+  background-image: url(../flags/1x1/gb-eng.svg);
+}
+.flag.gb-nir {
+  background-image: url(../flags/4x3/gb-nir.svg);
+}
+.flag.gb-nir.fis {
+  background-image: url(../flags/1x1/gb-nir.svg);
+}
+.flag.gb-sct {
+  background-image: url(../flags/4x3/gb-sct.svg);
+}
+.flag.gb-sct.fis {
+  background-image: url(../flags/1x1/gb-sct.svg);
+}
+.flag.gb-wls {
+  background-image: url(../flags/4x3/gb-wls.svg);
+}
+.flag.gb-wls.fis {
+  background-image: url(../flags/1x1/gb-wls.svg);
+}
+.flag.ic {
+  background-image: url(../flags/4x3/ic.svg);
+}
+.flag.ic.fis {
+  background-image: url(../flags/1x1/ic.svg);
+}
+.flag.ta {
+  background-image: url(../flags/4x3/ta.svg);
+}
+.flag.ta.fis {
+  background-image: url(../flags/1x1/ta.svg);
+}
+.flag.un {
+  background-image: url(../flags/4x3/un.svg);
+}
+.flag.un.fis {
+  background-image: url(../flags/1x1/un.svg);
+}
+.flag.xk {
+  background-image: url(../flags/4x3/xk.svg);
+}
+.flag.xk.fis {
+  background-image: url(../flags/1x1/xk.svg);
 }

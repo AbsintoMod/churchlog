@@ -43,12 +43,9 @@
 }
 
 .ms-dd .ms-dd-header {
-    border-bottom: none;
-    border-radius: 10px;
     cursor: pointer;
-    min-height: 35px;
     position: relative;
-    width: 37px;
+    width: 56px;
 }
 
 .ms-dd .ms-dd-header a {
