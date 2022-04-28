@@ -46,8 +46,8 @@ if ($btnCadUsuario) {
 	if (!$erro) {
 		$dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
 
-		$result_usuario = "INSERT INTO user (name, email, user, pass, date_create, id_nivel) VALUES (
-			'" . $dados['nome'] . "','" . $dados['email'] . "','" . $dados['usuario'] . "','" . $dados['senha'] . "',NOW(),'" . $dados['nivel'] . "')";
+		$result_usuario = "INSERT INTO user (name, email, user, pass, date_create, id_nivel, lang) VALUES (
+			'".$dados['nome']."','".$dados['email']."','".$dados['usuario']."','".$dados['senha']."',NOW(),'".$dados['nivel']."','".$dados['lang']."')";
 
 		$resultado_usario = mysqli_query($conn, $result_usuario);
 
@@ -139,6 +139,10 @@ if ($btnCadUsuario) {
 						}
 						?>
 					</select>
+				</div>
+				<!--<label>Language</label>-->
+				<div class="form-group has-feedback">
+					<input type="text" name="lang" placeholder="" class="form-control" value="pt-br" readonly>
 				</div>
 				<div class="row">
 					<div class="col-xs-8">
