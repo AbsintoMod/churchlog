@@ -1,0 +1,24 @@
+//captura event do language
+   var select = document.getElementById('countries');
+	  $('#countries').on('change',()=>{
+      var value = select.options[select.selectedIndex].value;
+	    console.log(value)
+    })
+
+    $('#countries').on('focus',e=>{
+      console.log(e)
+    })
+    $('#countries').on('blur',e=>{
+      console.log(e)
+    })
+
+    $('#countries[option:selected]').on('click',e=>{
+      if (select.options[select.selectedIndex]) {
+        console.log(e)  
+      }
+    })
+
+    
+    $('#countries').on({
+      change:()=>{console.log(event.type +': ' +event.which)},
+    })

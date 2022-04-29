@@ -7,7 +7,8 @@ if (empty($_SESSION['id'])) {
 }
 
 
-require_once '../../../../assets/lang/pt-br.php';
+$lang = $_SESSION['lang'];
+require_once '../../../../assets/lang/'.$lang.'.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

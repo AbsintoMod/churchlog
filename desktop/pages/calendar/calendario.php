@@ -5,7 +5,10 @@ if (empty($_SESSION['id'])) {
   $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
   header("Location:../../../login/home.php");
 }
-require_once '../../../assets/lang/pt-br.php';
+
+$lang = $_SESSION['lang'];
+require_once '../../../assets/lang/'.$lang.'.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -88,7 +91,7 @@ require_once '../../../assets/lang/pt-br.php';
   <script src="../../../plugins/fullcalendar/locales-all.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var initialLocaleCode = 'pt-br';
+      var initialLocaleCode = "<?=$_SESSION['lang']?>";
       var localeSelectorEl = document.getElementById('locale-selector');
       var calendarEl = document.getElementById('calendar');
 
@@ -99,7 +102,7 @@ require_once '../../../assets/lang/pt-br.php';
           right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
         },
         themeSystem: 'bootstrap',
-        initialDate: '2020-09-12',
+        initialDate: '<?=date("Y-m-d");?>',
         locale: initialLocaleCode,
         buttonIcons: true, // show the prev/next text
         weekNumbers: false,

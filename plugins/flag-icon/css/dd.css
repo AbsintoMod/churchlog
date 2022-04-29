@@ -48,6 +48,15 @@
     width: 56px;
 }
 
+.ms-dd .ms-dd-header .option-selected {
+    color: #000;
+    display: block;
+    font-weight: 600;
+    overflow: hidden;
+    padding: 10px 20px 10px 10px;
+    pointer-events: none;
+}
+
 .ms-dd .ms-dd-header a {
     display: block
 }

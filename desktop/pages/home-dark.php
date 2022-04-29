@@ -6,7 +6,9 @@ if (empty($_SESSION['id'])) {
   header("Location:../../login/home.php");
 }
 
-require_once '../../assets/lang/pt-br.php';
+$lang = $_SESSION['lang'];
+require_once '../../assets/lang/'.$lang.'.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -94,8 +96,7 @@ require_once '../../assets/lang/pt-br.php';
         </div>
       </div>
     </div>
-    <!-- /. Content Page -->
-
+    <!-- /. Content Page --> 
     <!-- Rodapé -->
     <?php require_once '../../assets/footer.php' ?>
     <!-- ./ Rodapé -->
@@ -132,6 +133,15 @@ require_once '../../assets/lang/pt-br.php';
   <script src='../../dist/js/pages/data.js'></script>
   <script src='../../dist/js/pages/themes.js'></script>
   <script src='../../dist/js/pages/bloqueio.js'></script>
+  <script>
+    //captura event do language
+    $('#countries').change(()=>{
+      //console.log(event.type +': ' +event.which)
+      if (event.type == 'mousedown') {
+        window.location = "../../php/language.php?lang="+$('#countries').val();
+      }
+    });
+  </script>
 </body>
 
 </html>

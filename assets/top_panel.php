@@ -14,8 +14,8 @@
         <!-- Navbar Flag -->
         <li class="nav-item">
           <select class="nav-link" name="countries" id="countries" is="ms-dropdown">
-            <option value='br' data-image-css="flag br" data-title="Brazil"></option>
-            <option value='us' data-image-css="flag us" data-title="United States"></option>
+            <option value='pt-br' data-image-css="flag br" data-title="Brazil"></option>
+            <option value='en' data-image-css="flag us" data-title="United States"></option>
             <option value='pt' data-image-css="flag pt" data-title="Portugal"></option>
             <option value='jp' data-image-css="flag jp" data-title="Japan"></option>
             <option value='il' data-image-css="flag il" data-title="Israel"></option>
@@ -120,3 +120,9 @@
       </ul>
     </nav>
     <script src="../../plugins/flag-icon/js/dd.min.js"></script>
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script>
+      var lang = "<?php echo $_SESSION['lang'];?>";      
+      $('#countries').val(lang).change();
+    </script>
+

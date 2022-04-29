@@ -135,7 +135,7 @@ if ($btnCadUsuario) {
 						$nivel_access = "SELECT * FROM `access_nivel`";
 						$valor_busca = mysqli_query($conn, $nivel_access);
 						while ($row_nivel = mysqli_fetch_assoc($valor_busca)) {
-							echo '<option value ="' . $row_nivel['id_nivel'] . '">' . $row_nivel['name'] . '</option>';
+							echo '<option value ="' . $row_nivel['id'] . '">' . $row_nivel['name'] . '</option>';
 						}
 						?>
 					</select>

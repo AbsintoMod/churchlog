@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Abr-2022 às 03:09
+-- Tempo de geração: 29-Abr-2022 às 14:25
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `access_nivel` (
-  `id_nivel` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -36,7 +36,7 @@ CREATE TABLE `access_nivel` (
 -- Extraindo dados da tabela `access_nivel`
 --
 
-INSERT INTO `access_nivel` (`id_nivel`, `name`) VALUES
+INSERT INTO `access_nivel` (`id`, `name`) VALUES
 (1, 'Usuario'),
 (2, 'Master'),
 (3, 'Senior');
@@ -74,7 +74,64 @@ INSERT INTO `report_login` (`id_report`, `id_user`, `date`, `hour`) VALUES
 (13, 6, '2022-04-27', '04:22:16'),
 (14, 6, '2022-04-27', '04:42:16'),
 (15, 6, '2022-04-27', '04:51:44'),
-(16, 6, '2022-04-27', '14:02:06');
+(16, 6, '2022-04-27', '14:02:06'),
+(17, 6, '2022-04-28', '03:28:35'),
+(18, 6, '2022-04-28', '03:49:28'),
+(19, 6, '2022-04-28', '03:50:48'),
+(20, 6, '2022-04-28', '03:50:50'),
+(21, 6, '2022-04-28', '03:50:51'),
+(22, 6, '2022-04-28', '03:51:18'),
+(23, 6, '2022-04-28', '03:51:41'),
+(24, 6, '2022-04-28', '03:57:45'),
+(25, 6, '2022-04-28', '03:58:09'),
+(26, 6, '2022-04-28', '03:59:52'),
+(27, 6, '2022-04-28', '04:02:44'),
+(28, 6, '2022-04-28', '04:02:48'),
+(29, 6, '2022-04-28', '04:08:12'),
+(30, 6, '2022-04-28', '04:08:13'),
+(31, 6, '2022-04-28', '04:08:14'),
+(32, 6, '2022-04-28', '04:08:15'),
+(33, 6, '2022-04-28', '04:08:15'),
+(34, 6, '2022-04-28', '04:08:16'),
+(35, 6, '2022-04-28', '04:08:16'),
+(36, 6, '2022-04-28', '04:08:17'),
+(37, 6, '2022-04-28', '04:10:15'),
+(38, 6, '2022-04-28', '04:11:22'),
+(39, 6, '2022-04-28', '04:11:25'),
+(40, 6, '2022-04-28', '04:12:29'),
+(41, 6, '2022-04-28', '04:18:08'),
+(42, 6, '2022-04-28', '04:21:33'),
+(43, 6, '2022-04-28', '04:27:06'),
+(44, 6, '2022-04-28', '04:27:10'),
+(45, 6, '2022-04-28', '04:28:05'),
+(46, 6, '2022-04-28', '04:28:06'),
+(47, 6, '2022-04-28', '04:28:08'),
+(48, 6, '2022-04-28', '04:28:10'),
+(49, 6, '2022-04-28', '04:36:10'),
+(50, 6, '2022-04-28', '04:36:25'),
+(51, 6, '2022-04-28', '04:36:27'),
+(52, 6, '2022-04-28', '04:36:28'),
+(53, 6, '2022-04-28', '04:36:29'),
+(54, 6, '2022-04-28', '04:37:02'),
+(55, 6, '2022-04-28', '04:37:03'),
+(56, 6, '2022-04-28', '04:37:04'),
+(57, 6, '2022-04-28', '04:37:04'),
+(58, 6, '2022-04-28', '04:38:17'),
+(59, 6, '2022-04-28', '04:49:16'),
+(60, 6, '2022-04-28', '04:55:47'),
+(61, 6, '2022-04-28', '05:27:54'),
+(62, 6, '2022-04-28', '05:34:43'),
+(63, 6, '2022-04-28', '05:36:19'),
+(64, 6, '2022-04-28', '05:39:36'),
+(65, 6, '2022-04-28', '06:19:08'),
+(66, 6, '2022-04-28', '06:46:29'),
+(67, 6, '2022-04-28', '07:50:19'),
+(68, 6, '2022-04-28', '07:55:33'),
+(69, 6, '2022-04-28', '08:08:55'),
+(70, 6, '2022-04-28', '08:48:21'),
+(71, 6, '2022-04-28', '09:01:11'),
+(72, 6, '2022-04-28', '21:19:47'),
+(73, 6, '2022-04-29', '14:22:01');
 
 -- --------------------------------------------------------
 
@@ -98,8 +155,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `user`, `pass`, `date_create`, `id_nivel`, `lang`) VALUES
-(6, 'Rodrigo', 'teste@teste.com', 'usuario', '$2y$10$6/AchxY5M.sObvhZqsqGV.2CjD1id1rH73h9VF.ASb9zyDTUycJgi', '2022-02-28', 1, 'pt-br'),
-(13, 'vdsvcbsdjvbcjsb', 'djbxjsdbfjybv@jbsdybxsjey.com', 'sdbjxvtdjf', '$2y$10$ZfujubDyo8p0czL1sKt5T.lgCX3cuc3uvVPDS4QqlBEc4eVmwXMhq', '2022-04-20', 1, 'us'),
+(6, 'Rodrigo', 'teste@teste.com', 'usuario', '$2y$10$6/AchxY5M.sObvhZqsqGV.2CjD1id1rH73h9VF.ASb9zyDTUycJgi', '2022-02-28', 2, 'pt-br'),
+(13, 'vdsvcbsdjvbcjsb', 'djbxjsdbfjybv@jbsdybxsjey.com', 'sdbjxvtdjf', '$2y$10$ZfujubDyo8p0czL1sKt5T.lgCX3cuc3uvVPDS4QqlBEc4eVmwXMhq', '2022-04-20', 1, 'en'),
 (14, 'svxjcdvvvshv', 'jbsjxfbsdjxfbjsjb@bzdfjdyjh.com', 'xjbdvjdsjf', '$2y$10$7FE7ok1M1aFWrFVr.cpKIOYt65pP2puBy0ZPnhZNii5RuogwUmhIS', '2022-04-20', 2, 'pt-br'),
 (15, 'Testando', 'novo@novo.com', 'usuarioq', '$2y$10$Knl27yVrG2VpSEU3i5JQwudnaY.FTyG.U8BB3XNbtxI8RNgQJTgS.', '2022-04-28', 1, 'pt-br');
 
@@ -111,7 +168,7 @@ INSERT INTO `user` (`id`, `name`, `email`, `user`, `pass`, `date_create`, `id_ni
 -- Índices para tabela `access_nivel`
 --
 ALTER TABLE `access_nivel`
-  ADD PRIMARY KEY (`id_nivel`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `report_login`
@@ -133,13 +190,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `access_nivel`
 --
 ALTER TABLE `access_nivel`
-  MODIFY `id_nivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `report_login`
 --
 ALTER TABLE `report_login`
-  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT de tabela `user`

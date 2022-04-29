@@ -6,7 +6,8 @@ if (empty($_SESSION['id'])) {
   header("Location:../../../login/home.php");
 }
 
-require_once '../../../assets/lang/pt-br.php';
+$lang = $_SESSION['lang'];
+require_once '../../../assets/lang/'.$lang.'.php';
 
 ?>
 <!DOCTYPE html>

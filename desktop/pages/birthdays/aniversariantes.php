@@ -5,7 +5,10 @@ if (empty($_SESSION['id'])) {
   $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
   header("Location:../../../login/home.php");
 }
-  require_once '../../../assets/lang/pt-br.php';
+
+$lang = $_SESSION['lang'];
+require_once '../../../assets/lang/'.$lang.'.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
