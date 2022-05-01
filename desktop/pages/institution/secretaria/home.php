@@ -2,13 +2,14 @@
 session_start();
 
 if (empty($_SESSION['id'])) {
-  $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
-  header("Location:../../../../login/home.php");
+    $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
+    header("Location:../../../../login/home.php");
 }
 
 
 $lang = $_SESSION['lang'];
 require_once '../../../../assets/lang/'.$lang.'.php';
+//require_once '../../../../assets/lang/pt-br.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -269,7 +270,87 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                                     <p>aba patrimonio</p>
                                 </div>
                                 <div class="tab-pane fade" id="tab-protocolo-tab" role="tabpanel" aria-labelledby="tab-protocolo">
-                                    <p>aba protocolo</p>
+                                    
+                                    <div class="row my-3">
+                                        <div class="form-group col-12 text-center">
+                                            <h2 class="col-12 "><?= $label_protocol ?></h2>
+                                            <h3><?php echo  date("d/m/Y").' - '.date("h:i a"); ?></h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group col-12 col-sm-6">
+                                            <h2 class="col-12 text-center"><?= $label_number ?></h2>
+
+                                        </div>
+                                        <div class="form-group col-12 col-sm-6">
+                                            <h2 class="col-12 text-center"><?= $label_code ?></h2>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group col-12 col-sm-6">
+                                            <label for="solicitante" class="col-12 control-label"><?= $label_applicant ?>:</label>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" id="solicitante" placeholder="..." name="solicitante" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-12 col-sm-6">
+                                            <label for="destinatario" class="col-12 control-label"><?= $label_target_sector ?>:</label>
+                                            <div class="col-12">
+                                                <select class="form-control" id="destinatario" name="destinatario">
+                                                    <option value="">Selecionar o Setor</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row align-items-end">
+                                        <div class="form-group col-12 col-lg-1">
+                                            <label for="numero_item1" class="col-12 control-label"><?= $label_item ?>:</label>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" id="numero_item1" placeholder="..." name="numero_item1" readonly value="1">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-12 col-lg-4">
+                                            <label for="item1" class="col-12 control-label"><?= $label_name ?>:</label>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" id="item1" placeholder="..." name="item1" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-12 col-lg-2">
+                                            <label for="quantidade1" class="col-12 control-label"><?= $label_quantity ?>:</label>
+                                            <div class="col-12">
+                                                <input type="number" class="form-control" id="quantidade1" placeholder="..." name="quantidade1" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-12 col-lg-5">
+                                            <label for="detalhe1" class="col-12 control-label"><?= $label_detail ?>:</label>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" id="detalhe1" placeholder="..." name="detalhe1" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="novoItem">
+                                        <!--criar novo item do protocolo-->
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="form-group text-center col-12 col-sm-3">
+                                            <button onclick="addNewItem()" class="btn bg-info btn-block btn-lg"><?= $button_new ?></button>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="form-group text-center col-12 col-sm-3">
+                                            <button class="btn bg-warning btn-block btn-lg"><?= $button_cancel ?></button>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="form-group text-center col-12 col-sm-3">
+                                            <button class="btn bg-success btn-block btn-lg"><?= $button_save ?></button>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                                 <div class="tab-pane fade" id="tab-documento-tab" role="tabpanel" aria-labelledby="tab-documento">
                                     <p>aba documento</p>
@@ -341,6 +422,53 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                         console.log(valor);
                         $('#nome_responsavel').val = valor;
                     }
+                
+                //item = variavel que identifica a div e os inputs
+                var item = 2;
+                function addNewItem() {
+
+                    var div = document.querySelector('#novoItem');
+
+                    var element = document.createElement('div');
+                    element.classList = "row align-items-end";
+                    element.id = 'div'+item;
+                    element.innerHTML = `
+                        <div class="form-group col-12 col-lg-1">
+                            <label for="numero_item${item}" class="col-12 control-label"><?= $label_item ?>:</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="numero_item${item}" placeholder="..." name="numero_item${item}" readonly value="${item}">
+                            </div>
+                        </div>
+                        <div class="form-group col-12 col-lg-4">
+                            <label for="item${item}" class="col-12 control-label"><?= $label_name ?>:</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="item${item}" placeholder="..." name="item${item}" value="">
+                            </div>
+                        </div>
+                        <div class="form-group col-12 col-lg-2">
+                            <label for="quantidade${item}" class="col-12 control-label"><?= $label_quantity ?>:</label>
+                            <div class="col-12">
+                                <input type="number" class="form-control" id="quantidade${item}" placeholder="..." name="quantidade${item}" value="">
+                            </div>
+                        </div>
+                        <div class="form-group col-12 col-lg-4">
+                            <label for="detalhe${item}" class="col-12 control-label"><?= $label_detail ?>:</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="detalhe${item}" placeholder="..." name="detalhe${item}" value="">
+                            </div>
+                        </div>
+                        <div class="form-group col-12 col-lg-1">
+                            <button onclick="removeNewItem(${item})" class="btn bg-danger btn-block"><?= $button_exclude ?> <?= $label_item ?></button>
+                        </div>
+                    `;
+                    ++item
+                    div.appendChild(element);
+                }
+
+                function removeNewItem(item) {
+                var elem = document.getElementById('div'+item);
+                elem.parentNode.removeChild(elem);
+                }
             </script>
 </body>
 

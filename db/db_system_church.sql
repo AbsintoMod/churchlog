@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Abr-2022 às 14:25
+-- Tempo de geração: 01-Maio-2022 às 05:54
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -44,6 +44,68 @@ INSERT INTO `access_nivel` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `members`
+--
+
+CREATE TABLE `members` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `second_name` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_father` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_mother` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_select_marital_status` int(11) NOT NULL,
+  `conjuge_name` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_select_sex` int(11) NOT NULL,
+  `id_select_schooling` int(11) NOT NULL,
+  `id_select_answer` int(11) NOT NULL,
+  `son` char(3) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount_son` int(2) NOT NULL,
+  `comungante` char(3) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `baptism_date` date DEFAULT NULL,
+  `id_select_type_admission` int(11) NOT NULL,
+  `id_select_ministerial_function` int(11) NOT NULL,
+  `identity_card` int(15) NOT NULL,
+  `identity_emitter` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state_emitter` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date_expedition` date NOT NULL,
+  `nationality` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uf_birth` char(2) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `naturalness` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date_birth` date NOT NULL,
+  `c_p_f` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cep` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `street` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `number_house` varchar(6) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `complement` varchar(6) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `neighborhood` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_select_city` int(11) NOT NULL,
+  `telephone` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cellphone` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `protocol`
+--
+
+CREATE TABLE `protocol` (
+  `id` int(11) NOT NULL,
+  `applicant` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_target_sector` int(11) NOT NULL,
+  `name_item` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `detail` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_select_answer` int(11) NOT NULL,
+  `id_member_aproved` int(11) NOT NULL,
+  `date_create` datetime NOT NULL,
+  `date_aproved` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `report_login`
 --
 
@@ -59,79 +121,204 @@ CREATE TABLE `report_login` (
 --
 
 INSERT INTO `report_login` (`id_report`, `id_user`, `date`, `hour`) VALUES
-(1, 6, '2022-04-25', '11:00:15'),
-(2, 6, '2022-04-25', '11:15:42'),
-(3, 6, '2022-04-25', '11:52:50'),
-(4, 6, '2022-04-25', '12:10:30'),
-(5, 6, '2022-04-25', '12:56:55'),
-(6, 6, '2022-04-25', '17:19:34'),
-(7, 6, '2022-04-26', '02:30:00'),
-(8, 6, '2022-04-26', '03:28:12'),
-(9, 6, '2022-04-26', '14:22:15'),
-(10, 6, '2022-04-26', '18:47:46'),
-(11, 6, '2022-04-27', '02:02:50'),
-(12, 6, '2022-04-27', '03:15:10'),
-(13, 6, '2022-04-27', '04:22:16'),
-(14, 6, '2022-04-27', '04:42:16'),
-(15, 6, '2022-04-27', '04:51:44'),
-(16, 6, '2022-04-27', '14:02:06'),
-(17, 6, '2022-04-28', '03:28:35'),
-(18, 6, '2022-04-28', '03:49:28'),
-(19, 6, '2022-04-28', '03:50:48'),
-(20, 6, '2022-04-28', '03:50:50'),
-(21, 6, '2022-04-28', '03:50:51'),
-(22, 6, '2022-04-28', '03:51:18'),
-(23, 6, '2022-04-28', '03:51:41'),
-(24, 6, '2022-04-28', '03:57:45'),
-(25, 6, '2022-04-28', '03:58:09'),
-(26, 6, '2022-04-28', '03:59:52'),
-(27, 6, '2022-04-28', '04:02:44'),
-(28, 6, '2022-04-28', '04:02:48'),
-(29, 6, '2022-04-28', '04:08:12'),
-(30, 6, '2022-04-28', '04:08:13'),
-(31, 6, '2022-04-28', '04:08:14'),
-(32, 6, '2022-04-28', '04:08:15'),
-(33, 6, '2022-04-28', '04:08:15'),
-(34, 6, '2022-04-28', '04:08:16'),
-(35, 6, '2022-04-28', '04:08:16'),
-(36, 6, '2022-04-28', '04:08:17'),
-(37, 6, '2022-04-28', '04:10:15'),
-(38, 6, '2022-04-28', '04:11:22'),
-(39, 6, '2022-04-28', '04:11:25'),
-(40, 6, '2022-04-28', '04:12:29'),
-(41, 6, '2022-04-28', '04:18:08'),
-(42, 6, '2022-04-28', '04:21:33'),
-(43, 6, '2022-04-28', '04:27:06'),
-(44, 6, '2022-04-28', '04:27:10'),
-(45, 6, '2022-04-28', '04:28:05'),
-(46, 6, '2022-04-28', '04:28:06'),
-(47, 6, '2022-04-28', '04:28:08'),
-(48, 6, '2022-04-28', '04:28:10'),
-(49, 6, '2022-04-28', '04:36:10'),
-(50, 6, '2022-04-28', '04:36:25'),
-(51, 6, '2022-04-28', '04:36:27'),
-(52, 6, '2022-04-28', '04:36:28'),
-(53, 6, '2022-04-28', '04:36:29'),
-(54, 6, '2022-04-28', '04:37:02'),
-(55, 6, '2022-04-28', '04:37:03'),
-(56, 6, '2022-04-28', '04:37:04'),
-(57, 6, '2022-04-28', '04:37:04'),
-(58, 6, '2022-04-28', '04:38:17'),
-(59, 6, '2022-04-28', '04:49:16'),
-(60, 6, '2022-04-28', '04:55:47'),
-(61, 6, '2022-04-28', '05:27:54'),
-(62, 6, '2022-04-28', '05:34:43'),
-(63, 6, '2022-04-28', '05:36:19'),
-(64, 6, '2022-04-28', '05:39:36'),
-(65, 6, '2022-04-28', '06:19:08'),
-(66, 6, '2022-04-28', '06:46:29'),
-(67, 6, '2022-04-28', '07:50:19'),
-(68, 6, '2022-04-28', '07:55:33'),
-(69, 6, '2022-04-28', '08:08:55'),
-(70, 6, '2022-04-28', '08:48:21'),
-(71, 6, '2022-04-28', '09:01:11'),
-(72, 6, '2022-04-28', '21:19:47'),
-(73, 6, '2022-04-29', '14:22:01');
+(1, 6, '2022-04-30', '03:03:08'),
+(2, 6, '2022-04-30', '03:31:58'),
+(3, 6, '2022-04-30', '04:00:28');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `select_answer`
+--
+
+CREATE TABLE `select_answer` (
+  `id` int(11) NOT NULL,
+  `status` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `select_answer`
+--
+
+INSERT INTO `select_answer` (`id`, `status`) VALUES
+(1, 'Completo'),
+(2, 'Incompleto'),
+(3, 'Aprovado'),
+(4, 'Reprovado'),
+(5, 'Permitido'),
+(6, 'Negado'),
+(7, 'Pendente'),
+(8, 'Concluído');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `select_city`
+--
+
+CREATE TABLE `select_city` (
+  `id` int(11) NOT NULL,
+  `name` int(11) NOT NULL,
+  `id_select_state` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `select_marital_status`
+--
+
+CREATE TABLE `select_marital_status` (
+  `id` int(11) NOT NULL,
+  `status` varchar(35) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `select_marital_status`
+--
+
+INSERT INTO `select_marital_status` (`id`, `status`) VALUES
+(1, 'Solteiro (a)'),
+(2, 'Casado (a)'),
+(3, 'Viúvo (a)'),
+(4, 'Separado (a) Judicialmente'),
+(5, 'Divorciado (a)');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `select_ministerial_function`
+--
+
+CREATE TABLE `select_ministerial_function` (
+  `id` int(11) NOT NULL,
+  `function` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `select_ministerial_function`
+--
+
+INSERT INTO `select_ministerial_function` (`id`, `function`) VALUES
+(1, 'Membro'),
+(2, 'Auxiliar'),
+(3, 'Diácono (iza)'),
+(4, 'Presbítero'),
+(5, 'Evangelista'),
+(6, 'Pastor'),
+(7, 'Missionário (a)');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `select_schooling`
+--
+
+CREATE TABLE `select_schooling` (
+  `id` int(11) NOT NULL,
+  `schooling` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `select_schooling`
+--
+
+INSERT INTO `select_schooling` (`id`, `schooling`) VALUES
+(1, 'Alfabetizado'),
+(2, '4ª Série do Ensino Fundamental'),
+(3, 'Ensino Fundamental'),
+(4, 'Ensino Médio'),
+(5, 'Ensino Técnico'),
+(6, 'Ensino Superior'),
+(7, 'Doutorado');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `select_sex`
+--
+
+CREATE TABLE `select_sex` (
+  `id` int(11) NOT NULL,
+  `sex` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `select_sex`
+--
+
+INSERT INTO `select_sex` (`id`, `sex`) VALUES
+(1, 'Masculino'),
+(2, 'Feminino');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `select_state`
+--
+
+CREATE TABLE `select_state` (
+  `id` int(11) NOT NULL,
+  `estado` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uf` char(2) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `capital` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `region` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `select_state`
+--
+
+INSERT INTO `select_state` (`id`, `estado`, `uf`, `capital`, `region`) VALUES
+(1, 'Acre', 'AC', 'Rio Branco', 'Norte'),
+(2, 'Alagoas', 'AL', 'Maceió', 'Nordeste'),
+(3, 'Amazonas', 'AM', 'Manaus', 'Norte'),
+(4, 'Amapá', 'AP', 'Macapá', 'Norte'),
+(5, 'Bahia', 'BA', 'Salvador', 'Nordeste'),
+(6, 'Ceará', 'CE', 'Fortaleza', 'Nordeste'),
+(7, 'Distrito Federal', 'DF', 'Brasília', 'Centro-Oeste'),
+(8, 'Espírito Santo', 'ES', 'Vitória', 'Sudeste'),
+(9, 'Goiás', 'GO', 'Goiânia', 'Centro-Oeste'),
+(10, 'Maranhão', 'MA', 'São Luís', 'Nordeste'),
+(11, 'Minas Gerais', 'MG', 'Belo Horizonte', 'Sudeste'),
+(12, 'Mato Grosso do Sul', 'MS', 'Campo Grande', 'Centro-Oeste'),
+(13, 'Mato Grosso', 'MT', 'Cuiabá', 'Centro-Oeste'),
+(14, 'Pará', 'PA', 'Belém', 'Norte'),
+(15, 'Paraíba', 'PB', 'João Pessoa', 'Nordeste'),
+(16, 'Pernambuco', 'PE', 'Recife', 'Nordeste'),
+(17, 'Piauí', 'PI', 'Teresina', 'Nordeste'),
+(18, 'Paraná', 'PR', 'Curitiba', 'Sul'),
+(19, 'Rio de Janeiro', 'RJ', 'Rio de Janeiro', 'Sudeste'),
+(20, 'Rio Grande do Norte', 'RN', 'Natal', 'Nordeste'),
+(21, 'Rondônia', 'RO', 'Porto Velho', 'Norte'),
+(22, 'Roraima', 'RR', 'Boa Vista', 'Norte'),
+(23, 'Rio Grande do Sul', 'RS', 'Porto Alegre', 'Sul'),
+(24, 'Santa Catarina', 'SC', 'Florianópolis', 'Sul'),
+(25, 'Sergipe', 'SE', 'Aracaju', 'Nordeste'),
+(26, 'São Paulo', 'SP', 'São Paulo', 'Sudeste'),
+(27, 'Tocantins', 'TO', 'Palmas', 'Norte');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `select_type_admission`
+--
+
+CREATE TABLE `select_type_admission` (
+  `id` int(11) NOT NULL,
+  `type` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `select_type_admission`
+--
+
+INSERT INTO `select_type_admission` (`id`, `type`) VALUES
+(1, 'Conversão e Batismo'),
+(2, 'Batismo'),
+(3, 'Transferência'),
+(4, 'Troca de Ministério'),
+(5, 'Reconciliação');
 
 -- --------------------------------------------------------
 
@@ -171,10 +358,64 @@ ALTER TABLE `access_nivel`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `members`
+--
+ALTER TABLE `members`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `report_login`
 --
 ALTER TABLE `report_login`
   ADD PRIMARY KEY (`id_report`);
+
+--
+-- Índices para tabela `select_answer`
+--
+ALTER TABLE `select_answer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `select_city`
+--
+ALTER TABLE `select_city`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `select_marital_status`
+--
+ALTER TABLE `select_marital_status`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `select_ministerial_function`
+--
+ALTER TABLE `select_ministerial_function`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `select_schooling`
+--
+ALTER TABLE `select_schooling`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `select_sex`
+--
+ALTER TABLE `select_sex`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `select_state`
+--
+ALTER TABLE `select_state`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `select_type_admission`
+--
+ALTER TABLE `select_type_admission`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `user`
@@ -193,10 +434,64 @@ ALTER TABLE `access_nivel`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de tabela `members`
+--
+ALTER TABLE `members`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `report_login`
 --
 ALTER TABLE `report_login`
-  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `select_answer`
+--
+ALTER TABLE `select_answer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de tabela `select_city`
+--
+ALTER TABLE `select_city`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `select_marital_status`
+--
+ALTER TABLE `select_marital_status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `select_ministerial_function`
+--
+ALTER TABLE `select_ministerial_function`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de tabela `select_schooling`
+--
+ALTER TABLE `select_schooling`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de tabela `select_sex`
+--
+ALTER TABLE `select_sex`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `select_state`
+--
+ALTER TABLE `select_state`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT de tabela `select_type_admission`
+--
+ALTER TABLE `select_type_admission`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `user`

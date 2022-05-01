@@ -132,7 +132,13 @@ $label_hour = 'Hora';
 $label_member = 'Membro(s)';
 $label_function = 'Função';
 $label_address = 'Endereço';
-
+$label_protocol = 'Protocolo';
+$label_code = 'Código';
+$label_applicant = 'Solicitante';
+$label_destiny = 'Destino';
+$label_item = 'Item';
+$label_detail = 'Detalhe';
+$label_target_sector = 'Setor de Destino';
 
 //========================BUTTONS=====================//
 
@@ -159,6 +165,7 @@ $button_exonerate = 'Desligamento';
 $button_functionary = 'Servidores';
 $button_recovery = 'Recuperar Senha';
 $button_go_back = 'Voltar';
+$button_new = 'Novo';
 
 //====================================================//
 
@@ -173,7 +180,13 @@ $info_new_converts = 'Novos Convertidos';
 $info_register_member = 'Cadastro de Membro';
 $info_number_son = 'Número máximo de filhos que podem ser cadastrados é de 6 (Seis) dependentes.';
 $info_null_son = 'Insira o número de filhos para o cadastro. Max de 6 (Seis) dependentes.';
-//$info_register_son = 'Cadastrou um total de:'.$_SESSION[$num_filhos].' filhos';
+    
+    if (empty($num_filhos)) {
+        $info_register_son = 'Não possui filhos';
+    } else {
+        $info_register_son = 'Cadastrou um total de:'.$_SESSION[$num_filhos].' filhos';
+    }
+
 $info_sectors = 'Setores';
 $info_logoff = 'Logoff automático em: ';
 $info_second = ' segundos';
@@ -209,3 +222,14 @@ $yes = 'Sim';
 $no = 'Não';
 
 //===========================================================//
+
+//==========================AWESOME==========================//
+
+$awesome_Complete = 'Completo';
+$awesome_incomplete = 'Incompleto';
+$awesome_approved = 'Aprovado';
+$awesome_failed = 'Reprovado';
+$awesome_allowed = 'Permitido';
+$awesome_denied = 'Negado';
+$awesome_pending = 'Pendente';
+$awesome_finished = 'Concluído';
