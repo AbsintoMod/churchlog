@@ -1,5 +1,5 @@
 function mostraData() {
-     
+    
        //Gerando GetDate  
         const data = new Date();
 

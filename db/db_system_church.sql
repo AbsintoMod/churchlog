@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Maio-2022 às 05:54
+-- Tempo de geração: 03-Maio-2022 às 05:04
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -53,24 +53,22 @@ CREATE TABLE `members` (
   `second_name` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name_father` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name_mother` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_select_marital_status` int(11) NOT NULL,
+  `marital_status` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `conjuge_name` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `id_select_sex` int(11) NOT NULL,
-  `id_select_schooling` int(11) NOT NULL,
-  `id_select_answer` int(11) NOT NULL,
+  `sex` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `schooling` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_schooling` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `son` char(3) COLLATE utf8mb4_unicode_ci NOT NULL,
   `amount_son` int(2) NOT NULL,
   `comungante` char(3) COLLATE utf8mb4_unicode_ci NOT NULL,
   `baptism_date` date DEFAULT NULL,
-  `id_select_type_admission` int(11) NOT NULL,
+  `type_admission` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_select_ministerial_function` int(11) NOT NULL,
   `identity_card` int(15) NOT NULL,
   `identity_emitter` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
   `state_emitter` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `date_expedition` date NOT NULL,
   `nationality` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `uf_birth` char(2) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `naturalness` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `date_birth` date NOT NULL,
   `c_p_f` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cep` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -123,32 +121,9 @@ CREATE TABLE `report_login` (
 INSERT INTO `report_login` (`id_report`, `id_user`, `date`, `hour`) VALUES
 (1, 6, '2022-04-30', '03:03:08'),
 (2, 6, '2022-04-30', '03:31:58'),
-(3, 6, '2022-04-30', '04:00:28');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `select_answer`
---
-
-CREATE TABLE `select_answer` (
-  `id` int(11) NOT NULL,
-  `status` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Extraindo dados da tabela `select_answer`
---
-
-INSERT INTO `select_answer` (`id`, `status`) VALUES
-(1, 'Completo'),
-(2, 'Incompleto'),
-(3, 'Aprovado'),
-(4, 'Reprovado'),
-(5, 'Permitido'),
-(6, 'Negado'),
-(7, 'Pendente'),
-(8, 'Concluído');
+(3, 6, '2022-04-30', '04:00:28'),
+(4, 6, '2022-05-02', '18:57:40'),
+(5, 6, '2022-05-03', '04:47:06');
 
 -- --------------------------------------------------------
 
@@ -158,31 +133,42 @@ INSERT INTO `select_answer` (`id`, `status`) VALUES
 
 CREATE TABLE `select_city` (
   `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
+  `city` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_select_state` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `select_city`
+--
+
+INSERT INTO `select_city` (`id`, `city`, `id_select_state`) VALUES
+(1, 'Maracanaú', 6),
+(2, 'Pajuçara', 6),
+(3, 'Acrelândia', 1),
+(4, 'Assis Brasil', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `select_marital_status`
+-- Estrutura da tabela `select_country`
 --
 
-CREATE TABLE `select_marital_status` (
+CREATE TABLE `select_country` (
   `id` int(11) NOT NULL,
-  `status` varchar(35) COLLATE utf8mb4_unicode_ci NOT NULL
+  `country` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cod_ISO` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `select_marital_status`
+-- Extraindo dados da tabela `select_country`
 --
 
-INSERT INTO `select_marital_status` (`id`, `status`) VALUES
-(1, 'Solteiro (a)'),
-(2, 'Casado (a)'),
-(3, 'Viúvo (a)'),
-(4, 'Separado (a) Judicialmente'),
-(5, 'Divorciado (a)');
+INSERT INTO `select_country` (`id`, `country`, `cod_ISO`) VALUES
+(1, 'Brazil', 'BR'),
+(2, 'United States', 'US'),
+(3, 'Portugal', 'PT'),
+(4, 'Japan', 'JP'),
+(5, 'Israel', 'IL');
 
 -- --------------------------------------------------------
 
@@ -206,50 +192,8 @@ INSERT INTO `select_ministerial_function` (`id`, `function`) VALUES
 (4, 'Presbítero'),
 (5, 'Evangelista'),
 (6, 'Pastor'),
-(7, 'Missionário (a)');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `select_schooling`
---
-
-CREATE TABLE `select_schooling` (
-  `id` int(11) NOT NULL,
-  `schooling` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Extraindo dados da tabela `select_schooling`
---
-
-INSERT INTO `select_schooling` (`id`, `schooling`) VALUES
-(1, 'Alfabetizado'),
-(2, '4ª Série do Ensino Fundamental'),
-(3, 'Ensino Fundamental'),
-(4, 'Ensino Médio'),
-(5, 'Ensino Técnico'),
-(6, 'Ensino Superior'),
-(7, 'Doutorado');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `select_sex`
---
-
-CREATE TABLE `select_sex` (
-  `id` int(11) NOT NULL,
-  `sex` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Extraindo dados da tabela `select_sex`
---
-
-INSERT INTO `select_sex` (`id`, `sex`) VALUES
-(1, 'Masculino'),
-(2, 'Feminino');
+(7, 'Missionário (a)'),
+(8, 'Profeta');
 
 -- --------------------------------------------------------
 
@@ -259,66 +203,45 @@ INSERT INTO `select_sex` (`id`, `sex`) VALUES
 
 CREATE TABLE `select_state` (
   `id` int(11) NOT NULL,
-  `estado` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `uf` char(2) COLLATE utf8mb4_unicode_ci NOT NULL,
   `capital` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `region` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
+  `region` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_select_country` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `select_state`
 --
 
-INSERT INTO `select_state` (`id`, `estado`, `uf`, `capital`, `region`) VALUES
-(1, 'Acre', 'AC', 'Rio Branco', 'Norte'),
-(2, 'Alagoas', 'AL', 'Maceió', 'Nordeste'),
-(3, 'Amazonas', 'AM', 'Manaus', 'Norte'),
-(4, 'Amapá', 'AP', 'Macapá', 'Norte'),
-(5, 'Bahia', 'BA', 'Salvador', 'Nordeste'),
-(6, 'Ceará', 'CE', 'Fortaleza', 'Nordeste'),
-(7, 'Distrito Federal', 'DF', 'Brasília', 'Centro-Oeste'),
-(8, 'Espírito Santo', 'ES', 'Vitória', 'Sudeste'),
-(9, 'Goiás', 'GO', 'Goiânia', 'Centro-Oeste'),
-(10, 'Maranhão', 'MA', 'São Luís', 'Nordeste'),
-(11, 'Minas Gerais', 'MG', 'Belo Horizonte', 'Sudeste'),
-(12, 'Mato Grosso do Sul', 'MS', 'Campo Grande', 'Centro-Oeste'),
-(13, 'Mato Grosso', 'MT', 'Cuiabá', 'Centro-Oeste'),
-(14, 'Pará', 'PA', 'Belém', 'Norte'),
-(15, 'Paraíba', 'PB', 'João Pessoa', 'Nordeste'),
-(16, 'Pernambuco', 'PE', 'Recife', 'Nordeste'),
-(17, 'Piauí', 'PI', 'Teresina', 'Nordeste'),
-(18, 'Paraná', 'PR', 'Curitiba', 'Sul'),
-(19, 'Rio de Janeiro', 'RJ', 'Rio de Janeiro', 'Sudeste'),
-(20, 'Rio Grande do Norte', 'RN', 'Natal', 'Nordeste'),
-(21, 'Rondônia', 'RO', 'Porto Velho', 'Norte'),
-(22, 'Roraima', 'RR', 'Boa Vista', 'Norte'),
-(23, 'Rio Grande do Sul', 'RS', 'Porto Alegre', 'Sul'),
-(24, 'Santa Catarina', 'SC', 'Florianópolis', 'Sul'),
-(25, 'Sergipe', 'SE', 'Aracaju', 'Nordeste'),
-(26, 'São Paulo', 'SP', 'São Paulo', 'Sudeste'),
-(27, 'Tocantins', 'TO', 'Palmas', 'Norte');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `select_type_admission`
---
-
-CREATE TABLE `select_type_admission` (
-  `id` int(11) NOT NULL,
-  `type` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Extraindo dados da tabela `select_type_admission`
---
-
-INSERT INTO `select_type_admission` (`id`, `type`) VALUES
-(1, 'Conversão e Batismo'),
-(2, 'Batismo'),
-(3, 'Transferência'),
-(4, 'Troca de Ministério'),
-(5, 'Reconciliação');
+INSERT INTO `select_state` (`id`, `state`, `uf`, `capital`, `region`, `id_select_country`) VALUES
+(1, 'Acre', 'AC', 'Rio Branco', 'Norte', 1),
+(2, 'Alagoas', 'AL', 'Maceió', 'Nordeste', 1),
+(3, 'Amazonas', 'AM', 'Manaus', 'Norte', 1),
+(4, 'Amapá', 'AP', 'Macapá', 'Norte', 1),
+(5, 'Bahia', 'BA', 'Salvador', 'Nordeste', 1),
+(6, 'Ceará', 'CE', 'Fortaleza', 'Nordeste', 1),
+(7, 'Distrito Federal', 'DF', 'Brasília', 'Centro-Oeste', 1),
+(8, 'Espírito Santo', 'ES', 'Vitória', 'Sudeste', 1),
+(9, 'Goiás', 'GO', 'Goiânia', 'Centro-Oeste', 1),
+(10, 'Maranhão', 'MA', 'São Luís', 'Nordeste', 1),
+(11, 'Minas Gerais', 'MG', 'Belo Horizonte', 'Sudeste', 1),
+(12, 'Mato Grosso do Sul', 'MS', 'Campo Grande', 'Centro-Oeste', 1),
+(13, 'Mato Grosso', 'MT', 'Cuiabá', 'Centro-Oeste', 1),
+(14, 'Pará', 'PA', 'Belém', 'Norte', 1),
+(15, 'Paraíba', 'PB', 'João Pessoa', 'Nordeste', 1),
+(16, 'Pernambuco', 'PE', 'Recife', 'Nordeste', 1),
+(17, 'Piauí', 'PI', 'Teresina', 'Nordeste', 1),
+(18, 'Paraná', 'PR', 'Curitiba', 'Sul', 1),
+(19, 'Rio de Janeiro', 'RJ', 'Rio de Janeiro', 'Sudeste', 1),
+(20, 'Rio Grande do Norte', 'RN', 'Natal', 'Nordeste', 1),
+(21, 'Rondônia', 'RO', 'Porto Velho', 'Norte', 1),
+(22, 'Roraima', 'RR', 'Boa Vista', 'Norte', 1),
+(23, 'Rio Grande do Sul', 'RS', 'Porto Alegre', 'Sul', 1),
+(24, 'Santa Catarina', 'SC', 'Florianópolis', 'Sul', 1),
+(25, 'Sergipe', 'SE', 'Aracaju', 'Nordeste', 1),
+(26, 'São Paulo', 'SP', 'São Paulo', 'Sudeste', 1),
+(27, 'Tocantins', 'TO', 'Palmas', 'Norte', 1);
 
 -- --------------------------------------------------------
 
@@ -370,21 +293,15 @@ ALTER TABLE `report_login`
   ADD PRIMARY KEY (`id_report`);
 
 --
--- Índices para tabela `select_answer`
---
-ALTER TABLE `select_answer`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices para tabela `select_city`
 --
 ALTER TABLE `select_city`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `select_marital_status`
+-- Índices para tabela `select_country`
 --
-ALTER TABLE `select_marital_status`
+ALTER TABLE `select_country`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -394,27 +311,9 @@ ALTER TABLE `select_ministerial_function`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `select_schooling`
---
-ALTER TABLE `select_schooling`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices para tabela `select_sex`
---
-ALTER TABLE `select_sex`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices para tabela `select_state`
 --
 ALTER TABLE `select_state`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices para tabela `select_type_admission`
---
-ALTER TABLE `select_type_admission`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -443,55 +342,31 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT de tabela `report_login`
 --
 ALTER TABLE `report_login`
-  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de tabela `select_answer`
---
-ALTER TABLE `select_answer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `select_city`
 --
 ALTER TABLE `select_city`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de tabela `select_marital_status`
+-- AUTO_INCREMENT de tabela `select_country`
 --
-ALTER TABLE `select_marital_status`
+ALTER TABLE `select_country`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `select_ministerial_function`
 --
 ALTER TABLE `select_ministerial_function`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de tabela `select_schooling`
---
-ALTER TABLE `select_schooling`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de tabela `select_sex`
---
-ALTER TABLE `select_sex`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `select_state`
 --
 ALTER TABLE `select_state`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
---
--- AUTO_INCREMENT de tabela `select_type_admission`
---
-ALTER TABLE `select_type_admission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `user`

@@ -95,12 +95,13 @@ $label_cell_phone = 'Celular';
 $label_email = 'E-Mail';
 $label_confirm_email = 'Confirmar E-Mail';
 $label_Identity = 'Identidade';
-$label_shipping_department = 'Órgão Expedidor';
+$label_shipping_department = 'Expedidor';
 $label_dispatch_state = 'Estado Expedidor';
 $label_shipping_date = 'Data Expedição';
 $label_date_of_birth = 'Data de Nascimento';
-$label_naturalness = 'Naturalidade';
-$label_state_of_birth = 'UF de Nascimento';
+$label_country_of_birth = 'País';
+$label_naturalness = 'Cidade';
+$label_state_of_birth = 'Estado';
 $label_nationality = 'Nacionalidade';
 $label_zip_code = 'CEP';
 $label_number = 'Número';
@@ -225,11 +226,51 @@ $no = 'Não';
 
 //==========================AWESOME==========================//
 
-$awesome_Complete = 'Completo';
-$awesome_incomplete = 'Incompleto';
-$awesome_approved = 'Aprovado';
-$awesome_failed = 'Reprovado';
-$awesome_allowed = 'Permitido';
-$awesome_denied = 'Negado';
-$awesome_pending = 'Pendente';
-$awesome_finished = 'Concluído';
+$select_awesome_complete = 'Completo';
+$select_awesome_incomplete = 'Incompleto';
+$select_awesome_approved = 'Aprovado';
+$select_awesome_failed = 'Reprovado';
+$select_awesome_allowed = 'Permitido';
+$select_awesome_denied = 'Negado';
+$select_awesome_pending = 'Pendente';
+$select_awesome_finished = 'Concluído';
+
+//=======================MARITAL STATUS======================//
+
+$select_marital_single = 'Solteiro (a)';
+$select_marital_married = 'Casado (a)';
+$select_marital_widower = 'Viúvo (a)';
+$select_marital_legally_separated = 'Separado (a) Judicialmente';
+$select_marital_divorced = 'Divorciado (a)';
+
+
+//===========================SEX=============================//
+
+$select_sex_male = 'Masculino';
+$select_sex_female = 'Feminino';
+
+//========================SCHOOLING==========================//
+
+$select_schooling_literate = 'Alfabetizado';
+$select_schooling_elementary_school_series = '4ª Série do Ensino Fundamental';
+$select_schooling_elementary_school = 'Ensino Fundamental';
+$select_schooling_middle_school = 'Ensino Médio';
+$select_schooling_technical_education = 'Ensino Técnico';
+$select_schooling_higher_education = 'Ensino Superior';
+$select_schooling_doctorate = 'Doutorado';
+
+//=======================ADMISSION==========================//
+
+
+$select_conversion = 'Conversão';
+$select_baptism = 'Batismo';
+$select_transfer = 'Transferência';
+$select_ministry_exchange = 'Troca de Ministério';
+$select_reconciliation = 'Reconciliação';
+
+//==========================================================//
+
+//=======================NATIONALITY=======================//
+
+$select_nationality_foreign = 'Estrangeira';
+$select_nationality_national = 'Brasileira';

@@ -9,6 +9,10 @@ if (empty($_SESSION['id'])) {
 $lang = $_SESSION['lang'];
 require_once '../../../../assets/lang/'.$lang.'.php';
 
+
+require_once '../../../../php/const_conn.php';
+$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -144,7 +148,11 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                                                 <select name="cod_estado_civil" onchange="casado()" class="form-control"
                                                     id="cod_estado_civil">
                                                     <option value="" selected>...</option>
-
+                                                    <option value="1"><?= $_select_marital_single ?></option>
+                                                    <option value="2"><?= $_select_marital_married ?></option>
+                                                    <option value="3"><?= $_select_marital_widower ?></option>
+                                                    <option value="4"><?= $_select_marital_legally_separated ?></option>
+                                                    <option value="5"><?= $_select_marital_divorced ?></option>
                                                 </select>
                                             </div>
                                         </div>
@@ -163,7 +171,12 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                                             <div class="col-sm-12">
                                                 <select name="sexo" class="form-control" id="sexo">
                                                     <option value="" selected>...</option>
-
+                                                    <option value="<?= $select_sex_male ?>">
+                                                        <?= $select_sex_male ?>
+                                                    </option>
+                                                    <option value="<?= $select_sex_female ?>">
+                                                        <?= $select_sex_female ?>
+                                                    </option>
                                                 </select>
                                             </div>
                                         </div>
@@ -171,10 +184,29 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                                             <label for="cod_escolaridade"
                                                 class="col-sm-12 control-label"><?= $label_schooling ?>:</label>
                                             <div class="col-sm-12">
-                                                <select name="cod_escolaridade" class="form-control"
-                                                    id="cod_escolaridade">
+                                                <select name="cod_escolaridade" class="form-control" id="cod_escolaridade">
                                                     <option value="" selected>...</option>
-
+                                                        <option value="<?=$select_schooling_literate?>">
+                                                            <?=$select_schooling_literate ?>
+                                                        </option>
+                                                        <option value="<?=$select_schooling_elementary_school_series?>">
+                                                            <?=$select_schooling_elementary_school_series ?>
+                                                        </option>
+                                                        <option value="<?=$select_schooling_elementary_school?>">
+                                                            <?=$select_schooling_elementary_school ?>
+                                                        </option>
+                                                        <option value="<?=$select_schooling_middle_school?>">
+                                                            <?=$select_schooling_middle_school ?>
+                                                        </option>
+                                                        <option value="<?=$select_schooling_technical_education?>">
+                                                            <?=$select_schooling_technical_education ?>
+                                                        </option>
+                                                        <option value="<?=$select_schooling_higher_education?>">
+                                                            <?=$select_schooling_higher_education ?>
+                                                        </option>
+                                                        <option value="<?=$select_schooling_doctorate?>">
+                                                            <?=$select_schooling_doctorate ?>
+                                                        </option>
                                                 </select>
                                             </div>
                                         </div>
@@ -185,7 +217,8 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                                                 <select name="escolaridade_status" class="form-control"
                                                     id="escolaridade_status">
                                                     <option value="" selected>...</option>
-
+                                                    <option value="<?= $select_awesome_complete ?>"><?= $select_awesome_complete ?></option>
+                                                    <option value="<?= $select_awesome_incomplete ?>"><?= $select_awesome_incomplete ?></option>
                                                 </select>
                                             </div>
                                         </div>
@@ -251,7 +284,11 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                                                 <select name="tipo_admissao" class="form-control"
                                                     onchange="meioAdmissao()" id="tipo_admissao">
                                                     <option value="" selected>...</option>
-
+                                                    <option value="1"><?= $select_conversion ?></option>
+                                                    <option value="2"><?= $select_baptism ?></option>
+                                                    <option value="3"><?= $select_transfer ?></option>
+                                                    <option value="4"><?= $select_ministry_exchange ?></option>
+                                                    <option value="5"><?= $select_reconciliation ?></option>
                                                 </select>
                                             </div>
                                         </div>
@@ -259,9 +296,18 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                                         <div class="form-group col-12 col-md-3">
                                             <label class="col-12 control-label"><?= $label_function_ministry ?>:</label>
                                             <div class="col-12">
+                                                <!--IMPROTANTE = CRIAR CAMPO PARA ALIMENTAR A TABELA-->
                                                 <select name="funcao_ministerio" class="form-control"
                                                     id="funcao_ministerio">
                                                     <option value="" selected>...</option>
+
+                                                    <?php 
+                                                        $ministerial = "SELECT * FROM `select_ministerial_function`";
+                                                        $valor_busca = mysqli_query($conn, $ministerial);
+                                                        while ($row_nivel = mysqli_fetch_assoc($valor_busca)) {
+                                                            echo '<option value ="' . $row_nivel['id'] . '">' . $row_nivel['function'] . '</option>';
+                                                        }
+                                                    ?>
 
                                                 </select>
                                             </div>
@@ -283,7 +329,7 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                                     aria-labelledby="tab-carteira-e-impresso">
 
                                     <div class="row">
-                                        <div class="form-group col-md-4">
+                                        <div class="form-group col-md-3">
                                             <label for="identidade"
                                                 class="col-12 control-label"><?= $label_Identity ?>:</label>
                                             <div class="col-12">
@@ -291,7 +337,8 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                                                     placeholder="..." value="">
                                             </div>
                                         </div>
-                                        <div class="form-group col-md-4">
+                                        
+                                        <div class="form-group col-md-2">
                                             <label for="orgao_expd"
                                                 class="col-12 control-label"><?= $label_shipping_department ?>:</label>
                                             <div class="col-12">
@@ -300,17 +347,23 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                                             </div>
                                         </div>
 
-                                        <div class="form-group col-md-4">
+                                        <div class="form-group col-md-3">
                                             <label for="estado_expd"
                                                 class="col-sm-12 control-label"><?= $label_dispatch_state ?>:</label>
                                             <div class="col-sm-12">
                                                 <select name="rg_estado" class="form-control" id="estado_expd">
                                                     <option value="">...</option>
+                                                    <?php 
+                                                        $state = "SELECT * FROM `select_state`";
+                                                        $valor_busca = mysqli_query($conn, $state);
+                                                        while ($row_state = mysqli_fetch_assoc($valor_busca)) {
+                                                            echo '<option value ="' . $row_state['uf'] . '">' . $row_state['state'] . '</option>';
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
+
                                         <div class="form-group col-md-4">
                                             <label for="data_expd"
                                                 class="col-sm-12 control-label"><?= $label_shipping_date ?>:</label>
@@ -319,43 +372,49 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                                                     id="data_expd" placeholder="..." value="">
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="form-group col-md-4">
-                                            <label for="nacionalidade"
-                                                class="col-sm-12 control-label"><?= $label_nationality ?>:</label>
+                                            <label for="pais_nasc"
+                                                class="col-sm-12 control-label"><?= $label_country_of_birth ?>:</label>
                                             <div class="col-sm-12">
-                                                <select name="nacionalidade" class="form-control" id="nacionalidade"
-                                                    onchange="verificaNacionalidade(this.value)">
+                                                <select name="pais_nasc" class="form-control" id="pais_nasc">
                                                     <option value="">...</option>
-                                                    <option value="1">
-                                                        Brasileira
-                                                    </option>
-                                                    <option value="2">
-                                                        Estrangeira
-                                                    </option>
+                                                    <?php
+                                                        $buscaPais = mysqli_query($conn, "SELECT `id`,`country` FROM `select_country`;");
+                                                        while ($pais = mysqli_fetch_object($buscaPais)):
+                                                            echo "<option value='$pais->id'>$pais->country</option>";
+                                                        endwhile;
+                                                    ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label for="estado_nasc" class="col-sm-12 control-label"><?= $label_state_of_birth ?>:</label>
+                                            <div class="col-sm-12">
+                                                <select name="estado_nasc" class="form-control" id="estado_nasc">
+                                                    <option value="">...</option>
+                                                    <?php /*
+                                                        $buscaEstado = mysqli_query($conn, "SELECT `id`,`state` FROM `select_state`;");
+                                                        while ($estado = mysqli_fetch_object($buscaEstado)):
+                                                            echo "<option value='$estado->id'>$estado->state</option>";
+                                                        endwhile;
+                                                    */?>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="uf_nascimento"
-                                                class="col-sm-12 control-label"><?= $label_state_of_birth ?>:</label>
-                                            <div class="col-sm-12">
-                                                <!-- Adicionar um select que traz os dados de acordo com o código do estado -->
-                                                <select name="uf_nascimento" class="form-control" id="uf_nascimento"
-                                                    onchange="buscaCidades(this.value, 'naturalidade')">
-                                                    <option value="">...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="naturalidade"
+                                            <label for="cidade_nasc"
                                                 class="col-sm-12 control-label"><?= $label_naturalness ?>:</label>
                                             <div class="col-sm-12">
-                                                <!-- Adicionar um select que traz os dados de acordo com o código do estado -->
-                                                <select name="naturalidade" class="form-control" id="naturalidade">
+                                                <select name="cidade_nasc" class="form-control" id="cidade_nasc">
                                                     <option value="">...</option>
                                                 </select>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="form-group col-md-4">
                                             <label for="nascimento"
                                                 class="col-sm-12 control-label"><?= $label_date_of_birth ?>:</label>
@@ -561,6 +620,49 @@ require_once '../../../../assets/lang/'.$lang.'.php';
     <script src="../../../../dist/js/pages/jquery.mask.min.js"></script>
     <script src="../../../../dist/js/pages/mascara.js"></script>
     <script src="../../../../dist/js/pages/formulario.js"></script>
+    <script>
+            //quando seleciona um option
+        $("#estado_nasc").change(function(){
+            //pega o valor do value do option
+            let id = $(this).val();  
+            
+            //faz a requisião ajax no arquivo php
+            $.ajax({
+                url:"../../../../php/popularSelectCity.php",
+                method:"POST",
+                dataType: "HTML",
+                data: {"id": id}
+                
+            }).done(function(data){
+                if (data == '') {
+                    $("#cidade_nasc").html(data);
+                    alert('Não ha Cidades para este Estado. Contactar Suporte');
+                }else{
+                    $('#cidade_nasc').html(data);
+                }
+            });
+            
+        });
+
+
+        $("#pais_nasc").change(function(){
+            let id = $(this).val();  
+            $.ajax({
+                url:"../../../../php/popularSelectState.php",
+                method:"POST",
+                dataType: "HTML",
+                data: {"id": id}
+                
+            }).done(function(data){
+                if (data == '') {
+                    $("#estado_nasc").html(data);
+                    alert('Não ha Estados para este Pais. Contactar Suporte');
+                }else{
+                    $("#estado_nasc").html(data);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
