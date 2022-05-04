@@ -93,6 +93,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                         <div class="d-none d-sm-block col-12 col-md-6 text-center">
                                             <img src="../../../../dist/img/background/bg-box/boxed-bg.jpg" alt="foto"
                                                 class="img-thumbnail" style="max-width: 250px; height: 300px;">
+                                            <input type="file" name="photo" style="display: none;" id="photo">
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <div class="form-group col-12">
@@ -533,13 +534,13 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                             <label for="emailc"
                                                 class="col-sm-12 control-label"><?= $label_confirm_email ?>:</label>
                                             <div class="col-sm-12">
-                                                <input name="emailc" type="email" class="form-control" id="emailc"
+                                                <input name="emailc" onblur="verificaEmail(this.value)" type="email" class="form-control" id="emailc"
                                                     placeholder="..." value="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <button style="margin-top: 10px;" onclick="enviaform()" type="button"
+                                        <button id="btn-cad" style="margin-top: 10px;" onclick="enviaform()" type="button"
                                             class="btn btn-block btn-success btn_form_continue"><?= $button_register ?></button>
                                     </div>
                                 </div>
@@ -662,6 +663,24 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                 }
             });
         });
+
+        //capturar verificação de email
+        function verificaEmail(value){
+            let email = document.querySelector('#email').value;
+            
+
+            if(email != value){ alert('Email não confere. Por favor verifique!!!'); }
+        }
+
+        //atribui valor ao input photo
+        $('.img-thumbnail').on('click',()=>{
+            $('#photo').click();
+        })
+        //atribui valor do input para Image
+        $('#photo').on('change',()=>{
+            $('.img-thumbnail').attr('src', document.write($('#photo').val()));
+        })
+        
     </script>
 </body>
 

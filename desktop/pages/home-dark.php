@@ -58,6 +58,10 @@ require_once '../../assets/lang/'.$lang.'.php';
           color: #ced4da;
           /*min-width: 20%;*/
         }
+        /*esconder scroll da pagina*/
+        body{
+          overflow: hidden;
+        }
     </style>
 </head>
 
@@ -141,6 +145,9 @@ require_once '../../assets/lang/'.$lang.'.php';
         window.location = "../../php/language.php?lang="+$('#countries').val();
       }
     });
+    
+
+
   </script>
 </body>
 

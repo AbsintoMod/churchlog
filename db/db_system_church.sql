@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Maio-2022 às 05:04
+-- Tempo de geração: 04-Maio-2022 às 04:28
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -51,6 +51,7 @@ CREATE TABLE `members` (
   `id` int(11) NOT NULL,
   `first_name` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `second_name` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `path_image` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name_father` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name_mother` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `marital_status` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -123,7 +124,8 @@ INSERT INTO `report_login` (`id_report`, `id_user`, `date`, `hour`) VALUES
 (2, 6, '2022-04-30', '03:31:58'),
 (3, 6, '2022-04-30', '04:00:28'),
 (4, 6, '2022-05-02', '18:57:40'),
-(5, 6, '2022-05-03', '04:47:06');
+(5, 6, '2022-05-03', '04:47:06'),
+(6, 6, '2022-05-04', '03:07:53');
 
 -- --------------------------------------------------------
 
@@ -342,7 +344,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT de tabela `report_login`
 --
 ALTER TABLE `report_login`
-  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `select_city`
