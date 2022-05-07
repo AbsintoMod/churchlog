@@ -73,8 +73,9 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                         </div>
 
                         <div class="card-body">
+                        <form method="POST" action="../../../../php/reg_member.php">    
                             <div class="tab-content" id="custom-tabs-one-tabContent">
-
+                                
                                 <div class="tab-pane fade show active" id="tab-membro-tab" role="tabpanel" aria-labelledby="tab-membro">
                                     <div class="row align-items-center">
                                         <div class="d-none d-sm-block col-12 col-md-6 text-center">
@@ -460,11 +461,12 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <button id="btn-cad" style="margin-top: 10px;" onclick="enviaform()" type="button" class="btn btn-block btn-success btn_form_continue"><?= $button_register ?></button>
+                                        <button id="btn-cad" style="margin-top: 10px;" type="submit" class="btn btn-block btn-success btn_form_continue"><?= $button_register ?></button>
                                     </div>
                                 </div>
                                 <!-- /.card -->
                             </div>
+                        </form>
                         </div>
 
                     </div>

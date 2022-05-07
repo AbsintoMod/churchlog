@@ -109,13 +109,24 @@ require_once '../../assets/lang/'.$lang.'.php';
 
   <!--Tela de Bloqueio-->
   <div id="lockscreen">
-    <div class="lock-msg">Insira sua senha para desbloquear a tela.</div>
-    <div class="lock-msg" id="msg"></div>
-    <div class="lock-msg" id="msg2"></div>
+    <div class="lock-msg"><?= $info_block_message ?>.</div>
+
+
+    <div class="lock-msg text-center">
+      <div id="msg">
+        <?=$info_blank_pass?>!</br>
+      </div>
+      <div id="msg2">
+        <?=$info_incorrect_pass?>!</br>
+      </div>
+      <div id="msg3">
+        <?=$info_count_remains?> <span id="cont"></span> <?=$info_count_attempt?>
+      </div>
+    </div>
 
     <input class="lockscreen-password" type="password" placeholder="password" autofocus />
 
-    <button type="submit" class="lockscreen-btn">DESBLOQUEAR</button>
+    <button type="submit" class="lockscreen-btn"><?=$button_confirm?></button>
   </div>
   <!--./Tela de Bloqueio-->
 

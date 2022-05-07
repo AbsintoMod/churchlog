@@ -3,7 +3,7 @@ var cont = 4;
 
 locked = false;
 	function lockScreen() {
-		/*1000 ms = 1 seg*/
+		/*1000 ms = 1 seg 180000*/
 		var timeout = 180000
 		
 		if (locked == true) {
@@ -26,9 +26,9 @@ locked = false;
 					});
 
 				//apaga mensagens anteriores
-				document.getElementById("msg").innerHTML = " ";
-				document.getElementById("msg2").innerHTML = " ";
-
+				$('#msg').hide();
+				$('#msg2').hide();
+				$('#msg3').hide();
 				//add class BLUR in page				
 				screenBody.classList.add('blur');
 				
@@ -58,13 +58,15 @@ lockScreen();
 	
 	$('.lockscreen-btn').click(function(){
 		
+		$('#msg3').show();
+		
 		var lck_senha = document.querySelector('.lockscreen-password');
-		console.log(cont);
 		
 		if (lck_senha.value == 0) { 
 			--cont;
-			document.getElementById("msg").innerHTML = "Senha de Usuário em branco.";
-			document.getElementById("msg2").innerHTML = `Resta ${cont} Tentativa.`;
+			document.getElementById('cont').innerHTML = cont
+			$('#msg').show();
+			$('#msg2').hide();
 			
 		}else{
 	
@@ -85,9 +87,9 @@ lockScreen();
 					clearTimeout(logoff);
 				}else{
 					--cont;
-					document.getElementById("msg").innerHTML = 'Senha Incorreta.';
-					document.getElementById("msg2").innerHTML = `Resta ${cont} Tentativa.`;
-					
+					document.getElementById('cont').innerHTML = cont
+					$('#msg').hide();
+					$('#msg2').show();
 				}
 			}
 			xhttp.open("GET", "../../php/teste.php?q="+lck_senha.value);

@@ -170,7 +170,7 @@ $button_new = 'Novo';
 
 //====================================================//
 
-//Messages And Infos
+//===============MESSAGES==AND==INFOs=================//
 $info_password = 'Você deve digitar sua senha atual para confirmar a alteração.';
 $info_verify_data = 'Confirmo que todos os Dados estão preenchidos corretamente.';
 $info_member_total = 'Total de Membros';
@@ -189,9 +189,18 @@ $info_null_son = 'Insira o número de filhos para o cadastro. Max de 6 (Seis) de
     }
 
 $info_sectors = 'Setores';
+
+//MODAL-LOGOFF
 $info_logoff = 'Logoff automático em: ';
 $info_second = ' segundos';
 $info_member = 'Membros';
+
+//SCREEN-BLOCK
+$info_block_message = 'Insira sua senha para desbloquear a tela';
+$info_blank_pass = 'Senha de Usuário em branco';
+$info_incorrect_pass = 'Senha Incorreta';
+$info_count_remains = 'Resta';
+$info_count_attempt = 'Tentativas';
 
 //===========================================================//
 
