@@ -57,11 +57,10 @@ function possuiFilho(){
 //Modal para cadastro de Filhos
 function addFilho(){
   let addFilho = document.getElementById('num_filho').value;
-  console.log(addFilho);
-
-  if (addFilho == '') {
+  
+  if (addFilho == '' || addFilho == 0) {
     $('#modal-error').modal('show');
-  } else if (addFilho <= 6) {
+  } else if (addFilho >= 1 && addFilho <= 6) {
     $('#modal-default').modal('show');
   } else if (addFilho >= 7) {
     $('#modal-danger').modal('show');
@@ -89,4 +88,8 @@ function meioAdmissao(){
      }else{
       $('#addIgreja').collapse('hide')
      }
+}
+
+function addCampo() {
+  console.log('falta add função para acrescentar dependentes (filhos)');
 }
