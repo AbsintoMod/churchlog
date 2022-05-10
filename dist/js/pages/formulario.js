@@ -62,10 +62,31 @@ function addFilho(){
     $('#modal-error').modal('show');
   } else if (addFilho >= 1 && addFilho <= 6) {
     $('#modal-default').modal('show');
+    
+    let i = 1;
+    document.querySelector('#nomes_filhos').innerHTML = '';
+
+    while (addFilho >= i) {  
+      var div = document.querySelector('#nomes_filhos');
+      var element = document.createElement('div');
+      element.classList = "row align-items-end";
+      element.id = 'div'+i;
+      element.innerHTML = `
+        <div class="form-group col-12 col-lg-4">
+            <label for="nome_filho${i}" class="col-12 control-label">${i}º:</label>
+            <div class="col-12">
+                <input type="text" class="form-control" id="nome_filho${i}" placeholder="..." name="nome_filho${i}" value="">
+            </div>
+        </div>
+      `;
+      div.appendChild(element);
+      i++
+    }
   } else if (addFilho >= 7) {
     $('#modal-danger').modal('show');
   }
 }
+
 
 //Libera data de batismo
 function comunga(){
@@ -91,5 +112,11 @@ function meioAdmissao(){
 }
 
 function addCampo() {
-  console.log('falta add função para acrescentar dependentes (filhos)');
+  
+  let addFilho = document.getElementById('num_filho').value;
+  
+  for (let i = 1; i <= addFilho; i++) {
+    console.log($(`#nome_filho${i}`).val()+' ID = '+i);
+  }
+  $('#closead').click();
 }

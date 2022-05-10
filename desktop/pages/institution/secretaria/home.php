@@ -413,8 +413,6 @@ require_once '../../../../assets/lang/'.$lang.'.php';
                             }
                         });
                     });
-
-
                 });
 
                 function addNomeLider(){

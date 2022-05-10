@@ -483,11 +483,11 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                     <div class="modal-header">
                         <h5 class="modal-title"><?= $label_add_son ?></h5>
                     </div>
-                    <div class="modal-body">
-
+                    <div class="modal-body" id="nomes_filhos">
+                        <!--preenchida de acordo com a quantidade de filhos-->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $button_close ?></button>
+                        <button type="button" class="btn btn-danger" id="closead" data-dismiss="modal"><?= $button_close ?></button>
                         <button type="button" onclick='addCampo()' class="btn btn-primary"><?= $button_confirm ?></button>
                     </div>
                 </div>

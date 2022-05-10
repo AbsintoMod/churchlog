@@ -9,10 +9,10 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 	$dados_st = array_map('strip_tags', $dados_rc);
 	$dados = array_map('trim', $dados_st);
 
-    echo'<pre>';
+    /*echo'<pre>';
     print_r($dados);
-    echo'</pre>';
-/*
+    echo'</pre>';*/
+
 	if ((strlen($dados['senha'])) < 6) {
 		$erro = true;
 		$_SESSION['msg'] = "<div class='alert alert-danger'>A senha deve ter no mínimo 6 caracteres!</div>";
@@ -38,7 +38,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 		}
 	}
 
-	if (!$erro) {
+	/*if (!$erro) {
 		$dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
 
 		$result_usuario = "INSERT INTO user (name, email, user, pass, date_create, id_nivel, lang) VALUES (
@@ -55,6 +55,6 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao cadastrar o usuário!</div>";
 			header("Location:./home.php");
 		}
-	}
-*/
+	}*/
+
 ?>
