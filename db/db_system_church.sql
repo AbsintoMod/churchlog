@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Maio-2022 às 04:28
+-- Tempo de geração: 12-Maio-2022 às 05:05
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -48,28 +48,30 @@ INSERT INTO `access_nivel` (`id`, `name`) VALUES
 --
 
 CREATE TABLE `members` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED ZEROFILL NOT NULL,
   `first_name` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `second_name` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `path_image` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `name_father` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_father` varchar(120) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name_mother` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `marital_status` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `marital_status` int(1) NOT NULL,
   `conjuge_name` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sex` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
   `schooling` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status_schooling` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `son` char(3) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `amount_son` int(2) NOT NULL,
-  `comungante` char(3) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `son` char(1) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount_son` int(1) NOT NULL DEFAULT 0,
+  `name_son` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comungante` char(1) COLLATE utf8mb4_unicode_ci NOT NULL,
   `baptism_date` date DEFAULT NULL,
-  `type_admission` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_admission` int(1) NOT NULL,
   `id_select_ministerial_function` int(11) NOT NULL,
-  `identity_card` int(15) NOT NULL,
-  `identity_emitter` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state_emitter` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `date_expedition` date NOT NULL,
-  `nationality` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `previous_church` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `identity_card` int(15) DEFAULT NULL,
+  `identity_emitter` varchar(8) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state_emitter` char(3) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date_expedition` date DEFAULT NULL,
+  `id_select_city_of_birth` int(11) NOT NULL,
   `date_birth` date NOT NULL,
   `c_p_f` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cep` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -77,7 +79,8 @@ CREATE TABLE `members` (
   `number_house` varchar(6) COLLATE utf8mb4_unicode_ci NOT NULL,
   `complement` varchar(6) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `neighborhood` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_select_city` int(11) NOT NULL,
+  `uf_cep` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city_cep` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `telephone` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `cellphone` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL
@@ -125,7 +128,26 @@ INSERT INTO `report_login` (`id_report`, `id_user`, `date`, `hour`) VALUES
 (3, 6, '2022-04-30', '04:00:28'),
 (4, 6, '2022-05-02', '18:57:40'),
 (5, 6, '2022-05-03', '04:47:06'),
-(6, 6, '2022-05-04', '03:07:53');
+(6, 6, '2022-05-04', '03:07:53'),
+(7, 6, '2022-05-07', '02:31:53'),
+(8, 6, '2022-05-07', '02:59:32'),
+(9, 6, '2022-05-07', '03:30:14'),
+(10, 6, '2022-05-07', '03:55:01'),
+(11, 6, '2022-05-07', '04:21:59'),
+(12, 6, '2022-05-07', '04:58:39'),
+(13, 6, '2022-05-07', '05:02:16'),
+(14, 6, '2022-05-07', '05:03:52'),
+(15, 6, '2022-05-07', '05:04:17'),
+(16, 6, '2022-05-07', '05:06:40'),
+(17, 6, '2022-05-07', '05:07:12'),
+(18, 6, '2022-05-07', '05:07:41'),
+(19, 6, '2022-05-07', '05:14:23'),
+(20, 6, '2022-05-07', '05:41:02'),
+(21, 6, '2022-05-08', '22:27:04'),
+(22, 6, '2022-05-09', '20:23:12'),
+(23, 6, '2022-05-09', '20:40:35'),
+(24, 6, '2022-05-09', '21:24:48'),
+(25, 6, '2022-05-09', '22:10:51');
 
 -- --------------------------------------------------------
 
@@ -338,13 +360,13 @@ ALTER TABLE `access_nivel`
 -- AUTO_INCREMENT de tabela `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `report_login`
 --
 ALTER TABLE `report_login`
-  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `select_city`

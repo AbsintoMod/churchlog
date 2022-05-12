@@ -40,7 +40,7 @@ if (cep != "") {
         document.getElementById('rua').value="...";
         document.getElementById('bairro').value="...";
         document.getElementById('cidade').value="...";
-        document.getElementById('uf').value="...";
+        document.getElementById('uf_cep').value="...";
      
 
         //Cria um elemento javascript.

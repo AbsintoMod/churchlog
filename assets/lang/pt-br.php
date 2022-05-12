@@ -1,4 +1,5 @@
 <?php
+
 $title = 'ChurchLog';
 
 //Pages & Menu Lateral
@@ -140,6 +141,7 @@ $label_destiny = 'Destino';
 $label_item = 'Item';
 $label_detail = 'Detalhe';
 $label_target_sector = 'Setor de Destino';
+$label_dependents = 'Dependentes';
 
 //========================BUTTONS=====================//
 
@@ -181,12 +183,9 @@ $info_new_converts = 'Novos Convertidos';
 $info_register_member = 'Cadastro de Membro';
 $info_number_son = 'Número máximo de filhos que podem ser cadastrados é de 6 (Seis) dependentes.';
 $info_null_son = 'Insira o número de filhos para o cadastro. Max de 6 (Seis) dependentes.';
-    
-    if (empty($num_filhos)) {
-        $info_register_son = 'Não possui filhos';
-    } else {
-        $info_register_son = 'Cadastrou um total de:'.$_SESSION[$num_filhos].' filhos';
-    }
+$info_register_son_empty = 'Não possui filhos';
+$info_register_son = 'Cadastrou um total de: <input type="text" id="totalFilho" readonly> filhos';
+
 
 $info_sectors = 'Setores';
 

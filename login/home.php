@@ -26,7 +26,7 @@ session_start();
 
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-30 p-b-30">
 				<form class="login100-form validate-form" action="../php/valida.php" method="POST">
 					<div class='form-header p-b-49'>
 						<img src="../dist/img/logo.png" alt="logo">
@@ -37,6 +37,7 @@ session_start();
 
 					<!--message error-->
 					<?php
+					
 						if(isset($_SESSION['msg'])){
 							echo $_SESSION['msg'];
 							unset($_SESSION['msg']);
@@ -74,7 +75,7 @@ session_start();
 					</div>
 				</form>
 
-				<div class="text-right p-t-20 p-b-1">
+				<div class="text-right p-t-30">
 					<p>ChurchLog© 2017-<?= date('Y')?></p>
 				</div>
 
