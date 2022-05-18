@@ -49,6 +49,7 @@ function possuiFilho() {
     $("#botao_filho").attr("disabled", true);
   }
 }
+
 //cadastro de Filhos
 function addFilho() {
   let addFilho = $("#num_filho").val();
@@ -67,11 +68,13 @@ function addFilho() {
         $("#modal-danger").modal("show");
         return;
       } else {
-        totalFilho.value = parseInt(totalFilho.value) + parseInt(addFilho);
+        //totalFilho.value = parseInt(totalFilho.value) + parseInt(addFilho);//soma os valores
+        totalFilho.value = addFilho;
       }
     }
 
     $("#dependentes").css("display", "block");
+    document.querySelector("#addDependente").innerHTML = '';
 
     for (let i = 1; i <= addFilho; i++) {
       var div = document.querySelector("#addDependente");

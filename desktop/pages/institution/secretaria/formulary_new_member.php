@@ -29,6 +29,8 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
     // Font Awesome Icons 
     require_once '../../../../assets/head/font_awesome.php';
     ?>
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="../../../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../../../dist/css/adminlte.min.css">
     <!-- Checkboxes e Radio Inputs -->
@@ -76,25 +78,26 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                         </div>
 
                         <div class="card-body">
-                            <form method="POST" action="../../../../php/reg_member.php">
+                            <form>
                                 <div class="tab-content" id="custom-tabs-one-tabContent">
 
                                     <div class="tab-pane fade show active" id="tab-membro-tab" role="tabpanel" aria-labelledby="tab-membro">
                                         <div class="row align-items-center">
                                             <div class="d-none d-sm-block col-12 col-md-6 text-center">
                                                 <img src="../../../../dist/img/background/bg-box/boxed-bg.jpg" alt="foto" class="img-thumbnail" style="max-width: 250px; height: 300px;">
-                                                <input type="file" name="photo" style="display: none;" id="photo">
+                                                <input type="file" class="collapse" id="photo">
+                                                <input type="text" name="photo" class="collapse" id="photo_input">
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group col-12">
                                                     <label for="matricula" class="col-12 control-label"><?= $label_registration ?>:</label>
                                                     <div class="col-12">
                                                         <?php
-                                                            $pesquisa = "SELECT id FROM `members` ORDER BY id DESC LIMIT 1";
-                                                            $result = $conn->query($pesquisa);
-                                                            $row = $result->fetch_assoc();
-                                                            
-                                                            $mat = ($row['id'] == null) ? 1 : $row['id'] + 1;
+                                                        $pesquisa = "SELECT id FROM `members` ORDER BY id DESC LIMIT 1";
+                                                        $result = $conn->query($pesquisa);
+                                                        $row = $result->fetch_assoc();
+
+                                                        $mat = ($row['id'] == null) ? 1 : $row['id'] + 1;
                                                         ?>
                                                         <input type="text" class="form-control" id="matricula" name="matricula" readonly>
                                                     </div>
@@ -230,7 +233,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                                 <h2 class="mt-4"><?= $info_register_son_empty ?></h2>
                                             </div>
                                             <div class="form-group col-12 col-md-6 text-center" style="display: none;" id="nfilhos">
-                                                <h2 class="mt-4"><?= $info_register_son ?></h2>
+                                                <h2 class="mt-4"><?= $info_register_son ?> <input type="text" name="totalFilho" id="totalFilho" readonly> <?= $info_son ?></h2>
                                             </div>
                                         </div>
                                         <div id="dependentes" class="row" style="display: none;">
@@ -249,7 +252,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                                 <label class="col-12 control-label"><?= $label_communing ?>?:</label>
                                                 <div class="col-12">
                                                     <select name="comunga" class="form-control" id="comunga" onchange="com(this.value)">
-                                                        <option value="" selected>...</option>
+                                                        <option value="0" selected>...</option>
                                                         <option value="0"><?= $no ?></option>
                                                         <option value="1"><?= $yes ?></option>
                                                     </select>
@@ -536,6 +539,8 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
     <script src="../../../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="../../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="../../../../plugins/sweetalert2/sweetalert2.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../../../../dist/js/adminlte.min.js"></script>
     <!--JS Busca CEP-->
@@ -599,8 +604,6 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
         //capturar verificação de email
         function verificaEmail(value) {
             let email = document.querySelector('#email').value;
-
-
             if (email != value) {
                 alert('Email não confere. Por favor verifique!!!');
             }
@@ -614,16 +617,16 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
         //atribui valor do input para Imagem
         $('#photo').on("change", function(e) {
             showThumbnail(this.files);
+
+            $('#photo_input').val($('#photo').val())
         });
 
         function showThumbnail(files) {
             if (files && files[0]) {
                 var reader = new FileReader();
-
                 reader.onload = function(e) {
                     $('.img-thumbnail').attr('src', e.target.result);
                 }
-
                 reader.readAsDataURL(files[0]);
             }
         }
@@ -631,9 +634,56 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
         //prenche com zero o campo
         function pad(str) {
             const resto = 5 - String(str).length;
-            document.querySelector('#matricula').value = '0'.repeat(resto > 0 ? resto : '0') + str 
+            document.querySelector('#matricula').value = '0'.repeat(resto > 0 ? resto : '0') + str
         }
         pad("<?= $mat ?>")
+
+        //retorno do cadastro
+        $('#btn-cad').on('click', (e) => {
+            e.preventDefault()
+            let dados = $('form').serialize()
+            let cell = $('#celular').val()
+            let emal = $('#email').val()
+            if (cell == '') {
+                alert('numero de celular vazio.')
+            } else if (email == '') {
+                alert('campo E-mail não pode ser vazio.')
+            } else {
+                $.ajax({
+                    type: 'post',
+                    url: '../../../../php/reg_member.php',
+                    data: dados,
+                    success: dados => {
+                        if (dados == 1) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: '<?= $info_register_member ?>.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        } else {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'error',
+                                title: '<?= $info_erro_register_member ?>.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
+                    },
+                    error: erro => {
+                        console.log(erro)
+                    }
+                });
+            }
+        })
+
+        //prevent sair page
+        window.addEventListener('beforeunload', e => {
+            e.preventDefault();
+            e.returnValue = '';
+        });
     </script>
 </body>
 

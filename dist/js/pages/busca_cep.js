@@ -3,7 +3,7 @@ function limpa_formulário_cep() {
     document.getElementById('rua').value=("");
     document.getElementById('bairro').value=("");
     document.getElementById('cidade').value=("");
-    document.getElementById('uf').value=("");
+    document.getElementById('uf_cep').value=("");
 }
 
 function meu_callback(conteudo) {
@@ -12,7 +12,7 @@ if (!("erro" in conteudo)) {
     document.getElementById('rua').value=(conteudo.logradouro);
     document.getElementById('bairro').value=(conteudo.bairro);
     document.getElementById('cidade').value=(conteudo.localidade);
-    document.getElementById('uf').value=(conteudo.uf);
+    document.getElementById('uf_cep').value=(conteudo.uf);
 
 } //end if.
 else {

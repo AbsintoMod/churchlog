@@ -184,8 +184,10 @@ $info_register_member = 'Cadastro de Membro';
 $info_number_son = 'Número máximo de filhos que podem ser cadastrados é de 6 (Seis) dependentes.';
 $info_null_son = 'Insira o número de filhos para o cadastro. Max de 6 (Seis) dependentes.';
 $info_register_son_empty = 'Não possui filhos';
-$info_register_son = 'Cadastrou um total de: <input type="text" id="totalFilho" readonly> filhos';
-
+$info_register_son = 'Cadastrou um total de:'; 
+$info_son = 'filhos';
+$info_register_member = 'Novo Membro cadastrado';
+$info_erro_register_member = 'Cadastro não realizado';
 
 $info_sectors = 'Setores';
 
