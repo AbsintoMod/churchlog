@@ -186,7 +186,7 @@ $info_null_son = 'Insira o número de filhos para o cadastro. Max de 6 (Seis) de
 $info_register_son_empty = 'Não possui filhos';
 $info_register_son = 'Cadastrou um total de:'; 
 $info_son = 'filhos';
-$info_register_member = 'Novo Membro cadastrado';
+$info_register_member = 'Cadastro de novo Membro';
 $info_erro_register_member = 'Cadastro não realizado';
 
 $info_sectors = 'Setores';
@@ -202,6 +202,25 @@ $info_blank_pass = 'Senha de Usuário em branco';
 $info_incorrect_pass = 'Senha Incorreta';
 $info_count_remains = 'Resta';
 $info_count_attempt = 'Tentativas';
+
+//VALIDATED-FORM
+$info_select_required = 'Selecione uma Opção';
+$info_date_required = 'Informe a Data';
+$info_email_valid = 'Digite um Email Válido';
+
+$info_firstname_required = 'Informar o Nome';
+$info_secondname_required = 'Informar o Sobrenome';
+$info_parent_required = 'Informe o Nome da Mãe';
+$info_marital_required = 'Selecione Estado Civil';
+$info_schooling_required = 'Selecione Grau de Escolaridade';
+$info_add_son_required = 'Informe quant. de Filhos';
+$info_church_required = 'Informe a antiga Igreja';
+$info_cpf_required = 'Informe o CPF';
+$info_street_required = 'Informe a Rua';
+$info_neighborhood_required = 'Informe o Bairro';
+$info_state_required = 'Informe o UF do Estado';
+$info_city_required = 'Informe a Cidade';
+$info_cell_required = 'Informe um Número. (Pessoal ou Responsável)';
 
 //===========================================================//
 

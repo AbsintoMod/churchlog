@@ -112,7 +112,9 @@ function meioAdmissao() {
 
   if (valor == 4) {
     $("#addIgreja").collapse("show");
+    $("#igreja_anterior").attr("disabled", false);
   } else {
     $("#addIgreja").collapse("hide");
+    $("#igreja_anterior").attr("disabled", true);
   }
 }

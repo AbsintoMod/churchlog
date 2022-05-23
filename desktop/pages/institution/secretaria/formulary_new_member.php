@@ -29,12 +29,21 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
     // Font Awesome Icons 
     require_once '../../../../assets/head/font_awesome.php';
     ?>
+
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="../../../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../../../dist/css/adminlte.min.css">
     <!-- Checkboxes e Radio Inputs -->
     <link rel="stylesheet" href="../../../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!--validation-form-->
+    <link rel="stylesheet" href="../../../../plugins/validation-form/form-validation.css">
+    <style>
+        .btn-form {
+            width: 15rem;
+            padding: 10px 0px;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -55,448 +64,508 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
             <!-- row -->
             <div class="row">
                 <div class="col-12">
-                    <div class="card card-primary card-tabs">
-
-                        <div class="card-header p-0 pt-1">
-                            <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="tab-membro" data-toggle="pill" href="#tab-membro-tab" role="tab" aria-controls="tab-membro-tab" aria-selected="true"><?= $menu_information ?></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tab-departamento" data-toggle="pill" href="#tab-departamento-tab" role="tab" aria-controls="tab-departamento-tab" aria-selected="false"><?= $menu_religious_data ?></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tab-carteira-e-impresso" data-toggle="pill" href="#tab-carteira-e-impresso-tab" role="tab" aria-controls="tab-carteira-e-impresso-tab" aria-selected="false"><?= $menu_documents ?></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tab-evento" data-toggle="pill" href="#tab-evento-tab" role="tab" aria-controls="tab-evento-tab" aria-selected="false"><?= $menu_address ?></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tab-patrimonio" data-toggle="pill" href="#tab-patrimonio-tab" role="tab" aria-controls="tab-patrimonio-tab" aria-selected="false"><?= $menu_contact ?></a>
-                                </li>
-                            </ul>
+                    <div class="card card-primary">
+                        <div class="card-header">
                         </div>
-
-                        <div class="card-body">
-                            <form>
-                                <div class="tab-content" id="custom-tabs-one-tabContent">
-
-                                    <div class="tab-pane fade show active" id="tab-membro-tab" role="tabpanel" aria-labelledby="tab-membro">
-                                        <div class="row align-items-center">
-                                            <div class="d-none d-sm-block col-12 col-md-6 text-center">
-                                                <img src="../../../../dist/img/background/bg-box/boxed-bg.jpg" alt="foto" class="img-thumbnail" style="max-width: 250px; height: 300px;">
-                                                <input type="file" class="collapse" id="photo">
-                                                <input type="text" name="photo" class="collapse" id="photo_input">
-                                            </div>
-                                            <div class="col-12 col-md-6">
-                                                <div class="form-group col-12">
-                                                    <label for="matricula" class="col-12 control-label"><?= $label_registration ?>:</label>
-                                                    <div class="col-12">
-                                                        <?php
-                                                        $pesquisa = "SELECT id FROM `members` ORDER BY id DESC LIMIT 1";
-                                                        $result = $conn->query($pesquisa);
-                                                        $row = $result->fetch_assoc();
-
-                                                        $mat = ($row['id'] == null) ? 1 : $row['id'] + 1;
-                                                        ?>
-                                                        <input type="text" class="form-control" id="matricula" name="matricula" readonly>
-                                                    </div>
-                                                </div>
-                                                <div class="w-100"></div>
-                                                <div class="form-group col-sm-12">
-                                                    <label for="nome" class="col-md-10 control-label"><?= $label_name ?>:</label>
-                                                    <div class="col-md-12">
-                                                        <input type="text" class="form-control" id="nome" placeholder="..." name="nome" value="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-sm-12">
-                                                    <label for="sobrenome" class="col-md-10 control-label"><?= $label_surname ?>:</label>
-                                                    <div class="col-md-12">
-                                                        <input type="text" class="form-control" id="sobrenome" placeholder="..." name="sobrenome" value="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-md-6">
-                                                <label for="pai" class="col-sm-4 control-label"><?= $label_father_name ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <input name="nome_pai" type="text" class="form-control" id="pai" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="mae" class="col-sm-4 control-label"><?= $label_mother_name ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <input type="text" name="nome_mae" class="form-control" id="mae" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-md-4">
-                                                <label for="cod_estado_civil" class="col-sm-12 control-label"><?= $label_marital_status ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <select name="cod_estado_civil" onchange="casado()" class="form-control" id="cod_estado_civil">
-                                                        <option value="" selected>...</option>
-                                                        <option value="1"><?= $select_marital_single ?></option>
-                                                        <option value="2"><?= $select_marital_married ?></option>
-                                                        <option value="3"><?= $select_marital_widower ?></option>
-                                                        <option value="4"><?= $select_marital_legally_separated ?></option>
-                                                        <option value="5"><?= $select_marital_divorced ?></option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-8">
-                                                <label for="conjuge" class="col-sm-4 control-label"><?= $label_spouse_name ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <input type="text" name="conjuge" class="form-control" disabled id="conjuge" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-md-4">
-                                                <label for="sexo" class="col-sm-12 control-label"><?= $label_sex ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <select name="sexo" class="form-control" id="sexo">
-                                                        <option value="" selected>...</option>
-                                                        <option value="<?= $select_sex_male ?>">
-                                                            <?= $select_sex_male ?>
-                                                        </option>
-                                                        <option value="<?= $select_sex_female ?>">
-                                                            <?= $select_sex_female ?>
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="escolaridade" class="col-sm-12 control-label"><?= $label_schooling ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <select name="escolaridade" class="form-control" id="escolaridade">
-                                                        <option value="" selected>...</option>
-                                                        <option value="<?= $select_schooling_literate ?>">
-                                                            <?= $select_schooling_literate ?>
-                                                        </option>
-                                                        <option value="<?= $select_schooling_elementary_school_series ?>">
-                                                            <?= $select_schooling_elementary_school_series ?>
-                                                        </option>
-                                                        <option value="<?= $select_schooling_elementary_school ?>">
-                                                            <?= $select_schooling_elementary_school ?>
-                                                        </option>
-                                                        <option value="<?= $select_schooling_middle_school ?>">
-                                                            <?= $select_schooling_middle_school ?>
-                                                        </option>
-                                                        <option value="<?= $select_schooling_technical_education ?>">
-                                                            <?= $select_schooling_technical_education ?>
-                                                        </option>
-                                                        <option value="<?= $select_schooling_higher_education ?>">
-                                                            <?= $select_schooling_higher_education ?>
-                                                        </option>
-                                                        <option value="<?= $select_schooling_doctorate ?>">
-                                                            <?= $select_schooling_doctorate ?>
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="escolaridade_status" class="col-sm-12 control-label"><?= $label_done ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <select name="escolaridade_status" class="form-control" id="escolaridade_status">
-                                                        <option value="" selected>...</option>
-                                                        <option value="<?= $select_awesome_complete ?>"><?= $select_awesome_complete ?></option>
-                                                        <option value="<?= $select_awesome_incomplete ?>"><?= $select_awesome_incomplete ?></option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-12 col-md-3">
-                                                <label class="col-12 control-label"><?= $label_have_a_son ?>?:</label>
-                                                <div class="col-12">
-                                                    <select name="filho" onchange="possuiFilho()" class="form-control" id="filho">
-                                                        <option value="0" selected><?= $no ?></option>
-                                                        <option value="1"><?= $yes ?></option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-12 col-md-3">
-                                                <label class="col-12 control-label"><?= $label_quantity ?>:</label>
-                                                <div class="input-group">
-                                                    <input type="text" name="num_filho" id="num_filho" class="form-control rounded-0 numero" disabled placeholder="Max.6">
-                                                    <span class="input-group-append">
-                                                        <button type="button" id="botao_filho" class="btn btn-info btn-flat" disabled onclick="addFilho()">Adic.</button>
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-12 col-md-6 text-center" id="nfilhos_vazio">
-                                                <h2 class="mt-4"><?= $info_register_son_empty ?></h2>
-                                            </div>
-                                            <div class="form-group col-12 col-md-6 text-center" style="display: none;" id="nfilhos">
-                                                <h2 class="mt-4"><?= $info_register_son ?> <input type="text" name="totalFilho" id="totalFilho" readonly> <?= $info_son ?></h2>
-                                            </div>
-                                        </div>
-                                        <div id="dependentes" class="row" style="display: none;">
-                                            <hr>
-                                            <h2 class="mt-4"><?= $label_dependents ?></h2>
-                                            <div id="addDependente">
-                                                <!--area para add dependentes-->
-                                            </div>
-                                            <hr>
-                                        </div>
+                        <form class="needs-validation" novalidate>
+                            <div class="card-body">
+                                <h2 class="mt-3 mb-3 text-center"><?= $menu_information ?></h2>
+                                <div class="row align-items-center">
+                                    <div class="d-none d-sm-block col-12 col-md-6 text-center">
+                                        <img src="../../../../dist/img/background/bg-box/boxed-bg.jpg" alt="foto" class="img-thumbnail" style="max-width: 250px; height: 300px;">
+                                        <input type="file" class="collapse" id="photo">
+                                        <input type="text" name="photo" class="collapse" id="photo_input">
                                     </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group col-12">
+                                            <label for="matricula" class="col-12 control-label"><?= $label_registration ?>:</label>
+                                            <div class="col-12">
+                                                <?php
+                                                $pesquisa = "SELECT id FROM `members` ORDER BY id DESC LIMIT 1";
+                                                $result = $conn->query($pesquisa);
+                                                $row = $result->fetch_assoc();
 
-                                    <div class="tab-pane fade" id="tab-departamento-tab" role="tabpanel" aria-labelledby="tab-departamento">
-                                        <div class="row">
-                                            <div class="form-group col-12 col-md-2">
-                                                <label class="col-12 control-label"><?= $label_communing ?>?:</label>
-                                                <div class="col-12">
-                                                    <select name="comunga" class="form-control" id="comunga" onchange="com(this.value)">
-                                                        <option value="0" selected>...</option>
-                                                        <option value="0"><?= $no ?></option>
-                                                        <option value="1"><?= $yes ?></option>
-                                                    </select>
-                                                </div>
+                                                $mat = ($row['id'] == null) ? 1 : $row['id'] + 1;
+                                                ?>
+                                                <input type="text" class="form-control" id="matricula" name="matricula" readonly>
                                             </div>
-
-                                            <div class="form-group col-12 col-md-3">
-                                                <label for="data_batismo" class="col-12 control-label"><?= $label_baptism_date ?>:</label>
-                                                <div class="col-12">
-                                                    <input name="data_batismo" type="date" class="form-control" id="data_batismo" disabled>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-12 col-md-4">
-                                                <label class="col-12 control-label"><?= $label_admission_type ?>:</label>
-                                                <div class="col-12">
-                                                    <select name="tipo_admissao" class="form-control" onchange="meioAdmissao()" id="tipo_admissao">
-                                                        <option value="" selected>...</option>
-                                                        <option value="1"><?= $select_conversion ?></option>
-                                                        <option value="2"><?= $select_baptism ?></option>
-                                                        <option value="3"><?= $select_transfer ?></option>
-                                                        <option value="4"><?= $select_ministry_exchange ?></option>
-                                                        <option value="5"><?= $select_reconciliation ?></option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-12 col-md-3">
-                                                <label class="col-12 control-label"><?= $label_function_ministry ?>:</label>
-                                                <div class="col-12">
-                                                    <!--IMPROTANTE = CRIAR CAMPO PARA ALIMENTAR A TABELA-->
-                                                    <select name="funcao_ministerio" class="form-control" id="funcao_ministerio">
-                                                        <option value="" selected>...</option>
-
-                                                        <?php
-                                                        $ministerial = "SELECT * FROM `select_ministerial_function`";
-                                                        $valor_busca = mysqli_query($conn, $ministerial);
-                                                        while ($row_nivel = mysqli_fetch_assoc($valor_busca)) {
-                                                            echo '<option value ="' . $row_nivel['id'] . '">' . $row_nivel['function'] . '</option>';
-                                                        }
-                                                        ?>
-
-                                                    </select>
+                                        </div>
+                                        <div class="w-100"></div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="nome" class="col-md-10 control-label"><?= $label_name ?>:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" required class="form-control" id="nome" placeholder="..." name="nome" value="">
+                                                <div class="invalid-feedback">
+                                                    <?= $info_firstname_required ?>.
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div id="addIgreja" class="form-group col-12 collapse">
-                                                <label for="igreja_anterior" class="col-12 control-label"><?= $label_previous_church ?>:</label>
-                                                <div class="col-12">
-                                                    <input name="igreja_anterior" type="text" class="form-control" id="igreja_anterior" placeholder="..." value="">
+                                        <div class="form-group col-sm-12">
+                                            <label for="sobrenome" class="col-md-10 control-label"><?= $label_surname ?>:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" id="sobrenome" placeholder="..." name="sobrenome" value="" required>
+                                                <div class="invalid-feedback">
+                                                    <?= $info_secondname_required ?>.
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="tab-pane fade" id="tab-carteira-e-impresso-tab" role="tabpanel" aria-labelledby="tab-carteira-e-impresso">
-
-                                        <div class="row">
-                                            <div class="form-group col-md-3">
-                                                <label for="rg" class="col-12 control-label"><?= $label_Identity ?>:</label>
-                                                <div class="col-12">
-                                                    <input name="rg" type="text" maxlength="15" class="form-control numero" id="rg" placeholder="..." value="">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-md-2">
-                                                <label for="orgao_expd" class="col-12 control-label"><?= $label_shipping_department ?>:</label>
-                                                <div class="col-12">
-                                                    <input name="rg_orgao" type="text" class="form-control" id="orgao_expd" placeholder="..." value="">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-md-3">
-                                                <label for="rg_estado" class="col-sm-12 control-label"><?= $label_dispatch_state ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <select name="rg_estado" class="form-control" id="rg_estado">
-                                                        <option value="">...</option>
-                                                        <?php
-                                                        $state = "SELECT * FROM `select_state`";
-                                                        $valor_busca = mysqli_query($conn, $state);
-                                                        while ($row_state = mysqli_fetch_assoc($valor_busca)) {
-                                                            echo '<option value ="' . $row_state['uf'] . '">' . $row_state['state'] . '</option>';
-                                                        }
-                                                        ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-md-4">
-                                                <label for="data_expd" class="col-sm-12 control-label"><?= $label_shipping_date ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <input name="rg_expedicao" type="date" class="form-control" id="data_expd" placeholder="..." value="">
-                                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="pai" class="col-sm-4 control-label"><?= $label_father_name ?>:</label>
+                                        <div class="col-sm-12">
+                                            <input name="nome_pai" type="text" class="form-control" id="pai" placeholder="..." value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="mae" class="col-sm-4 control-label"><?= $label_mother_name ?>:</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" name="nome_mae" class="form-control" id="mae" placeholder="..." value="" required>
+                                            <div class="invalid-feedback">
+                                                <?= $info_parent_required ?>.
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="form-group col-md-4">
-                                                <label for="pais_nasc" class="col-sm-12 control-label"><?= $label_country_of_birth ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <select name="pais_nasc" class="form-control" id="pais_nasc">
-                                                        <option value="">...</option>
-                                                        <?php
-                                                        $buscaPais = mysqli_query($conn, "SELECT `id`,`country` FROM `select_country`;");
-                                                        while ($pais = mysqli_fetch_object($buscaPais)) :
-                                                            echo "<option value='$pais->id'>$pais->country</option>";
-                                                        endwhile;
-                                                        ?>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                    </div>
+                                </div>
 
-                                            <div class="form-group col-md-4">
-                                                <label for="estado_nasc" class="col-sm-12 control-label"><?= $label_state_of_birth ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <select name="estado_nasc" class="form-control" id="estado_nasc">
-                                                        <option value="">...</option>
-                                                        <?php /*
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="cod_estado_civil" class="col-sm-12 control-label"><?= $label_marital_status ?>:</label>
+                                        <div class="col-sm-12">
+                                            <select name="cod_estado_civil" onchange="casado()" class="form-select " id="cod_estado_civil" required>
+                                                <option value="" selected>...</option>
+                                                <option value="1"><?= $select_marital_single ?></option>
+                                                <option value="2"><?= $select_marital_married ?></option>
+                                                <option value="3"><?= $select_marital_widower ?></option>
+                                                <option value="4"><?= $select_marital_legally_separated ?></option>
+                                                <option value="5"><?= $select_marital_divorced ?></option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $info_marital_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label for="conjuge" class="col-sm-4 control-label"><?= $label_spouse_name ?>:</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" name="conjuge" class="form-control" disabled id="conjuge" placeholder="..." value="" required>
+                                            <div class="invalid-feedback">
+                                                <?= $info_firstname_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="sexo" class="col-sm-12 control-label"><?= $label_sex ?>:</label>
+                                        <div class="col-sm-12">
+                                            <select name="sexo" class="form-select" id="sexo" required>
+                                                <option value="" selected>...</option>
+                                                <option value="<?= $select_sex_male ?>">
+                                                    <?= $select_sex_male ?>
+                                                </option>
+                                                <option value="<?= $select_sex_female ?>">
+                                                    <?= $select_sex_female ?>
+                                                </option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $info_select_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="escolaridade" class="col-sm-12 control-label"><?= $label_schooling ?>:</label>
+                                        <div class="col-sm-12">
+                                            <select name="escolaridade" class="form-select" id="escolaridade" required>
+                                                <option value="" selected>...</option>
+                                                <option value="<?= $select_schooling_literate ?>">
+                                                    <?= $select_schooling_literate ?>
+                                                </option>
+                                                <option value="<?= $select_schooling_elementary_school_series ?>">
+                                                    <?= $select_schooling_elementary_school_series ?>
+                                                </option>
+                                                <option value="<?= $select_schooling_elementary_school ?>">
+                                                    <?= $select_schooling_elementary_school ?>
+                                                </option>
+                                                <option value="<?= $select_schooling_middle_school ?>">
+                                                    <?= $select_schooling_middle_school ?>
+                                                </option>
+                                                <option value="<?= $select_schooling_technical_education ?>">
+                                                    <?= $select_schooling_technical_education ?>
+                                                </option>
+                                                <option value="<?= $select_schooling_higher_education ?>">
+                                                    <?= $select_schooling_higher_education ?>
+                                                </option>
+                                                <option value="<?= $select_schooling_doctorate ?>">
+                                                    <?= $select_schooling_doctorate ?>
+                                                </option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $info_schooling_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="escolaridade_status" class="col-sm-12 control-label"><?= $label_done ?>:</label>
+                                        <div class="col-sm-12">
+                                            <select name="escolaridade_status" class="form-select" id="escolaridade_status" required>
+                                                <option value="" selected>...</option>
+                                                <option value="<?= $select_awesome_complete ?>"><?= $select_awesome_complete ?></option>
+                                                <option value="<?= $select_awesome_incomplete ?>"><?= $select_awesome_incomplete ?></option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $info_select_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-12 col-md-3">
+                                        <label class="col-12 control-label"><?= $label_have_a_son ?>?:</label>
+                                        <div class="col-12">
+                                            <select name="filho" onchange="possuiFilho()" class="form-select" id="filho" required>
+                                                <option value="0" selected><?= $no ?></option>
+                                                <option value="1"><?= $yes ?></option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $info_select_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-12 col-md-3">
+                                        <label class="col-12 control-label"><?= $label_quantity ?>:</label>
+                                        <div class="input-group">
+                                            <input type="text" name="num_filho" id="num_filho" class="form-control numero" disabled placeholder="Max.6" required>
+                                            <button type="button" id="botao_filho" class="btn btn-info" disabled onclick="addFilho()"><i class="fas fa-plus"></i></button>
+                                            <div class="invalid-feedback"><?= $info_add_son_required ?>.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-12 col-md-6 text-center" id="nfilhos_vazio">
+                                        <h2 class="mt-4"><?= $info_register_son_empty ?></h2>
+                                    </div>
+                                    <div class="form-group col-12 col-md-6 text-center" style="display: none;" id="nfilhos">
+                                        <h2 class="mt-4"><?= $info_register_son ?> <input type="text" name="totalFilho" id="totalFilho" readonly> <?= $info_son ?></h2>
+                                    </div>
+                                </div>
+
+                                <div id="dependentes" class="row" style="display: none;">
+                                    <h2 class="mt-5 mb-5 text-center"><?= $label_dependents ?></h2>
+                                    <div id="addDependente">
+                                        <!--area para add dependentes-->
+                                    </div>
+                                </div>
+
+                                <h2 class="mt-5 mb-5 text-center"><?= $menu_religious_data ?></h2>
+                                <div class="row">
+                                    <div class="form-group col-12 col-md-2">
+                                        <label class="col-12 control-label"><?= $label_communing ?>?:</label>
+                                        <div class="col-12">
+                                            <select name="comunga" class="form-select" id="comunga" onchange="com(this.value)" required>
+                                                <option value="" selected>...</option>
+                                                <option value="0"><?= $no ?></option>
+                                                <option value="1"><?= $yes ?></option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $info_select_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-12 col-md-3">
+                                        <label for="data_batismo" class="col-12 control-label"><?= $label_baptism_date ?>:</label>
+                                        <div class="col-12">
+                                            <input name="data_batismo" maxlength="10" type="date" class="form-control" id="data_batismo" disabled required>
+                                            <div class="invalid-feedback">
+                                                <?= $info_date_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-12 col-md-4">
+                                        <label class="col-12 control-label"><?= $label_admission_type ?>:</label>
+                                        <div class="col-12">
+                                            <select name="tipo_admissao" class="form-select" onchange="meioAdmissao()" id="tipo_admissao" required>
+                                                <option value="" selected>...</option>
+                                                <option value="1"><?= $select_conversion ?></option>
+                                                <option value="2"><?= $select_baptism ?></option>
+                                                <option value="3"><?= $select_transfer ?></option>
+                                                <option value="4"><?= $select_ministry_exchange ?></option>
+                                                <option value="5"><?= $select_reconciliation ?></option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $info_select_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-12 col-md-3">
+                                        <label class="col-12 control-label"><?= $label_function_ministry ?>:</label>
+                                        <div class="col-12">
+                                            <!--IMPROTANTE = CRIAR CAMPO PARA ALIMENTAR A TABELA-->
+                                            <select name="funcao_ministerio" class="form-select" id="funcao_ministerio" required>
+                                                <option value="" selected>...</option>
+
+                                                <?php
+                                                $ministerial = "SELECT * FROM `select_ministerial_function`";
+                                                $valor_busca = mysqli_query($conn, $ministerial);
+                                                while ($row_nivel = mysqli_fetch_assoc($valor_busca)) {
+                                                    echo '<option value ="' . $row_nivel['id'] . '">' . $row_nivel['function'] . '</option>';
+                                                }
+                                                ?>
+
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $info_select_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div id="addIgreja" class="form-group col-12 collapse">
+                                        <label for="igreja_anterior" class="col-12 control-label"><?= $label_previous_church ?>:</label>
+                                        <div class="col-12">
+                                            <input name="igreja_anterior" type="text" disabled class="form-control" id="igreja_anterior" placeholder="..." value="" required>
+                                            <div class="invalid-feedback">
+                                                <?= $info_church_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h2 class="mt-4 mb-5 text-center"><?= $menu_documents ?></h2>
+                                <div class="row">
+                                    <div class="form-group col-md-3">
+                                        <label for="rg" class="col-12 control-label"><?= $label_Identity ?>:</label>
+                                        <div class="col-12">
+                                            <input name="rg" type="text" maxlength="15" class="form-control numero" id="rg" placeholder="..." value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-2">
+                                        <label for="orgao_expd" class="col-12 control-label"><?= $label_shipping_department ?>:</label>
+                                        <div class="col-12">
+                                            <input name="rg_orgao" type="text" class="form-control" id="orgao_expd" placeholder="..." value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label for="rg_estado" class="col-sm-12 control-label"><?= $label_dispatch_state ?>:</label>
+                                        <div class="col-sm-12">
+                                            <select name="rg_estado" class="form-control" id="rg_estado">
+                                                <option value="">...</option>
+                                                <?php
+                                                $state = "SELECT * FROM `select_state`";
+                                                $valor_busca = mysqli_query($conn, $state);
+                                                while ($row_state = mysqli_fetch_assoc($valor_busca)) {
+                                                    echo '<option value ="' . $row_state['uf'] . '">' . $row_state['state'] . '</option>';
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="data_expd" class="col-sm-12 control-label"><?= $label_shipping_date ?>:</label>
+                                        <div class="col-sm-12">
+                                            <input name="rg_expedicao" maxlength="10" type="date" class="form-control" id="data_expd" placeholder="..." value="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="pais_nasc" class="col-sm-12 control-label"><?= $label_country_of_birth ?>:</label>
+                                        <div class="col-sm-12">
+                                            <select name="pais_nasc" class="form-select" id="pais_nasc" required>
+                                                <option value="">...</option>
+                                                <?php
+                                                $buscaPais = mysqli_query($conn, "SELECT `id`,`country` FROM `select_country`;");
+                                                while ($pais = mysqli_fetch_object($buscaPais)) :
+                                                    echo "<option value='$pais->id'>$pais->country</option>";
+                                                endwhile;
+                                                ?>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $info_select_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="estado_nasc" class="col-sm-12 control-label"><?= $label_state_of_birth ?>:</label>
+                                        <div class="col-sm-12">
+                                            <select name="estado_nasc" class="form-select" id="estado_nasc" required>
+                                                <option value="">...</option>
+                                                <?php /*
                                                         $buscaEstado = mysqli_query($conn, "SELECT `id`,`state` FROM `select_state`;");
                                                         while ($estado = mysqli_fetch_object($buscaEstado)):
                                                             echo "<option value='$estado->id'>$estado->state</option>";
                                                         endwhile;
                                                     */ ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="cidade_nasc" class="col-sm-12 control-label"><?= $label_naturalness ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <select name="cidade_nasc" class="form-control" id="cidade_nasc">
-                                                        <option value="">...</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-md-4">
-                                                <label for="nascimento" class="col-sm-12 control-label"><?= $label_date_of_birth ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <input name="data_nascimento" type="date" class="form-control" id="nascimento" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="cpf" class="col-md-4 control-label">CPF:</label>
-                                                <div class="col-md-12">
-                                                    <input type="text" class="form-control cpf" id="cpf" placeholder="..." name="cpf" value="">
-                                                </div>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $info_select_required ?>.
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="tab-pane fade" id="tab-evento-tab" role="tabpanel" aria-labelledby="tab-evento">
-                                        <div class="row">
-                                            <div class="form-group col-md-3">
-                                                <label for="cep" class="col-md-12 control-label"><?= $label_zip_code ?>:</label>
-                                                <div class="col-md-12">
-                                                    <input name="cep" type="text" class="form-control cep" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" placeholder="...">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-9">
-                                                <label for="rua" class="col-md-6 control-label"><?= $label_street ?>:</label>
-                                                <div class="col-md-12">
-                                                    <input name="rua" type="text" class="form-control" id="rua" size="60" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-md-3">
-                                                <label for="numero" class="col-md-12 control-label"><?= $label_number ?>:</label>
-                                                <div class="col-md-12">
-                                                    <input name="numero" type="text" class="form-control" id="numero" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-9">
-                                                <label for="bairro" class="col-md-6 control-label"><?= $label_neighborhood ?>:</label>
-                                                <div class="col-md-12">
-                                                    <input name="bairro" type="text" class="form-control" id="bairro" size="40" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-12">
-                                                <label for="complemento" class="col-md-6 control-label"><?= $label_complement ?>:</label>
-                                                <div class="col-md-12">
-                                                    <input name="complemento" type="text" class="form-control" id="complemento" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-md-4">
-                                                <label for="uf_cep" class="col-sm-12 control-label"><?= $label_state ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <input name="uf_cep" type="text" id="uf_cep" size="2" class="form-control" placeholder="...">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-8">
-                                                <label for="cidade" class="col-sm-12 control-label"><?= $label_city ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <input name="cidade" class="form-control" type="text" id="cidade" size="40" placeholder="...">
-                                                </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="cidade_nasc" class="col-sm-12 control-label"><?= $label_naturalness ?>:</label>
+                                        <div class="col-sm-12">
+                                            <select name="cidade_nasc" class="form-control" id="cidade_nasc" required>
+                                                <option value="">...</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $info_select_required ?>.
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="tab-pane fade" id="tab-patrimonio-tab" role="tabpanel" aria-labelledby="tab-patrimonio">
-                                        <div class="row">
-                                            <div class="form-group col-md-6">
-                                                <label for="telefone" class="col-sm-12 control-label"><?= $label_telephone ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <input name="telefone" type="text" class="form-control phone_with_ddd" id="telefone" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="celular" class="col-sm-12 control-label"><?= $label_cell_phone ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <input name="celular" type="text" class="form-control celular_com_9" id="celular" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-md-6">
-                                                <label for="email" class="col-sm-12 control-label"><?= $label_email ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <input name="email" type="email" class="form-control" id="email" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="emailc" class="col-sm-12 control-label"><?= $label_confirm_email ?>:</label>
-                                                <div class="col-sm-12">
-                                                    <input name="emailc" onblur="verificaEmail(this.value)" type="email" class="form-control" id="emailc" placeholder="..." value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <button id="btn-cad" style="margin-top: 10px;" type="submit" class="btn btn-block btn-success btn_form_continue"><?= $button_register ?></button>
-                                        </div>
-                                    </div>
-                                    <!-- /.card -->
                                 </div>
-                            </form>
-                        </div>
 
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="nascimento" class="col-sm-12 control-label"><?= $label_date_of_birth ?>:</label>
+                                        <div class="col-sm-12">
+                                            <input name="data_nascimento" maxlength="10" type="date" class="form-control" id="nascimento" placeholder="..." value="" required>
+                                            <div class="invalid-feedback">
+                                                <?= $info_date_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="cpf" class="col-md-4 control-label">CPF:</label>
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control cpf" id="cpf" placeholder="..." name="cpf" value="" required>
+                                            <div class="invalid-feedback">
+                                                <?= $info_cpf_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h2 class="mt-4 mb-4 text-center"><?= $menu_address ?></h2>
+                                <div class="row">
+                                    <div class="form-group col-md-3">
+                                        <label for="cep" class="col-md-12 control-label"><?= $label_zip_code ?>:</label>
+                                        <div class="col-md-12">
+                                            <input name="cep" type="text" class="form-control cep" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" placeholder="...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-9">
+                                        <label for="rua" class="col-md-6 control-label"><?= $label_street ?>:</label>
+                                        <div class="col-md-12">
+                                            <input name="rua" type="text" class="form-control" id="rua" size="60" placeholder="..." value="" required>
+                                            <div class="invalid-feedback">
+                                                <?= $info_street_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-3">
+                                        <label for="numero" class="col-md-12 control-label"><?= $label_number ?>:</label>
+                                        <div class="col-md-12">
+                                            <input name="numero" type="text" class="form-control" id="numero" placeholder="..." value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="complemento" class="col-12 control-label"><?= $label_complement ?>:</label>
+                                        <div class="col-md-12">
+                                            <input name="complemento" type="text" class="form-control" id="complemento" placeholder="..." value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="bairro" class="col-md-6 control-label"><?= $label_neighborhood ?>:</label>
+                                        <div class="col-md-12">
+                                            <input name="bairro" type="text" class="form-control" id="bairro" size="40" placeholder="..." value="" required>
+                                            <div class="invalid-feedback">
+                                                <?= $info_neighborhood_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-8">
+                                        <label for="cidade" class="col-sm-12 control-label"><?= $label_city ?>:</label>
+                                        <div class="col-sm-12">
+                                            <input name="cidade" class="form-control" type="text" id="cidade" size="40" placeholder="..." required>
+                                            <div class="invalid-feedback">
+                                                <?= $info_city_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="uf_cep" class="col-sm-12 control-label"><?= $label_state ?>:</label>
+                                        <div class="col-sm-12">
+                                            <input name="uf_cep" type="text" id="uf_cep" size="2" class="form-control" placeholder="..." required>
+                                            <div class="invalid-feedback">
+                                                <?= $info_state_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h2 class="mt-4 mb-4 text-center"><?= $menu_contact ?></h2>
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="telefone" class="col-sm-12 control-label"><?= $label_telephone ?>:</label>
+                                        <div class="col-sm-12">
+                                            <input name="telefone" type="text" class="form-control phone_with_ddd" id="telefone" placeholder="..." value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="celular" class="col-sm-12 control-label"><?= $label_cell_phone ?>:</label>
+                                        <div class="col-sm-12">
+                                            <input name="celular" type="text" class="form-control celular_com_9" id="celular" placeholder="..." value="" required>
+                                            <div class="invalid-feedback">
+                                                <?= $info_cell_required ?>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="email" class="col-sm-12 control-label"><?= $label_email ?>:</label>
+                                        <div class="col-sm-12">
+                                            <input name="email" type="email" class="form-control" id="email" placeholder="..." value="">
+                                            <div class="invalid-feedback">
+                                                <?= $info_email_valid ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="emailc" class="col-sm-12 control-label"><?= $label_confirm_email ?>:</label>
+                                        <div class="col-sm-12">
+                                            <input name="emailc" onblur="verificaEmail(this.value)" type="email" class="form-control" id="emailc" placeholder="..." value="">
+                                            <div class="invalid-feedback">
+                                                <?= $info_email_valid ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12 col-sm-6 text-center mt-4">
+                                        <button type="reset" class="btn btn-form btn-warning"><?= $button_clean ?></button>
+                                    </div>
+                                    <div class="col-12 col-sm-6 text-center mt-4">
+                                        <button id="btn-cad" type="submit" class="btn btn-form btn-success"><?= $button_register ?></button>
+                                    </div>
+                                </div>
+                            </div><!-- /.card -->
+                        </form>
                     </div>
                 </div>
             </div>
-
         </div>
         <!-- /.Conteudo -->
 
@@ -555,11 +624,11 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                 return false;
             }
         });
+
         //quando seleciona um option
         $("#estado_nasc").change(function() {
             //pega o valor do value do option
             let id = $(this).val();
-
             //faz a requisião ajax no arquivo php
             $.ajax({
                 url: "../../../../php/popularSelectCity.php",
@@ -568,7 +637,6 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                 data: {
                     "id": id
                 }
-
             }).done(function(data) {
                 if (data == '') {
                     $("#cidade_nasc").html(data);
@@ -577,9 +645,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                     $('#cidade_nasc').html(data);
                 }
             });
-
         });
-
 
         $("#pais_nasc").change(function() {
             let id = $(this).val();
@@ -590,7 +656,6 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                 data: {
                     "id": id
                 }
-
             }).done(function(data) {
                 if (data == '') {
                     $("#estado_nasc").html(data);
@@ -617,7 +682,6 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
         //atribui valor do input para Imagem
         $('#photo').on("change", function(e) {
             showThumbnail(this.files);
-
             $('#photo_input').val($('#photo').val())
         });
 
@@ -638,52 +702,64 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
         }
         pad("<?= $mat ?>")
 
-        //retorno do cadastro
-        $('#btn-cad').on('click', (e) => {
-            e.preventDefault()
-            let dados = $('form').serialize()
-            let cell = $('#celular').val()
-            let emal = $('#email').val()
-            if (cell == '') {
-                alert('numero de celular vazio.')
-            } else if (email == '') {
-                alert('campo E-mail não pode ser vazio.')
-            } else {
-                $.ajax({
-                    type: 'post',
-                    url: '../../../../php/reg_member.php',
-                    data: dados,
-                    success: dados => {
-                        if (dados == 1) {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: '<?= $info_register_member ?>.',
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                        } else {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'error',
-                                title: '<?= $info_erro_register_member ?>.',
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
+        //validando e salvando formulário
+        const forms = $('.needs-validation')
+
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    event.preventDefault()
+                    let dados = forms.serialize()
+
+                    $.ajax({
+                        type: 'post',
+                        url: '../../../../php/reg_member.php',
+                        data: dados,
+                        success: dados => {
+                            if (dados == 1) {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: '<?= $info_register_member ?>.',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                                setTimeout(() => {
+                                    forms.removeClass('was-validated');
+                                    document.querySelector('form').reset();
+                                }, 1700);
+                            } else {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: '<?= $info_erro_register_member ?>.',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            }
+                        },
+                        error: erro => {
+                            console.log(erro)
                         }
-                    },
-                    error: erro => {
-                        console.log(erro)
-                    }
-                });
-            }
+                    });
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+
+            // botão limpar campos
+        $('[type=reset]').on('click',()=>{
+            forms.removeClass("was-validated");
         })
 
         //prevent sair page
-        window.addEventListener('beforeunload', e => {
+        /*window.addEventListener('beforeunload', e => {
             e.preventDefault();
             e.returnValue = '';
-        });
+        });*/
     </script>
 </body>
 
