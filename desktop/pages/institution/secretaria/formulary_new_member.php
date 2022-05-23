@@ -67,25 +67,23 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                     <div class="card card-primary">
                         <div class="card-header">
                         </div>
-                        <form class="needs-validation" novalidate>
+                        <form enctype="multipart/form-data" class="needs-validation" novalidate>
                             <div class="card-body">
                                 <h2 class="mt-3 mb-3 text-center"><?= $menu_information ?></h2>
                                 <div class="row align-items-center">
                                     <div class="d-none d-sm-block col-12 col-md-6 text-center">
                                         <img src="../../../../dist/img/background/bg-box/boxed-bg.jpg" alt="foto" class="img-thumbnail" style="max-width: 250px; height: 300px;">
-                                        <input type="file" class="collapse" id="photo">
-                                        <input type="text" name="photo" class="collapse" id="photo_input">
+                                        <input type="file" class="collapse" name="photo" id="photo" accept=".jpg,.jpeg,.png">
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="form-group col-12">
                                             <label for="matricula" class="col-12 control-label"><?= $label_registration ?>:</label>
                                             <div class="col-12">
                                                 <?php
-                                                $pesquisa = "SELECT id FROM `members` ORDER BY id DESC LIMIT 1";
-                                                $result = $conn->query($pesquisa);
-                                                $row = $result->fetch_assoc();
-
-                                                $mat = ($row['id'] == null) ? 1 : $row['id'] + 1;
+                                                    $pesquisa = "SELECT id FROM `members` ORDER BY id DESC LIMIT 1";
+                                                    $result = $conn->query($pesquisa);
+                                                    $row = $result->fetch_assoc();
+                                                    $mat = isset($row['id']) ? $row['id']+1 : 1;
                                                 ?>
                                                 <input type="text" class="form-control" id="matricula" name="matricula" readonly>
                                             </div>
@@ -164,10 +162,10 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                         <div class="col-sm-12">
                                             <select name="sexo" class="form-select" id="sexo" required>
                                                 <option value="" selected>...</option>
-                                                <option value="<?= $select_sex_male ?>">
+                                                <option value="1">
                                                     <?= $select_sex_male ?>
                                                 </option>
-                                                <option value="<?= $select_sex_female ?>">
+                                                <option value="2">
                                                     <?= $select_sex_female ?>
                                                 </option>
                                             </select>
@@ -681,9 +679,25 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
         //atribui valor do input para Imagem
         $('#photo').on("change", function(e) {
-            showThumbnail(this.files);
-            $('#photo_input').val($('#photo').val())
+            for (const file of this.files) {
+                if (file.type === 'image/png' || file.type === 'image/jpeg') {
+                    $('#btn-cad').removeAttr('disabled','true');
+                    showThumbnail(this.files);
+                }else if (file.size > 3145728) {
+                    $('#btn-cad').attr('disabled','true');
+                    $('.img-thumbnail').attr('src', '../../../../dist/img/background/bg-box/boxed-bg-alert.jpg');
+                    alert('Tamanho MAX do Arquivo é de 3Mb')
+                }else{
+                    $('#btn-cad').attr('disabled', '');
+                    $('.img-thumbnail').attr('src', '../../../../dist/img/background/bg-box/boxed-bg-alert.jpg');
+                    alert('Tipo de Arquivo Invalido')
+                }
+                /*console.log("Filename: ", file.name);
+                console.log("Type: ", file.type);
+                console.log("Size: ", file.size, " bytes");*/
+            }
         });
+
 
         function showThumbnail(files) {
             if (files && files[0]) {
@@ -705,33 +719,38 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
         //validando e salvando formulário
         const forms = $('.needs-validation')
 
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                } else {
-                    event.preventDefault()
-                    let dados = forms.serialize()
-
-                    $.ajax({
-                        type: 'post',
-                        url: '../../../../php/reg_member.php',
-                        data: dados,
-                        success: dados => {
-                            if (dados == 1) {
+        Array.from(forms).forEach((form) => {
+            form.addEventListener("submit", e => {
+                    e.preventDefault();
+                    if (!form.checkValidity()) {
+                        form.classList.add("was-validated");
+                    } else {
+                        const data = new FormData(e.target); // Valores do formulário
+                        var xhr = new XMLHttpRequest();
+                        xhr.withCredentials = true;
+                        xhr.addEventListener("readystatechange", function() {
+                            if (this.responseText == 1) {
                                 Swal.fire({
                                     position: 'top-end',
                                     icon: 'success',
-                                    title: '<?= $info_register_member ?>.',
+                                    title: '<?= $info_register_member_save ?>.',
                                     showConfirmButton: false,
                                     timer: 1500
                                 });
                                 setTimeout(() => {
                                     forms.removeClass('was-validated');
+                                    $('.img-thumbnail').attr('src', '../../../../dist/img/background/bg-box/boxed-bg.jpg');
                                     document.querySelector('form').reset();
                                 }, 1700);
-                            } else {
+                            } else if(this.responseText == 2){
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: '<?= $info_erro_register_member_exist ?>.',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            }else {
                                 Swal.fire({
                                     position: 'top-end',
                                     icon: 'error',
@@ -740,18 +759,17 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     timer: 1500
                                 });
                             }
-                        },
-                        error: erro => {
-                            console.log(erro)
-                        }
-                    });
-                }
-                form.classList.add('was-validated')
-            }, false)
-        })
+                        });
+                        xhr.open("POST", "../../../../php/reg_member.php");
+                        xhr.send(data);
+                    }
+                },
+                false
+            );
+        });
 
-            // botão limpar campos
-        $('[type=reset]').on('click',()=>{
+        // botão limpar campos
+        $('[type=reset]').on('click', () => {
             forms.removeClass("was-validated");
         })
 

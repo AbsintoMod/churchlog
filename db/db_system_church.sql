@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Maio-2022 às 03:13
+-- Tempo de geração: 23-Maio-2022 às 13:56
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -51,7 +51,7 @@ CREATE TABLE `members` (
   `id` int(11) UNSIGNED ZEROFILL NOT NULL,
   `first_name` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `second_name` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `path_image` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `path_image` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name_father` varchar(120) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name_mother` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `marital_status` int(1) NOT NULL,
@@ -88,36 +88,6 @@ CREATE TABLE `members` (
   `date_register` datetime NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Extraindo dados da tabela `members`
---
-
-INSERT INTO `members` (`id`, `first_name`, `second_name`, `path_image`, `name_father`, `name_mother`, `marital_status`, `conjuge_name`, `sex`, `schooling`, `status_schooling`, `son`, `amount_son`, `name_son`, `comungante`, `baptism_date`, `type_admission`, `id_select_ministerial_function`, `previous_church`, `identity_card`, `identity_emitter`, `state_emitter`, `date_expedition`, `id_select_city_of_birth`, `date_birth`, `c_p_f`, `cep`, `street`, `number_house`, `complement`, `neighborhood`, `uf_cep`, `city_cep`, `telephone`, `cellphone`, `email`, `status`, `date_register`, `id_user`) VALUES
-(00000000001, '', '', '', '', '', 0, 'Não Possui', '', '', '', '0', 0, '0', '0', '0000-00-00', 0, 0, 'Não Possui', 0, '', '', '0000-00-00', 0, '0000-00-00', '', '', '', 'S/N', 'Não Possui', '', '', '', '(00) 00000-0000', '(51) 31351-3131', '', '1', '2022-05-23 02:42:49', 0),
-(00000000002, '', 'd', '', NULL, '', 0, NULL, '', '', '', '', 0, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, '0000-00-00', '', NULL, '', '', NULL, '', '', '', NULL, NULL, NULL, '1', '2022-05-23 02:42:49', 0),
-(00000000003, '', '', 'C:fakepath20200307_112208.jpg', '', '', 0, 'Não Possui', '', '', '', '0', 0, '0', '0', '0000-00-00', 0, 0, 'Não Possui', 0, '', '', '0000-00-00', 0, '0000-00-00', '', '', '', 'S/N', 'Não Possui', '', '', '', '(00) 00000-0000', '(12) 31813-8138', '', '1', '2022-05-23 02:42:49', 0),
-(00000000004, '', '', 'C:fakepath20200307_112208.jpg', '', '', 0, 'Não Possui', '', '', '', '0', 0, '0', '0', '0000-00-00', 0, 0, 'Não Possui', 0, '', '', '0000-00-00', 0, '0000-00-00', '', '', '', 'S/N', 'Não Possui', '', '', '', '(00) 00000-0000', '(12) 31813-8138', '', '1', '2022-05-23 02:42:49', 0),
-(00000000005, 'dbkfbkbkn', 'lcgn lfnl gflngbl fglfnl', '', 'lnlnlnl', 'nlnnliu', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '2002-02-02', '20-20', '61921-160', 'Rua 15', 'S/N', '1531', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(11) 35135', '', '1', '2022-05-23 02:42:49', 0),
-(00000000006, '522', '135135', '', '', '52', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '2000-02-02', '5', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(52', '', '1', '2022-05-23 02:42:49', 0),
-(00000000007, '522', '135135', '', '', '52', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '2000-02-02', '5', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(52', '', '1', '2022-05-23 02:42:49', 0),
-(00000000008, '522', '135135', '', '', '52', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '2000-02-02', '5', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(52', '', '1', '2022-05-23 02:42:49', 0),
-(00000000009, '522', '135135', '', '', '52', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '2000-02-02', '5', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(52', '', '1', '2022-05-23 02:42:49', 0),
-(00000000010, '522', '135135', '', '', '52', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '2000-02-02', '5', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(52', '', '1', '2022-05-23 02:42:49', 0),
-(00000000011, '522', '135135', '', '', '52', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '2000-02-02', '5', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(52', '', '1', '2022-05-23 02:42:49', 0),
-(00000000012, 'rhrt', 'hrthr', '', 'thrthrth', 'rthrth', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '2222-02-02', '5-15', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(52', '', '1', '2022-05-23 02:42:49', 0),
-(00000000013, 'rhrt', 'hrthr', '', 'thrthrth', 'rthrth', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '2222-02-02', '5-15', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(52', '', '1', '2022-05-23 02:42:49', 0),
-(00000000014, 'fnbfgn', 'ghngh', '', '', 'nghng', 1, 'Não Possui', 'Feminino', '4ª Série do Ensino Fundamental', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '0222-02-02', '05.050-50', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(13) 6815', '', '1', '2022-05-23 02:42:49', 0),
-(00000000015, 'ghngt', 'hnghng', '', 'ghng', 'nghngh', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Incompleto', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '0222-02-02', '256-13', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(25) 25', '', '1', '2022-05-23 02:42:49', 0),
-(00000000016, 'fgbfg', 'bfgbfg', 'C:fakepath20200307_112208.jpg', '', 'bfgbfgbf', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 2, 'Não Possui', 0, '', '', '0000-00-00', 1, '2023-01-04', '515.151.515-15', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(16) 115', '', '1', '2022-05-23 02:42:49', 0),
-(00000000017, 'fgbfg', 'bfgbfg', 'C:fakepath20200307_112208.jpg', '', 'bfgbfgbf', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 2, 'Não Possui', 0, '', '', '0000-00-00', 1, '2023-01-04', '515.151.515-15', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(16) 115', '', '1', '2022-05-23 02:42:49', 0),
-(00000000018, 'fgbfg', 'bfgbfg', 'C:fakepath20200307_112208.jpg', '', 'bfgbfgbf', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 2, 'Não Possui', 0, '', '', '0000-00-00', 1, '2023-01-04', '515.151.515-15', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(16) 115', '', '1', '2022-05-23 02:42:49', 0),
-(00000000019, 'fgbfg', 'bfgbfg', 'C:fakepath20200307_112208.jpg', '', 'bfgbfgbf', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 2, 'Não Possui', 0, '', '', '0000-00-00', 1, '2023-01-04', '515.151.515-15', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(16) 115', '', '1', '2022-05-23 02:42:49', 0),
-(00000000020, 'fgbfg', 'bfgbfg', 'C:fakepath20200307_112208.jpg', '', 'bfgbfgbf', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 2, 'Não Possui', 0, '', '', '0000-00-00', 1, '2023-01-04', '515.151.515-15', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(16) 115', '', '1', '2022-05-23 02:42:49', 0),
-(00000000021, 'fgbfg', 'bfgbfg', 'C:fakepath20200307_112208.jpg', '', 'bfgbfgbf', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 2, 'Não Possui', 0, '', '', '0000-00-00', 1, '2023-01-04', '515.151.515-15', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(16) 115', '', '1', '2022-05-23 02:42:49', 0),
-(00000000022, 'fgbfg', 'bfgbfg', 'C:fakepath20200307_112208.jpg', '', 'bfgbfgbf', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 2, 'Não Possui', 0, '', '', '0000-00-00', 1, '2023-01-04', '515.151.515-15', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(16) 115', '', '1', '2022-05-23 02:42:49', 0),
-(00000000023, 'fgbfg', 'bfgbfg', 'C:fakepath20200307_112208.jpg', '', 'bfgbfgbf', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 2, 'Não Possui', 0, '', '', '0000-00-00', 1, '2023-01-04', '515.151.515-15', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(16) 115', '', '1', '2022-05-23 02:42:49', 0),
-(00000000024, 'f nf', 'ngfng', '', 'hngv', 'gnhghn', 1, 'Não Possui', 'Masculino', 'Alfabetizado', 'Completo', '0', 0, '0', '0', '0000-00-00', 1, 1, 'Não Possui', 0, '', '', '0000-00-00', 1, '2023-01-03', '551-36', '61921-160', 'Rua 15', 'S/N', 'Não Possui', 'Novo Oriente', 'CE', 'Maracanaú', '(00) 00000-0000', '(11) 514', '', '1', '2022-05-23 02:44:40', 0);
 
 -- --------------------------------------------------------
 
@@ -395,7 +365,7 @@ ALTER TABLE `access_nivel`
 -- AUTO_INCREMENT de tabela `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `report_login`

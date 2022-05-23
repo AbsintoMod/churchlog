@@ -186,8 +186,10 @@ $info_null_son = 'Insira o número de filhos para o cadastro. Max de 6 (Seis) de
 $info_register_son_empty = 'Não possui filhos';
 $info_register_son = 'Cadastrou um total de:'; 
 $info_son = 'filhos';
-$info_register_member = 'Cadastro de novo Membro';
+$info_register_member = 'Cadastro de Novo Membro';
+$info_register_member_save = 'Cadastro Realizado';
 $info_erro_register_member = 'Cadastro não realizado';
+$info_erro_register_member_exist = 'Membro ja Cadastrado';
 
 $info_sectors = 'Setores';
 
