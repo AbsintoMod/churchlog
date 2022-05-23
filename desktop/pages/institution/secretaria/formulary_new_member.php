@@ -1,5 +1,4 @@
 <?php
-/*
 session_start();
 
 if (empty($_SESSION['id'])) {
@@ -9,8 +8,7 @@ if (empty($_SESSION['id'])) {
 
 $lang = $_SESSION['lang'];
 require_once '../../../../assets/lang/' . $lang . '.php';
-*/
-require_once '../../../../assets/lang/pt-br.php';
+
 
 require_once '../../../../php/const_conn.php';
 $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
@@ -85,7 +83,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                                     $row = $result->fetch_assoc();
                                                     $mat = isset($row['id']) ? $row['id']+1 : 1;
                                                 ?>
-                                                <input type="text" class="form-control" id="matricula" name="matricula" readonly>
+                                                <input type="text" class="form-control" id="matricula" readonly>
                                             </div>
                                         </div>
                                         <div class="w-100"></div>
@@ -712,7 +710,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
         //prenche com zero o campo
         function pad(str) {
             const resto = 5 - String(str).length;
-            document.querySelector('#matricula').value = '0'.repeat(resto > 0 ? resto : '0') + str
+            document.querySelector('#matricula').placeholder = '0'.repeat(resto > 0 ? resto : '0') + str
         }
         pad("<?= $mat ?>")
 
