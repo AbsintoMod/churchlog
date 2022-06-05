@@ -22,3 +22,15 @@
     $('#countries').on({
       change:()=>{console.log(event.type +': ' +event.which)},
     })
+
+
+
+
+
+    SELECT
+	select_city.id, select_city.city, select_state.id, select_state.state, select_country.id, select_country.country
+FROM select_city
+INNER JOIN
+    select_state ON select_state.id = select_city.id_select_state
+INNER JOIN
+    select_country ON select_country.id = select_state.id_select_country

@@ -142,6 +142,7 @@ $label_item = 'Item';
 $label_detail = 'Detalhe';
 $label_target_sector = 'Setor de Destino';
 $label_dependents = 'Dependentes';
+$label_date_register = 'Data de Registro';
 
 //========================BUTTONS=====================//
 
@@ -190,7 +191,7 @@ $info_register_member = 'Cadastro de Novo Membro';
 $info_register_member_save = 'Cadastro Realizado';
 $info_erro_register_member = 'Cadastro não realizado';
 $info_erro_register_member_exist = 'Membro ja Cadastrado';
-
+$info_member_list = 'Relação de Membros';
 $info_sectors = 'Setores';
 
 //MODAL-LOGOFF

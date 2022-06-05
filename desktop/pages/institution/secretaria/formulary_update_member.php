@@ -8,10 +8,40 @@ if (empty($_SESSION['id'])) {
 
 $lang = $_SESSION['lang'];
 require_once '../../../../assets/lang/' . $lang . '.php';
-
-
 require_once '../../../../php/const_conn.php';
 $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
+
+if (!empty($_GET)) {
+    $member_id = $_GET["id"];
+
+    $sql = "SELECT * FROM `members` WHERE `id` = $member_id";
+    $result = mysqli_query($conn, $sql);
+    $member = mysqli_fetch_array($result);
+    
+    echo '<pre>';
+    print_r($member);
+    echo '</pre>';
+
+    //search city / state / country
+    $locale = $member['id_select_city_of_birth'];
+    $sql = "SELECT\n"
+
+    . "	select_city.id AS id_city, select_city.city, select_state.id AS id_state, select_state.state, select_country.id AS id_country, select_country.country\n"
+
+    . "FROM select_city\n"
+
+    . "INNER JOIN\n"
+
+    . "    select_state ON select_city.id_select_state = select_state.id \n"
+
+    . "INNER JOIN\n"
+
+    . "    select_country ON select_state.id_select_country = select_country.id WHERE select_city.id = '$locale';";
+
+    $result = mysqli_query($conn, $sql);
+    $search_locale = mysqli_fetch_array($result);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -69,7 +99,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                 <h2 class="mt-3 mb-3 text-center"><?= $menu_information ?></h2>
                                 <div class="row align-items-center">
                                     <div class="d-none d-sm-block col-12 col-md-6 text-center">
-                                        <img src="../../../../dist/img/background/bg-box/boxed-bg.jpg" alt="foto" class="img-thumbnail" style="max-width: 250px; height: 300px;">
+                                    <img src="../../../.<?=$member['path_image']?>" alt="foto" class="img-thumbnail" style="max-width: 250px; height: 300px;">
                                         <input type="file" class="collapse" name="photo" id="photo" accept=".jpg,.jpeg,.png">
                                     </div>
                                     <div class="col-12 col-md-6">
@@ -77,10 +107,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                             <label for="matricula" class="col-12 control-label"><?= $label_registration ?>:</label>
                                             <div class="col-12">
                                                 <?php
-                                                    $pesquisa = "SELECT id FROM `members` ORDER BY id DESC LIMIT 1";
-                                                    $result = $conn->query($pesquisa);
-                                                    $row = $result->fetch_assoc();
-                                                    $mat = isset($row['id']) ? $row['id']+1 : 1;
+                                                    $mat = $member['id'];
                                                 ?>
                                                 <input type="text" class="form-control" id="matricula" readonly>
                                             </div>
@@ -89,7 +116,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                         <div class="form-group col-sm-12">
                                             <label for="nome" class="col-md-10 control-label"><?= $label_name ?>:</label>
                                             <div class="col-md-12">
-                                                <input type="text" required class="form-control" id="nome" placeholder="..." name="nome" value="">
+                                                <input type="text" required class="form-control" id="nome" placeholder="..." name="nome" value="<?=$member['first_name']?>">
                                                 <div class="invalid-feedback">
                                                     <?= $info_firstname_required ?>.
                                                 </div>
@@ -98,7 +125,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                         <div class="form-group col-sm-12">
                                             <label for="sobrenome" class="col-md-10 control-label"><?= $label_surname ?>:</label>
                                             <div class="col-md-12">
-                                                <input type="text" class="form-control" id="sobrenome" placeholder="..." name="sobrenome" value="" required>
+                                                <input type="text" class="form-control" id="sobrenome" placeholder="..." name="sobrenome" value="<?=$member['second_name']?>" required>
                                                 <div class="invalid-feedback">
                                                     <?= $info_secondname_required ?>.
                                                 </div>
@@ -111,13 +138,13 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-6">
                                         <label for="pai" class="col-sm-4 control-label"><?= $label_father_name ?>:</label>
                                         <div class="col-sm-12">
-                                            <input name="nome_pai" type="text" class="form-control" id="pai" placeholder="..." value="">
+                                            <input name="nome_pai" type="text" class="form-control" id="pai" placeholder="..." value="<?=$member['name_father']?>">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="mae" class="col-sm-4 control-label"><?= $label_mother_name ?>:</label>
                                         <div class="col-sm-12">
-                                            <input type="text" name="nome_mae" class="form-control" id="mae" placeholder="..." value="" required>
+                                            <input type="text" name="nome_mae" class="form-control" id="mae" placeholder="..." value="<?=$member['name_mother']?>" required>
                                             <div class="invalid-feedback">
                                                 <?= $info_parent_required ?>.
                                             </div>
@@ -145,7 +172,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-8">
                                         <label for="conjuge" class="col-sm-4 control-label"><?= $label_spouse_name ?>:</label>
                                         <div class="col-sm-12">
-                                            <input type="text" name="conjuge" class="form-control" disabled id="conjuge" placeholder="..." value="" required>
+                                            <input type="text" name="conjuge" class="form-control" disabled id="conjuge" placeholder="..." value="<?= $member['conjuge_name'] ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= $info_firstname_required ?>.
                                             </div>
@@ -159,12 +186,8 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                         <div class="col-sm-12">
                                             <select name="sexo" class="form-select" id="sexo" required>
                                                 <option value="" selected>...</option>
-                                                <option value="1">
-                                                    <?= $select_sex_male ?>
-                                                </option>
-                                                <option value="2">
-                                                    <?= $select_sex_female ?>
-                                                </option>
+                                                <option value="1"><?= $select_sex_male ?></option>
+                                                <option value="2"><?= $select_sex_female ?></option>
                                             </select>
                                             <div class="invalid-feedback">
                                                 <?= $info_select_required ?>.
@@ -220,7 +243,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
                                 <div class="row">
                                     <div class="form-group col-12 col-md-3">
-                                        <label class="col-12 control-label"><?= $label_have_a_son ?>?:</label>
+                                        <label class="col-12 control-label"><?= $label_have_a_son ?>:</label>
                                         <div class="col-12">
                                             <select name="filho" onchange="possuiFilho()" class="form-select" id="filho" required>
                                                 <option value="0" selected><?= $no ?></option>
@@ -235,7 +258,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-12 col-md-3">
                                         <label class="col-12 control-label"><?= $label_quantity ?>:</label>
                                         <div class="input-group">
-                                            <input type="text" name="num_filho" id="num_filho" class="form-control numero" disabled placeholder="Max.6" required>
+                                            <input type="text" name="num_filho" id="num_filho" class="form-control numero" disabled placeholder="Max.6" value="<?=$member['amount_son']?>" required>
                                             <button type="button" id="botao_filho" class="btn btn-info" disabled onclick="addFilho()"><i class="fas fa-plus"></i></button>
                                             <div class="invalid-feedback"><?= $info_add_son_required ?>.</div>
                                         </div>
@@ -259,7 +282,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                 <h2 class="mt-5 mb-5 text-center"><?= $menu_religious_data ?></h2>
                                 <div class="row">
                                     <div class="form-group col-12 col-md-2">
-                                        <label class="col-12 control-label"><?= $label_communing ?>?:</label>
+                                        <label class="col-12 control-label"><?= $label_communing ?>:</label>
                                         <div class="col-12">
                                             <select name="comunga" class="form-select" id="comunga" onchange="com(this.value)" required>
                                                 <option value="" selected>...</option>
@@ -275,7 +298,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-12 col-md-3">
                                         <label for="data_batismo" class="col-12 control-label"><?= $label_baptism_date ?>:</label>
                                         <div class="col-12">
-                                            <input name="data_batismo" maxlength="10" type="date" class="form-control" id="data_batismo" disabled required>
+                                            <input name="data_batismo" maxlength="10" type="date" class="form-control" id="data_batismo" disabled value="<?= $member['baptism_date'] ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= $info_date_required ?>.
                                             </div>
@@ -326,7 +349,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div id="addIgreja" class="form-group col-12 collapse">
                                         <label for="igreja_anterior" class="col-12 control-label"><?= $label_previous_church ?>:</label>
                                         <div class="col-12">
-                                            <input name="igreja_anterior" type="text" disabled class="form-control" id="igreja_anterior" placeholder="..." value="" required>
+                                            <input name="igreja_anterior" type="text" disabled class="form-control" id="igreja_anterior" placeholder="..." value="<?= $member['previous_church'] ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= $info_church_required ?>.
                                             </div>
@@ -339,14 +362,14 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-3">
                                         <label for="rg" class="col-12 control-label"><?= $label_Identity ?>:</label>
                                         <div class="col-12">
-                                            <input name="rg" type="text" maxlength="15" class="form-control numero" id="rg" placeholder="..." value="">
+                                            <input name="rg" type="text" maxlength="15" class="form-control numero" id="rg" placeholder="..." value="<?= $member['identity_card'] ?>">
                                         </div>
                                     </div>
 
                                     <div class="form-group col-md-2">
                                         <label for="orgao_expd" class="col-12 control-label"><?= $label_shipping_department ?>:</label>
                                         <div class="col-12">
-                                            <input name="rg_orgao" type="text" class="form-control" id="orgao_expd" placeholder="..." value="">
+                                            <input name="rg_orgao" type="text" class="form-control" id="orgao_expd" placeholder="..." value="<?= $member['identity_emitter'] ?>">
                                         </div>
                                     </div>
 
@@ -369,7 +392,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-4">
                                         <label for="data_expd" class="col-sm-12 control-label"><?= $label_shipping_date ?>:</label>
                                         <div class="col-sm-12">
-                                            <input name="rg_expedicao" maxlength="10" type="date" class="form-control" id="data_expd" placeholder="..." value="">
+                                            <input name="rg_expedicao" maxlength="10" type="date" class="form-control" id="data_expd" placeholder="..." value="<?= $member['date_expedition']?>">
                                         </div>
                                     </div>
                                 </div>
@@ -398,18 +421,13 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                         <div class="col-sm-12">
                                             <select name="estado_nasc" class="form-select" id="estado_nasc" required>
                                                 <option value="">...</option>
-                                                <?php /*
-                                                        $buscaEstado = mysqli_query($conn, "SELECT `id`,`state` FROM `select_state`;");
-                                                        while ($estado = mysqli_fetch_object($buscaEstado)):
-                                                            echo "<option value='$estado->id'>$estado->state</option>";
-                                                        endwhile;
-                                                    */ ?>
                                             </select>
                                             <div class="invalid-feedback">
                                                 <?= $info_select_required ?>.
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="form-group col-md-4">
                                         <label for="cidade_nasc" class="col-sm-12 control-label"><?= $label_naturalness ?>:</label>
                                         <div class="col-sm-12">
@@ -427,7 +445,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-4">
                                         <label for="nascimento" class="col-sm-12 control-label"><?= $label_date_of_birth ?>:</label>
                                         <div class="col-sm-12">
-                                            <input name="data_nascimento" maxlength="10" type="date" class="form-control" id="nascimento" placeholder="..." value="" required>
+                                            <input name="data_nascimento" maxlength="10" type="date" class="form-control" id="nascimento" placeholder="..." value="<?= $member['date_birth'] ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= $info_date_required ?>.
                                             </div>
@@ -436,7 +454,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-4">
                                         <label for="cpf" class="col-md-4 control-label">CPF:</label>
                                         <div class="col-md-12">
-                                            <input type="text" class="form-control cpf" id="cpf" placeholder="..." name="cpf" value="" required>
+                                            <input type="text" class="form-control cpf" id="cpf" placeholder="..." name="cpf" value="<?= $member['c_p_f'] ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= $info_cpf_required ?>.
                                             </div>
@@ -449,13 +467,13 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-3">
                                         <label for="cep" class="col-md-12 control-label"><?= $label_zip_code ?>:</label>
                                         <div class="col-md-12">
-                                            <input name="cep" type="text" class="form-control cep" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" placeholder="...">
+                                            <input name="cep" type="text" class="form-control cep" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" value="<?= $member['cep'] ?>" placeholder="...">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-9">
                                         <label for="rua" class="col-md-6 control-label"><?= $label_street ?>:</label>
                                         <div class="col-md-12">
-                                            <input name="rua" type="text" class="form-control" id="rua" size="60" placeholder="..." value="" required>
+                                            <input name="rua" type="text" class="form-control" id="rua" size="60" placeholder="..." value="<?= $member['street'] ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= $info_street_required ?>.
                                             </div>
@@ -467,19 +485,19 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-3">
                                         <label for="numero" class="col-md-12 control-label"><?= $label_number ?>:</label>
                                         <div class="col-md-12">
-                                            <input name="numero" type="text" class="form-control" id="numero" placeholder="..." value="">
+                                            <input name="numero" type="text" class="form-control" id="numero" placeholder="..." value="<?= $member['number_house'] ?>">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="complemento" class="col-12 control-label"><?= $label_complement ?>:</label>
                                         <div class="col-md-12">
-                                            <input name="complemento" type="text" class="form-control" id="complemento" placeholder="..." value="">
+                                            <input name="complemento" type="text" class="form-control" id="complemento" placeholder="..." value="<?= $member['complement'] ?>">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="bairro" class="col-md-6 control-label"><?= $label_neighborhood ?>:</label>
                                         <div class="col-md-12">
-                                            <input name="bairro" type="text" class="form-control" id="bairro" size="40" placeholder="..." value="" required>
+                                            <input name="bairro" type="text" class="form-control" id="bairro" size="40" placeholder="..." value="<?= $member['neighborhood'] ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= $info_neighborhood_required ?>.
                                             </div>
@@ -491,7 +509,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-8">
                                         <label for="cidade" class="col-sm-12 control-label"><?= $label_city ?>:</label>
                                         <div class="col-sm-12">
-                                            <input name="cidade" class="form-control" type="text" id="cidade" size="40" placeholder="..." required>
+                                            <input name="cidade" class="form-control" type="text" id="cidade" size="40" placeholder="..." required value="<?= $member['city_cep'] ?>">
                                             <div class="invalid-feedback">
                                                 <?= $info_city_required ?>.
                                             </div>
@@ -500,7 +518,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-4">
                                         <label for="uf_cep" class="col-sm-12 control-label"><?= $label_state ?>:</label>
                                         <div class="col-sm-12">
-                                            <input name="uf_cep" type="text" id="uf_cep" size="2" class="form-control" placeholder="..." required>
+                                            <input name="uf_cep" type="text" id="uf_cep" size="2" class="form-control" placeholder="..." required value="<?= $member['uf_cep'] ?>">
                                             <div class="invalid-feedback">
                                                 <?= $info_state_required ?>.
                                             </div>
@@ -513,13 +531,13 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-6">
                                         <label for="telefone" class="col-sm-12 control-label"><?= $label_telephone ?>:</label>
                                         <div class="col-sm-12">
-                                            <input name="telefone" type="text" class="form-control phone_with_ddd" id="telefone" placeholder="..." value="">
+                                            <input name="telefone" type="text" class="form-control phone_with_ddd" id="telefone" placeholder="..." value="<?= $member['telephone'] ?>">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="celular" class="col-sm-12 control-label"><?= $label_cell_phone ?>:</label>
                                         <div class="col-sm-12">
-                                            <input name="celular" type="text" class="form-control celular_com_9" id="celular" placeholder="..." value="" required>
+                                            <input name="celular" type="text" class="form-control celular_com_9" id="celular" placeholder="..." value="<?= $member['cellphone'] ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= $info_cell_required ?>.
                                             </div>
@@ -531,7 +549,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-6">
                                         <label for="email" class="col-sm-12 control-label"><?= $label_email ?>:</label>
                                         <div class="col-sm-12">
-                                            <input name="email" type="email" class="form-control" id="email" placeholder="..." value="">
+                                            <input name="email" type="email" class="form-control" id="email" placeholder="..." value="<?= $member['email'] ?>">
                                             <div class="invalid-feedback">
                                                 <?= $info_email_valid ?>
                                             </div>
@@ -540,7 +558,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-6">
                                         <label for="emailc" class="col-sm-12 control-label"><?= $label_confirm_email ?>:</label>
                                         <div class="col-sm-12">
-                                            <input name="emailc" onblur="verificaEmail(this.value)" type="email" class="form-control" id="emailc" placeholder="..." value="">
+                                            <input name="emailc" onblur="verificaEmail(this.value)" type="email" class="form-control" id="emailc" placeholder="..." value="<?= $member['email'] ?>">
                                             <div class="invalid-feedback">
                                                 <?= $info_email_valid ?>
                                             </div>
@@ -553,7 +571,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                         <button type="reset" class="btn btn-form btn-warning"><?= $button_clean ?></button>
                                     </div>
                                     <div class="col-12 col-sm-6 text-center mt-4">
-                                        <button id="btn-cad" type="submit" class="btn btn-form btn-success"><?= $button_register ?></button>
+                                        <button id="btn-cad" type="submit" class="btn btn-form btn-success"><?= $button_update ?></button>
                                     </div>
                                 </div>
                             </div><!-- /.card -->
@@ -769,6 +787,44 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
         $('[type=reset]').on('click', () => {
             forms.removeClass("was-validated");
         })
+
+        //load form values
+        var sel_marital = "<?= $member['marital_status']; ?>";
+        $('#cod_estado_civil').val(sel_marital).change();
+        var sel_sex = "<?= $member['sex']; ?>";
+        $('#sexo').val(sel_sex).change();
+        var sel_schooling = "<?= $member['schooling']; ?>";
+        $('#escolaridade').val(sel_schooling).change();
+        var sel_status_schooling = "<?= $member['status_schooling']; ?>";
+        $('#escolaridade_status').val(sel_status_schooling).change();
+        var sel_son = "<?= $member['son']; ?>";
+        $('#filho').val(sel_son).change();
+        var sel_comungante = "<?= $member['comungante']; ?>";
+        $('#comunga').val(sel_comungante).change();
+        var sel_type_admission = "<?= $member['type_admission']; ?>";
+        $('#tipo_admissao').val(sel_type_admission).change();
+        var sel_ministerial_function = "<?= $member['id_select_ministerial_function']; ?>";
+        $('#funcao_ministerio').val(sel_ministerial_function).change();
+        var sel_state_emitter = "<?= $member['state_emitter'] ?>";
+        $('#rg_estado').val(sel_state_emitter).change();
+
+        var sel_country = "<?= $search_locale['id_country'] ?>";
+        $('#pais_nasc').val(sel_country).change();
+
+        setTimeout(() => {
+            var sel_state = "<?= $search_locale['id_state'] ?>";
+            $('#estado_nasc').val(sel_state).change();            
+        }, 500);
+
+        setTimeout(() => {
+            var sel_city = "<?= $search_locale['id_city'] ?>";
+            $('#cidade_nasc').val(sel_city).change();            
+        }, 1000);
+        
+        var have_son = <?= $member['amount_son'] ?>;
+        if (have_son != '0') {
+            addFilho()
+        }
 
         //prevent sair page
         /*window.addEventListener('beforeunload', e => {
