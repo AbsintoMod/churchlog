@@ -18,26 +18,26 @@ if (!empty($_GET)) {
     $sql = "SELECT * FROM `members` WHERE `id` = $member_id";
     $result = mysqli_query($conn, $sql);
     $member = mysqli_fetch_array($result);
-    
+
     echo '<pre>';
-    print_r($member);
+    //print_r($member);
     echo '</pre>';
 
     //search city / state / country
     $locale = $member['id_select_city_of_birth'];
     $sql = "SELECT\n"
 
-    . "	select_city.id AS id_city, select_city.city, select_state.id AS id_state, select_state.state, select_country.id AS id_country, select_country.country\n"
+        . "	select_city.id AS id_city, select_city.city, select_state.id AS id_state, select_state.state, select_country.id AS id_country, select_country.country\n"
 
-    . "FROM select_city\n"
+        . "FROM select_city\n"
 
-    . "INNER JOIN\n"
+        . "INNER JOIN\n"
 
-    . "    select_state ON select_city.id_select_state = select_state.id \n"
+        . "    select_state ON select_city.id_select_state = select_state.id \n"
 
-    . "INNER JOIN\n"
+        . "INNER JOIN\n"
 
-    . "    select_country ON select_state.id_select_country = select_country.id WHERE select_city.id = '$locale';";
+        . "    select_country ON select_state.id_select_country = select_country.id WHERE select_city.id = '$locale';";
 
     $result = mysqli_query($conn, $sql);
     $search_locale = mysqli_fetch_array($result);
@@ -99,7 +99,7 @@ if (!empty($_GET)) {
                                 <h2 class="mt-3 mb-3 text-center"><?= $menu_information ?></h2>
                                 <div class="row align-items-center">
                                     <div class="d-none d-sm-block col-12 col-md-6 text-center">
-                                    <img src="../../../.<?=$member['path_image']?>" alt="foto" class="img-thumbnail" style="max-width: 250px; height: 300px;">
+                                        <img src="../../../.<?= $member['path_image'] ?>" alt="foto" class="img-thumbnail" style="max-width: 250px; height: 300px;">
                                         <input type="file" class="collapse" name="photo" id="photo" accept=".jpg,.jpeg,.png">
                                     </div>
                                     <div class="col-12 col-md-6">
@@ -107,7 +107,7 @@ if (!empty($_GET)) {
                                             <label for="matricula" class="col-12 control-label"><?= $label_registration ?>:</label>
                                             <div class="col-12">
                                                 <?php
-                                                    $mat = $member['id'];
+                                                $mat = $member['id'];
                                                 ?>
                                                 <input type="text" class="form-control" id="matricula" readonly>
                                             </div>
@@ -116,7 +116,7 @@ if (!empty($_GET)) {
                                         <div class="form-group col-sm-12">
                                             <label for="nome" class="col-md-10 control-label"><?= $label_name ?>:</label>
                                             <div class="col-md-12">
-                                                <input type="text" required class="form-control" id="nome" placeholder="..." name="nome" value="<?=$member['first_name']?>">
+                                                <input type="text" required class="form-control" id="nome" placeholder="..." name="nome" value="<?= $member['first_name'] ?>">
                                                 <div class="invalid-feedback">
                                                     <?= $info_firstname_required ?>.
                                                 </div>
@@ -125,7 +125,7 @@ if (!empty($_GET)) {
                                         <div class="form-group col-sm-12">
                                             <label for="sobrenome" class="col-md-10 control-label"><?= $label_surname ?>:</label>
                                             <div class="col-md-12">
-                                                <input type="text" class="form-control" id="sobrenome" placeholder="..." name="sobrenome" value="<?=$member['second_name']?>" required>
+                                                <input type="text" class="form-control" id="sobrenome" placeholder="..." name="sobrenome" value="<?= $member['second_name'] ?>" required>
                                                 <div class="invalid-feedback">
                                                     <?= $info_secondname_required ?>.
                                                 </div>
@@ -138,13 +138,13 @@ if (!empty($_GET)) {
                                     <div class="form-group col-md-6">
                                         <label for="pai" class="col-sm-4 control-label"><?= $label_father_name ?>:</label>
                                         <div class="col-sm-12">
-                                            <input name="nome_pai" type="text" class="form-control" id="pai" placeholder="..." value="<?=$member['name_father']?>">
+                                            <input name="nome_pai" type="text" class="form-control" id="pai" placeholder="..." value="<?= $member['name_father'] ?>">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="mae" class="col-sm-4 control-label"><?= $label_mother_name ?>:</label>
                                         <div class="col-sm-12">
-                                            <input type="text" name="nome_mae" class="form-control" id="mae" placeholder="..." value="<?=$member['name_mother']?>" required>
+                                            <input type="text" name="nome_mae" class="form-control" id="mae" placeholder="..." value="<?= $member['name_mother'] ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= $info_parent_required ?>.
                                             </div>
@@ -258,8 +258,8 @@ if (!empty($_GET)) {
                                     <div class="form-group col-12 col-md-3">
                                         <label class="col-12 control-label"><?= $label_quantity ?>:</label>
                                         <div class="input-group">
-                                            <input type="text" name="num_filho" id="num_filho" class="form-control numero" disabled placeholder="Max.6" value="<?=$member['amount_son']?>" required>
-                                            <button type="button" id="botao_filho" class="btn btn-info" disabled onclick="addFilho()"><i class="fas fa-plus"></i></button>
+                                            <input type="text" name="num_filho" id="num_filho" class="form-control numero" disabled placeholder="Max.6" value="<?= $member['amount_son'] ?>" required>
+                                            <button type="button" id="botao_filho" class="btn btn-info" disabled onclick="updateFilho()"><i class="fas fa-plus"></i></button>
                                             <div class="invalid-feedback"><?= $info_add_son_required ?>.</div>
                                         </div>
                                     </div>
@@ -276,6 +276,24 @@ if (!empty($_GET)) {
                                     <h2 class="mt-5 mb-5 text-center"><?= $label_dependents ?></h2>
                                     <div id="addDependente">
                                         <!--area para add dependentes-->
+                                        <div class="row align-items-end">
+                                            <?php
+                                            $son = $member['name_son'];
+                                            $array_son = explode(',', $son);
+                                            $a = 0;
+                                            while ($a < count($array_son)) {
+                                            ?>
+                                                <div class="form-group col-12">
+                                                    <label for="nome_filho" class="col-12 control-label"><?= $b = $a + 1 ?>º:</label>
+                                                    <div class="col-12">
+                                                        <input type="text" class="form-control" id="nome_filho" name="nome_filho" value="<?= $array_son[$a] ?>">
+                                                    </div>
+                                                </div>
+                                            <?php
+                                                $a++;
+                                            }
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -392,7 +410,7 @@ if (!empty($_GET)) {
                                     <div class="form-group col-md-4">
                                         <label for="data_expd" class="col-sm-12 control-label"><?= $label_shipping_date ?>:</label>
                                         <div class="col-sm-12">
-                                            <input name="rg_expedicao" maxlength="10" type="date" class="form-control" id="data_expd" placeholder="..." value="<?= $member['date_expedition']?>">
+                                            <input name="rg_expedicao" maxlength="10" type="date" class="form-control" id="data_expd" placeholder="..." value="<?= $member['date_expedition'] ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -568,7 +586,7 @@ if (!empty($_GET)) {
 
                                 <div class="row">
                                     <div class="col-12 col-sm-6 text-center mt-4">
-                                        <button type="reset" class="btn btn-form btn-warning"><?= $button_clean ?></button>
+                                        <button type="button" class="btn btn-form btn-primary" onclick="back()"><?= $button_go_back ?></button>
                                     </div>
                                     <div class="col-12 col-sm-6 text-center mt-4">
                                         <button id="btn-cad" type="submit" class="btn btn-form btn-success"><?= $button_update ?></button>
@@ -631,7 +649,14 @@ if (!empty($_GET)) {
     <script src="../../../../dist/js/pages/jquery.mask.min.js"></script>
     <script src="../../../../dist/js/pages/mascara.js"></script>
     <script src="../../../../dist/js/pages/formulario.js"></script>
+    <script src="../../../../dist/js/pages/update_register.js"></script>
     <script>
+
+        function back(){
+            $('#secretariat').click();
+            console.log('voltar');
+        }
+
         $(document).keydown(function(e) {
             if (e.keyCode == 13) {
                 return false;
@@ -653,7 +678,7 @@ if (!empty($_GET)) {
             }).done(function(data) {
                 if (data == '') {
                     $("#cidade_nasc").html(data);
-                    alert('Não ha Cidades para este Estado. Contactar Suporte');
+                    alert('<?= $info_values_city ?>');
                 } else {
                     $('#cidade_nasc').html(data);
                 }
@@ -672,7 +697,7 @@ if (!empty($_GET)) {
             }).done(function(data) {
                 if (data == '') {
                     $("#estado_nasc").html(data);
-                    alert('Não ha Estados para este Pais. Contactar Suporte');
+                    alert('<?= $info_values_state ?>');
                 } else {
                     $("#estado_nasc").html(data);
                 }
@@ -683,7 +708,7 @@ if (!empty($_GET)) {
         function verificaEmail(value) {
             let email = document.querySelector('#email').value;
             if (email != value) {
-                alert('Email não confere. Por favor verifique!!!');
+                alert('<?= $info_verify_email ?>');
             }
         }
 
@@ -696,16 +721,16 @@ if (!empty($_GET)) {
         $('#photo').on("change", function(e) {
             for (const file of this.files) {
                 if (file.type === 'image/png' || file.type === 'image/jpeg') {
-                    $('#btn-cad').removeAttr('disabled','true');
+                    $('#btn-cad').removeAttr('disabled', 'true');
                     showThumbnail(this.files);
-                }else if (file.size > 3145728) {
-                    $('#btn-cad').attr('disabled','true');
+                } else if (file.size > 3145728) {
+                    $('#btn-cad').attr('disabled', 'true');
                     $('.img-thumbnail').attr('src', '../../../../dist/img/background/bg-box/boxed-bg-alert.jpg');
-                    alert('Tamanho MAX do Arquivo é de 3Mb')
-                }else{
+                    alert('<?= $info_size_photo ?>')
+                } else {
                     $('#btn-cad').attr('disabled', '');
                     $('.img-thumbnail').attr('src', '../../../../dist/img/background/bg-box/boxed-bg-alert.jpg');
-                    alert('Tipo de Arquivo Invalido')
+                    alert('<?= $info_type_photo ?>')
                 }
                 /*console.log("Filename: ", file.name);
                 console.log("Type: ", file.type);
@@ -748,24 +773,11 @@ if (!empty($_GET)) {
                                 Swal.fire({
                                     position: 'top-end',
                                     icon: 'success',
-                                    title: '<?= $info_register_member_save ?>.',
+                                    title: '<?= $info_register_member_update ?>.',
                                     showConfirmButton: false,
                                     timer: 1500
                                 });
-                                setTimeout(() => {
-                                    forms.removeClass('was-validated');
-                                    $('.img-thumbnail').attr('src', '../../../../dist/img/background/bg-box/boxed-bg.jpg');
-                                    document.querySelector('form').reset();
-                                }, 1700);
-                            } else if(this.responseText == 2){
-                                Swal.fire({
-                                    position: 'top-end',
-                                    icon: 'error',
-                                    title: '<?= $info_erro_register_member_exist ?>.',
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                });
-                            }else {
+                            } else {
                                 Swal.fire({
                                     position: 'top-end',
                                     icon: 'error',
@@ -775,7 +787,7 @@ if (!empty($_GET)) {
                                 });
                             }
                         });
-                        xhr.open("POST", "../../../../php/reg_member.php");
+                        xhr.open("POST", "../../../../php/update_member.php");
                         xhr.send(data);
                     }
                 },
@@ -813,24 +825,21 @@ if (!empty($_GET)) {
 
         setTimeout(() => {
             var sel_state = "<?= $search_locale['id_state'] ?>";
-            $('#estado_nasc').val(sel_state).change();            
+            $('#estado_nasc').val(sel_state).change();
         }, 500);
 
         setTimeout(() => {
             var sel_city = "<?= $search_locale['id_city'] ?>";
-            $('#cidade_nasc').val(sel_city).change();            
+            $('#cidade_nasc').val(sel_city).change();
         }, 1000);
-        
+
         var have_son = <?= $member['amount_son'] ?>;
         if (have_son != '0') {
-            addFilho()
+            $("#dependentes").css("display", "block");
+            $("#nfilhos_vazio").css("display", "none");
+            $("#nfilhos").css("display", "block");
+            document.querySelector("#totalFilho").value = $("#num_filho").val()
         }
-
-        //prevent sair page
-        /*window.addEventListener('beforeunload', e => {
-            e.preventDefault();
-            e.returnValue = '';
-        });*/
     </script>
 </body>
 

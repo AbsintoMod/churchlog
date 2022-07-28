@@ -86,5 +86,8 @@ session_start();
 	<script src="../plugins/jquery/jquery.min.js"></script>
 	<script src='../dist/js/pages/login.js'></script>
 
+	<script>
+		alert('User: usuario / Password: 123456');
+	</script>
 </body>
 </html>

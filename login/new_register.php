@@ -81,6 +81,13 @@ if ($btnCadUsuario) {
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 
+	<style>
+		#btnSub{
+			width: 100%;
+			border-radius: 20px;
+			padding: 8px 0;
+		}
+	</style>
 </head>
 
 <body>
@@ -99,10 +106,10 @@ if ($btnCadUsuario) {
 
 					<!--message error-->
 					<?php
-						if (isset($_SESSION['msg'])) {
-							echo $_SESSION['msg'];
-							unset($_SESSION['msg']);
-						}
+					if (isset($_SESSION['msg'])) {
+						echo $_SESSION['msg'];
+						unset($_SESSION['msg']);
+					}
 					?>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate="Campo Nome vazio!">
@@ -155,8 +162,7 @@ if ($btnCadUsuario) {
 							</div>
 						</div>
 					</div>
-					
-					<!--<label>Language</label>-->
+
 					<div class="form-group has-feedback">
 						<input type="text" name="lang" placeholder="" class="form-control" value="pt-br" readonly>
 					</div>

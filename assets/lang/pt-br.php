@@ -189,10 +189,16 @@ $info_register_son = 'Cadastrou um total de:';
 $info_son = 'filhos';
 $info_register_member = 'Cadastro de Novo Membro';
 $info_register_member_save = 'Cadastro Realizado';
+$info_register_member_update = 'Cadastro Atualizado';
 $info_erro_register_member = 'Cadastro não realizado';
 $info_erro_register_member_exist = 'Membro ja Cadastrado';
 $info_member_list = 'Relação de Membros';
 $info_sectors = 'Setores';
+$info_values_city = 'Não ha Cidades para este Estado. Contactar Suporte;';
+$info_values_state = 'Não ha Estados para este Pais. Contactar Suporte';
+$info_verify_email = 'Email não confere. Por favor verifique!!!';
+$info_size_photo = 'Tamanho MAX do Arquivo é de 3Mb';
+$info_type_photo = 'Tipo de Arquivo Invalido';
 
 //MODAL-LOGOFF
 $info_logoff = 'Logoff automático em: ';

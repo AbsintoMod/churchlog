@@ -635,7 +635,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
             }).done(function(data) {
                 if (data == '') {
                     $("#cidade_nasc").html(data);
-                    alert('Não ha Cidades para este Estado. Contactar Suporte');
+                    alert('<?= $info_values_city ?>');
                 } else {
                     $('#cidade_nasc').html(data);
                 }
@@ -654,7 +654,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
             }).done(function(data) {
                 if (data == '') {
                     $("#estado_nasc").html(data);
-                    alert('Não ha Estados para este Pais. Contactar Suporte');
+                    alert('<?= $info_values_state ?>');
                 } else {
                     $("#estado_nasc").html(data);
                 }
@@ -665,7 +665,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
         function verificaEmail(value) {
             let email = document.querySelector('#email').value;
             if (email != value) {
-                alert('Email não confere. Por favor verifique!!!');
+                alert('<?= $info_verify_email ?>');
             }
         }
 
@@ -683,11 +683,11 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                 }else if (file.size > 3145728) {
                     $('#btn-cad').attr('disabled','true');
                     $('.img-thumbnail').attr('src', '../../../../dist/img/background/bg-box/boxed-bg-alert.jpg');
-                    alert('Tamanho MAX do Arquivo é de 3Mb')
+                    alert('<?= $info_size_photo ?>')
                 }else{
                     $('#btn-cad').attr('disabled', '');
                     $('.img-thumbnail').attr('src', '../../../../dist/img/background/bg-box/boxed-bg-alert.jpg');
-                    alert('Tipo de Arquivo Invalido')
+                    alert('<?= $info_type_photo ?>')
                 }
                 /*console.log("Filename: ", file.name);
                 console.log("Type: ", file.type);

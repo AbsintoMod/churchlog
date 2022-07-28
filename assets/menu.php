@@ -41,7 +41,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="institution/secretaria/home.php" class="nav-link">
+              <a href="institution/secretaria/home.php" id="secretariat" class="nav-link">
                 <i class="fa-regular fa-circle-right nav-icon"></i>
                 <p><?= $menu_secretariat ?></p>
               </a>
