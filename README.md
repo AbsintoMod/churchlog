@@ -19,6 +19,7 @@ Sistema para Organização Religiosa
 - Multiplataforma
 - Versículos de Rodapé
 - Diferentes Idiomas
+- Bloqueio por inatividade (após 35seg)
 
 ## Páginas do Sistema
 - Perfil Pessoal

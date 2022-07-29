@@ -6,7 +6,6 @@ if (empty($_SESSION['id'])) {
   header("Location:../../../../login/home.php");
 }
 
-
 $lang = $_SESSION['lang'];
 require_once '../../../../assets/lang/' . $lang . '.php';
 require_once '../../../../php/const_conn.php';

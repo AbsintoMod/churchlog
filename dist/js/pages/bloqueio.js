@@ -1,10 +1,10 @@
 const screenBody = document.querySelector('#content');
-var cont = 4;
+var cont = 3;
 
 locked = false;
 	function lockScreen() {
-		/*1000 ms = 1 seg 180000*/
-		var timeout = 180000
+		//1000 ms = 1 seg / padrão:180000
+		var timeout = 35000
 		
 		if (locked == true) {
 			clearTimeout(lockscreen);
@@ -57,7 +57,6 @@ locked = false;
 lockScreen();
 	
 	$('.lockscreen-btn').click(function(){
-		
 		$('#msg3').show();
 		
 		var lck_senha = document.querySelector('.lockscreen-password');
@@ -75,6 +74,9 @@ lockScreen();
 				
 				if (this.responseText == '1') {
 					locked = false;
+
+					//reinicia contador de vezes
+					cont = 3;
 					
 					//esconde formulário de bloqueio
 					$('#lockscreen').hide();
@@ -82,8 +84,6 @@ lockScreen();
 					//remove class BLUR in page				
 					screenBody.classList.remove('blur');
 					
-					//reinicia contador de vezes
-					cont = 4;
 					clearTimeout(logoff);
 				}else{
 					--cont;
@@ -96,10 +96,9 @@ lockScreen();
 			xhttp.send();
 		}
 
-		if (cont == 0) {
+		if (cont < 1) {
 			console.log('sair');
 			window.location='../../php/sair.php';
 		}
-
 		lck_senha.value ='';
 	});
