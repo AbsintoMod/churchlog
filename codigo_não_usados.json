@@ -34,3 +34,16 @@ INNER JOIN
     select_state ON select_state.id = select_city.id_select_state
 INNER JOIN
     select_country ON select_country.id = select_state.id_select_country
+
+
+              /*const xhttp = new XMLHttpRequest();
+          xhttp.onload = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              console.log(xhttp.responseText);
+              console.log(xhttp)
+            }else{
+              alert('deu errado');
+            }
+          }
+          xhttp.open("POST", "../../../../php/reg_departamento.php");
+          xhttp.send();*/

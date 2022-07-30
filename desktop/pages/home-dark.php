@@ -147,7 +147,10 @@ require_once '../../assets/lang/'.$lang.'.php';
   <!-- Mostra Saudação -->
   <script src='../../dist/js/pages/data.js'></script>
   <script src='../../dist/js/pages/themes.js'></script>
-  <script src='../../dist/js/pages/bloqueio.js'></script>
+  <script>
+    alert('Habilitar função de bloqueio');
+    //<script src='../../dist/js/pages/bloqueio.js'>
+  </script>
   <script>
     //captura event do language
     $('#countries').change(()=>{
@@ -156,9 +159,6 @@ require_once '../../assets/lang/'.$lang.'.php';
         window.location = "../../php/language.php?lang="+$('#countries').val();
       }
     });
-    
-
-
   </script>
 </body>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Jul-2022 às 13:14
+-- Tempo de geração: 29-Jul-2022 às 22:47
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -40,6 +40,20 @@ INSERT INTO `access_nivel` (`id`, `name`) VALUES
 (1, 'Usuario'),
 (2, 'Master'),
 (3, 'Senior');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `departament`
+--
+
+CREATE TABLE `departament` (
+  `id` int(11) NOT NULL,
+  `name` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_members` int(11) NOT NULL,
+  `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date_create` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -182,6 +196,13 @@ CREATE TABLE `report_login` (
   `date` date NOT NULL,
   `hour` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `report_login`
+--
+
+INSERT INTO `report_login` (`id_report`, `id_user`, `date`, `hour`) VALUES
+(1, 6, '2022-07-29', '13:26:33');
 
 -- --------------------------------------------------------
 
@@ -339,6 +360,12 @@ ALTER TABLE `access_nivel`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `departament`
+--
+ALTER TABLE `departament`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `members`
 --
 ALTER TABLE `members`
@@ -391,6 +418,12 @@ ALTER TABLE `access_nivel`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de tabela `departament`
+--
+ALTER TABLE `departament`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `members`
 --
 ALTER TABLE `members`
@@ -400,7 +433,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT de tabela `report_login`
 --
 ALTER TABLE `report_login`
-  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `select_city`

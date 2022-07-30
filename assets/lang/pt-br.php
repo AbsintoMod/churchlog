@@ -24,7 +24,7 @@ $menu_financial = 'Financeiro';
 $menu_coordination = 'Coordenação';
 $menu_social_action = 'Ação Social';
 $menu_teaching = 'Ensino';
-$menu_sector = 'Setor';
+$menu_sector = 'Setores';
 $menu_congregation = 'Congregação';
 $menu_groups = 'Grupos';
 $menu_email_box = 'Caixa de E-Mail';
@@ -199,6 +199,9 @@ $info_values_state = 'Não ha Estados para este Pais. Contactar Suporte';
 $info_verify_email = 'Email não confere. Por favor verifique!!!';
 $info_size_photo = 'Tamanho MAX do Arquivo é de 3Mb';
 $info_type_photo = 'Tipo de Arquivo Invalido';
+$info_register_department_save = 'Departamento cadastrado';
+$info_erro_register_department_exist = 'Departamento já cadastrado';
+$info_erro_register_department = 'Departamento Não cadastrado';
 
 //MODAL-LOGOFF
 $info_logoff = 'Logoff automático em: ';

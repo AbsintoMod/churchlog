@@ -25,8 +25,6 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
   // Font Awesome Icons 
   require_once '../../../../assets/head/font_awesome.php';
   ?>
-  <!-- SweetAlert2 -->
-  <link rel="stylesheet" href="../../../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="../../../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../../../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -224,7 +222,13 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                     <div class="col-lg-3 col-6">
                       <div class="small-box bg-info">
                         <div class="inner">
-                          <h3 id="department_values"></h3>
+                          <?php
+                            $sql = "SELECT COUNT(*) FROM `departament`;";
+                            $count = mysqli_query($conn, $sql);
+                            $counter = mysqli_fetch_array($count);
+                            $counter = $counter[0];
+                          ?>
+                          <h3><?= $counter ?></h3>
 
                           <p><?= $menu_department ?></p>
                         </div>
@@ -239,7 +243,13 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                       <!-- small box -->
                       <div class="small-box bg-info">
                         <div class="inner">
-                          <h3 id="sectors_values"></h3>
+                          <?php
+                            $sql = "SELECT COUNT(*) FROM `departament` WHERE `type` = '$info_sectors'";
+                            $count = mysqli_query($conn, $sql);
+                            $counter = mysqli_fetch_array($count);
+                            $counter = $counter[0];
+                          ?>
+                          <h3><?= $counter ?></h3>
 
                           <p><?= $info_sectors ?></p>
                         </div>
@@ -254,7 +264,13 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                       <!-- small box -->
                       <div class="small-box bg-info">
                         <div class="inner">
-                          <h3 id="groups_values"></h3>
+                          <?php
+                            $sql = "SELECT COUNT(*) FROM `departament` WHERE `type` = '$menu_groups'";
+                            $count = mysqli_query($conn, $sql);
+                            $counter = mysqli_fetch_array($count);
+                            $counter = $counter[0];
+                          ?>
+                          <h3><?= $counter ?></h3>
 
                           <p><?= $menu_groups ?></p>
                         </div>
@@ -282,35 +298,33 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                   </div><!-- ./line box -->
                   <!--Register New-->
                   <h2 class="title-form"><?= $label_new_register ?></h2>
-                  <form id="form_depart">
-                    <div class="row">
-                      <div class="form-group col-md-3">
-                        <label for="nome_cadastro" class="col-12 control-label"><?= $label_name ?>:</label>
-                        <div class="col-12">
-                          <input type="text" class="form-control" id="nome_cadastro" placeholder="..." name="nome_cadastro" value="">
-                        </div>
-                      </div>
-                      <div class="form-group col-md-2">
-                        <label for="nome_responsavel" class="col-12 control-label"><?= $label_accountable ?>:</label>
-                        <div class="col-12">
-                          <input type="text" class="form-control" id="nome_responsavel" placeholder="..." name="nome_responsavel" value="">
-                        </div>
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="tipo_dep" class="col-12 control-label"><?= $label_type ?>:</label>
-                        <div class="col-sm-12">
-                          <select name="tipo_dep" class="form-control" id="tipo_dep">
-                            <option value="" selected>...</option>
-                            <option value="<?= $menu_sector ?>"><?= $menu_sector ?></option>
-                            <option value="<?= $menu_groups ?>"><?= $menu_groups ?></option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="form-group col-md-3 mt-4">
-                        <button type="submit" id="button_cadDep" onclick="cardDep()" class="btn bg-info btn-lg btn-block"><?= $button_register ?></button>
+                  <div class="row">
+                    <div class="form-group col-md-3">
+                      <label for="nome_cadastro" class="col-12 control-label"><?= $label_name ?>:</label>
+                      <div class="col-12">
+                        <input type="text" class="form-control" id="nome_cadastro" placeholder="..." name="nome_cadastro" value="">
                       </div>
                     </div>
-                  </form>
+                    <div class="form-group col-md-2">
+                      <label for="nome_responsavel" class="col-12 control-label"><?= $label_accountable ?>:</label>
+                      <div class="col-12">
+                        <input type="text" class="form-control" id="nome_responsavel" placeholder="..." name="nome_responsavel" value="">
+                      </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="tipo_dep" class="col-12 control-label"><?= $label_type ?>:</label>
+                      <div class="col-sm-12">
+                        <select name="tipo_dep" class="form-control" id="tipo_dep">
+                          <option value="" selected>...</option>
+                          <option value="<?= $menu_sector ?>"><?= $menu_sector ?></option>
+                          <option value="<?= $menu_groups ?>"><?= $menu_groups ?></option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-3 mt-4">
+                      <button type="button" class="btn bg-info btn-lg btn-block"><?= $button_register ?></button>
+                    </div>
+                  </div>
                   <!--./Register New-->
                   <!--Search-->
                   <h2 class="title-form"><?= $label_search ?></h2>
@@ -451,8 +465,6 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
       <script src="../../../../plugins/jquery/jquery.js"></script>
       <!-- Bootstrap 4 -->
       <script src="../../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <!-- SweetAlert2 -->
-      <script src="../../../../plugins/sweetalert2/sweetalert2.min.js"></script>
       <!-- AdminLTE App -->
       <script src="../../../../dist/js/adminlte.min.js"></script>
       <!-- Summernote -->
@@ -555,68 +567,21 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
           var elem = document.getElementById('div' + item);
           elem.parentNode.removeChild(elem);
         }
-        
-        $('#form_depart').on("submit", e => {
-          e.preventDefault();
-          var data = new FormData(e.target); // Valores do formulário
-          var xhr = new XMLHttpRequest();
-          xhr.withCredentials = true;
-          xhr.addEventListener("readystatechange", function() {
-              if (this.readyState == 4 && this.status == 200) {
-                if (this.responseText == 1) {
-                  Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: '<?= $info_register_department_save ?>.',
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-                }else{
-                  Swal.fire({
-                    position: 'top-end',
-                    icon: 'error',
-                    title: '<?= $info_erro_register_department_exist ?>.',
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-                }
-              }else{
-                Swal.fire({
-                  position: 'top-end',
-                  icon: 'error',
-                  title: '<?= $info_erro_register_department ?>.',
-                  showConfirmButton: false,
-                  timer: 1500
-                });
-              }
-          });
-          xhr.open("POST", "../../../../php/reg_departamento.php");
-          xhr.send(data);
-          console.log(this.responseText)
-          //chama função para atualizar os cards
-          cardDep();
-        })
 
-        
-
-        //alimentador de cards departamento
-        function cardDep() {
-          $.ajax({
-            type: 'GET',
-            url: '../../../../php/departamento.php',
-            dataType: 'json',
-            success: dados => { 
-              $('#department_values').html(dados.departamento);
-              $('#sectors_values').html(dados.setor);
-              $('#groups_values').html(dados.grupo);
-            },
-            error: erro => { console.log(erro) }
-          })
+        //cadastro de departamentos
+        function cadDep(){
+          const xhttp = new XMLHttpRequest();
+          xhttp.onload = function() {
+            
+            if (this.responseText == '1') {
+              
+            }else{
+              
+            }
+          }
+          xhttp.open("POST", "../../php/teste.php?q="+lck_senha.value);
+          xhttp.send();
         }
-
-        $(document).ready(function(){
-          cardDep()
-        });
       </script>
 </body>
 </html>
