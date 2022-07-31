@@ -233,7 +233,9 @@ $info_neighborhood_required = 'Informe o Bairro';
 $info_state_required = 'Informe o UF do Estado';
 $info_city_required = 'Informe a Cidade';
 $info_cell_required = 'Informe um Número. (Pessoal ou Responsável)';
-
+$info_department_required = 'Selecione o Tipo';
+$info_manenger_required = 'Selecione um Responsável';
+$info_depart_name_required = 'Informe o Nome';
 //===========================================================//
 
 //========================MODAL==============================//

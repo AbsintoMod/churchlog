@@ -25,12 +25,10 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
   // Font Awesome Icons 
   require_once '../../../../assets/head/font_awesome.php';
   ?>
+      <!--validation-form-->
+      <link rel="stylesheet" href="../../../../plugins/validation-form/form-validation.css">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="../../../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../../../dist/css/adminlte.css">
   <!-- Theme style -->
@@ -40,9 +38,16 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
   <!-- Select2 -->
   <link rel="stylesheet" href="../../../../plugins/select2/css/select2.min.css">
   <link rel="stylesheet" href="../../../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <style>
     td a {
       color: #FFFFFF;
+    }
+    .table-striped>tbody>tr:nth-of-type(odd)>* {
+    color: #FFFFFF; 
     }
   </style>
 </head>
@@ -102,10 +107,10 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                       <div class="small-box bg-info">
                         <div class="inner">
                           <?php
-                            $sql = "SELECT COUNT(*) FROM `members`;";
-                            $count = mysqli_query($conn, $sql);
-                            $counter = mysqli_fetch_array($count);
-                            $counter = $counter[0];
+                          $sql = "SELECT COUNT(*) FROM `members`;";
+                          $count = mysqli_query($conn, $sql);
+                          $counter = mysqli_fetch_array($count);
+                          $counter = $counter[0];
                           ?>
                           <h3><?= $counter ?></h3>
 
@@ -282,32 +287,41 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                   </div><!-- ./line box -->
                   <!--Register New-->
                   <h2 class="title-form"><?= $label_new_register ?></h2>
-                  <form id="form_depart">
+                  <form id="form_depart" enctype="multipart/form-data" class="needs-validation" novalidate>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label for="nome_cadastro" class="col-12 control-label"><?= $label_name ?>:</label>
                         <div class="col-12">
-                          <input type="text" class="form-control" id="nome_cadastro" placeholder="..." name="nome_cadastro" value="">
+                          <input type="text" class="form-control" id="nome_cadastro" name="nome_cadastro" value="" placeholder="..." required>
+                          <div class="invalid-feedback">
+                            <?= $info_depart_name_required ?>.
+                          </div>
                         </div>
                       </div>
                       <div class="form-group col-md-2">
                         <label for="nome_responsavel" class="col-12 control-label"><?= $label_accountable ?>:</label>
                         <div class="col-12">
                           <input type="text" class="form-control" id="nome_responsavel" placeholder="..." name="nome_responsavel" value="">
+                          <div class="invalid-feedback">
+                            <?= $info_manenger_required ?>.
+                          </div>
                         </div>
                       </div>
                       <div class="form-group col-md-3">
                         <label for="tipo_dep" class="col-12 control-label"><?= $label_type ?>:</label>
                         <div class="col-sm-12">
-                          <select name="tipo_dep" class="form-control" id="tipo_dep">
+                          <select name="tipo_dep" class="form-select" id="tipo_dep" required>
                             <option value="" selected>...</option>
                             <option value="<?= $menu_sector ?>"><?= $menu_sector ?></option>
                             <option value="<?= $menu_groups ?>"><?= $menu_groups ?></option>
                           </select>
+                          <div class="invalid-feedback">
+                            <?= $info_department_required ?>.
+                          </div>
                         </div>
                       </div>
                       <div class="form-group col-md-3 mt-4">
-                        <button type="submit" id="button_cadDep" onclick="cardDep()" class="btn bg-info btn-lg btn-block"><?= $button_register ?></button>
+                        <button type="submit" onclick="sub('form_departament')" class="btn bg-info btn-lg btn-block"><?= $button_register ?></button>
                       </div>
                     </div>
                   </form>
@@ -341,80 +355,80 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                       <h3><?php echo  date("d/m/Y") . ' - ' . date("h:i a"); ?></h3>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="form-group col-12 col-sm-6">
-                      <h2 class="col-12 text-center"><?= $label_number ?></h2>
-
-                    </div>
-                    <div class="form-group col-12 col-sm-6">
-                      <h2 class="col-12 text-center"><?= $label_code ?></h2>
-
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="form-group col-12 col-sm-6">
-                      <label for="solicitante" class="col-12 control-label"><?= $label_applicant ?>:</label>
-                      <div class="col-12">
-                        <input type="text" class="form-control" id="solicitante" placeholder="..." name="solicitante" value="">
+                  <form id="form_protocol" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <div class="row">
+                      <div class="form-group col-12 col-sm-6">
+                        <h2 class="col-12 text-center"><?= $label_number ?></h2>
+                        <input>
+                      </div>
+                      <div class="form-group col-12 col-sm-6">
+                        <h2 class="col-12 text-center"><?= $label_code ?></h2>
+                        <input>
                       </div>
                     </div>
-                    <div class="form-group col-12 col-sm-6">
-                      <label for="destinatario" class="col-12 control-label"><?= $label_target_sector ?>:</label>
-                      <div class="col-12">
-                        <select class="form-control" id="destinatario" name="destinatario">
-                          <option value="">Selecionar o Setor</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="row align-items-end">
-                    <div class="form-group col-12 col-lg-1">
-                      <label for="numero_item1" class="col-12 control-label"><?= $label_item ?>:</label>
-                      <div class="col-12">
-                        <input type="text" class="form-control" id="numero_item1" placeholder="..." name="numero_item1" readonly value="1">
+                    <div class="row">
+                      <div class="form-group col-12 col-sm-6">
+                        <label for="solicitante" class="col-12 control-label"><?= $label_applicant ?>:</label>
+                        <div class="col-12">
+                          <input type="text" class="form-control" id="solicitante" placeholder="..." name="solicitante" value="">
+                        </div>
+                      </div>
+                      <div class="form-group col-12 col-sm-6">
+                        <label for="destinatario" class="col-12 control-label"><?= $label_target_sector ?>:</label>
+                        <div class="col-12">
+                          <select class="form-control" id="destinatario" name="destinatario">
+                            <option value="">Selecionar o Setor</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
-                    <div class="form-group col-12 col-lg-4">
-                      <label for="item1" class="col-12 control-label"><?= $label_name ?>:</label>
-                      <div class="col-12">
-                        <input type="text" class="form-control" id="item1" placeholder="..." name="item1" value="">
-                      </div>
-                    </div>
-                    <div class="form-group col-12 col-lg-2">
-                      <label for="quantidade1" class="col-12 control-label"><?= $label_quantity ?>:</label>
-                      <div class="col-12">
-                        <input type="number" class="form-control" id="quantidade1" placeholder="..." name="quantidade1" value="">
-                      </div>
-                    </div>
-                    <div class="form-group col-12 col-lg-5">
-                      <label for="detalhe1" class="col-12 control-label"><?= $label_detail ?>:</label>
-                      <div class="col-12">
-                        <input type="text" class="form-control" id="detalhe1" placeholder="..." name="detalhe1" value="">
-                      </div>
-                    </div>
-                  </div>
 
-                  <div id="novoItem">
-                    <!--criar novo item do protocolo-->
-                  </div>
+                    <div class="row align-items-end">
+                      <div class="form-group col-12 col-lg-1">
+                        <label for="numero_item1" class="col-12 control-label"><?= $label_item ?>:</label>
+                        <div class="col-12">
+                          <input type="text" class="form-control" id="numero_item1" placeholder="..." name="numero_item1" readonly value="1">
+                        </div>
+                      </div>
+                      <div class="form-group col-12 col-lg-4">
+                        <label for="item1" class="col-12 control-label"><?= $label_name ?>:</label>
+                        <div class="col-12">
+                          <input type="text" class="form-control" id="item1" placeholder="..." name="item1" value="">
+                        </div>
+                      </div>
+                      <div class="form-group col-12 col-lg-2">
+                        <label for="quantidade1" class="col-12 control-label"><?= $label_quantity ?>:</label>
+                        <div class="col-12">
+                          <input type="number" class="form-control" id="quantidade1" placeholder="..." name="quantidade1" value="">
+                        </div>
+                      </div>
+                      <div class="form-group col-12 col-lg-5">
+                        <label for="detalhe1" class="col-12 control-label"><?= $label_detail ?>:</label>
+                        <div class="col-12">
+                          <input type="text" class="form-control" id="detalhe1" placeholder="..." name="detalhe1" value="">
+                        </div>
+                      </div>
+                    </div>
 
-                  <div class="row justify-content-center">
-                    <div class="form-group text-center col-12 col-sm-3">
-                      <button onclick="addNewItem()" class="btn bg-info btn-block btn-lg"><?= $button_new ?></button>
+                    <div id="novoItem">
+                      <!--criar novo item do protocolo-->
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="form-group text-center col-12 col-sm-3">
-                      <button class="btn bg-warning btn-block btn-lg"><?= $button_cancel ?></button>
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="form-group text-center col-12 col-sm-3">
-                      <button class="btn bg-success btn-block btn-lg"><?= $button_save ?></button>
-                    </div>
-                  </div>
 
+                    <div class="row justify-content-center">
+                      <div class="form-group text-center col-12 col-sm-3">
+                        <button onclick="addNewItem()" class="btn bg-info btn-block btn-lg"><?= $button_new ?></button>
+                      </div>
+                      <div class="col-md-1"></div>
+                      <div class="form-group text-center col-12 col-sm-3">
+                        <button type="reset" class="btn bg-warning btn-block btn-lg"><?= $button_cancel ?></button>
+                      </div>
+                      <div class="col-md-1"></div>
+                      <div class="form-group text-center col-12 col-sm-3">
+                        <button type="submit" onclick="sub('form_protocol')" class="btn bg-success btn-block btn-lg"><?= $button_save ?></button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
                 <div class="tab-pane fade" id="tab-documento-tab" role="tabpanel" aria-labelledby="tab-documento">
                   <p>aba documento</p>
@@ -513,7 +527,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
         //item = variavel que identifica a div e os inputs
         var item = 2;
 
-        function addNewItem(){
+        function addNewItem() {
           var div = document.querySelector('#novoItem');
           var element = document.createElement('div');
           element.classList = "row align-items-end";
@@ -555,49 +569,122 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
           var elem = document.getElementById('div' + item);
           elem.parentNode.removeChild(elem);
         }
-        
-        $('#form_depart').on("submit", e => {
-          e.preventDefault();
-          var data = new FormData(e.target); // Valores do formulário
-          var xhr = new XMLHttpRequest();
-          xhr.withCredentials = true;
-          xhr.addEventListener("readystatechange", function() {
-              if (this.readyState == 4 && this.status == 200) {
-                if (this.responseText == 1) {
-                  Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: '<?= $info_register_department_save ?>.',
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-                }else{
-                  Swal.fire({
-                    position: 'top-end',
-                    icon: 'error',
-                    title: '<?= $info_erro_register_department_exist ?>.',
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-                }
-              }else{
-                Swal.fire({
-                  position: 'top-end',
-                  icon: 'error',
-                  title: '<?= $info_erro_register_department ?>.',
-                  showConfirmButton: false,
-                  timer: 1500
-                });
-              }
-          });
-          xhr.open("POST", "../../../../php/reg_departamento.php");
-          xhr.send(data);
-          console.log(this.responseText)
-          //chama função para atualizar os cards
-          cardDep();
-        })
 
-        
+        /* este funciona
+        const forms = $('.needs-validation')
+          Array.from(forms).forEach((form) => {
+            form.addEventListener("submit", e => {
+                e.preventDefault();
+                if (!form.checkValidity()) {
+                  form.classList.add("was-validated");
+                } else {
+                  var data = new FormData(e.target); // Valores do formulário
+                  var xhr = new XMLHttpRequest();
+                  xhr.withCredentials = true;
+                  xhr.addEventListener("readystatechange", function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        if (this.responseText == 1) {
+                          Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: '<?= $info_register_department_save ?>.',
+                            showConfirmButton: false,
+                            timer: 1500
+                          });
+                        }else{
+                          Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: '<?= $info_erro_register_department_exist ?>.',
+                            showConfirmButton: false,
+                            timer: 1500
+                          });
+                          console.log(this.responseText);
+                        }
+                      }else{
+                        Swal.fire({
+                          position: 'top-end',
+                          icon: 'error',
+                          title: '<?= $info_erro_register_department ?>.',
+                          showConfirmButton: false,
+                          timer: 1500
+                        });
+                      }
+                  });
+                  xhr.open("POST", "../../../../php/reg_departamento.php");
+                  xhr.send(data);
+                }
+              },
+              false
+            );
+          });*/
+
+        //recebe o id do botão save
+        var id = '';
+        function sub(value) {
+          id = value;
+          return id;
+        }
+
+        const forms = $('.needs-validation')
+        Array.from(forms).forEach((form) => {
+          form.addEventListener("submit", e => {
+              e.preventDefault();
+              if (!form.checkValidity()) {
+                form.classList.add("was-validated");
+              } else {
+                switch (id) {
+                  case 'form_departament':
+                    var data = new FormData(e.target); // Valores do formulário
+                    var xhr = new XMLHttpRequest();
+                    xhr.withCredentials = true;
+                    xhr.addEventListener("readystatechange", function() {
+                      if (this.readyState == 4 && this.status == 200) {
+                        if (this.responseText == 1) {
+                          Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: '<?= $info_register_department_save ?>.',
+                            showConfirmButton: false,
+                            timer: 1500
+                          });
+                        } else {
+                          Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: '<?= $info_erro_register_department_exist ?>.',
+                            showConfirmButton: false,
+                            timer: 1500
+                          });
+                        }
+                      } else {
+                        Swal.fire({
+                          position: 'top-end',
+                          icon: 'error',
+                          title: '<?= $info_erro_register_department ?>.',
+                          showConfirmButton: false,
+                          timer: 1500
+                        });
+                      }
+                    });
+                    xhr.open("POST", "../../../../php/reg_departamento.php");
+                    xhr.send(data);
+                    //chama função para atualizar os cards
+                    cardDep();
+                    break;
+                  case 'form_protocol':
+                    alert(id)
+                    break;
+
+                  default:
+                    alert('Formulario não selecionado no Switch')
+                    break;
+                }
+              }
+            },
+            false
+          );
+        });
 
         //alimentador de cards departamento
         function cardDep() {
@@ -605,18 +692,21 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
             type: 'GET',
             url: '../../../../php/departamento.php',
             dataType: 'json',
-            success: dados => { 
+            success: dados => {
               $('#department_values').html(dados.departamento);
               $('#sectors_values').html(dados.setor);
               $('#groups_values').html(dados.grupo);
             },
-            error: erro => { console.log(erro) }
+            error: erro => {
+              console.log(erro);
+            }
           })
         }
 
-        $(document).ready(function(){
+        $(document).ready(function() {
           cardDep()
         });
       </script>
 </body>
+
 </html>

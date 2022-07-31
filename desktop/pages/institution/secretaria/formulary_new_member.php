@@ -117,7 +117,7 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
                                     <div class="form-group col-md-6">
                                         <label for="mae" class="col-sm-4 control-label"><?= $label_mother_name ?>:</label>
                                         <div class="col-sm-12">
-                                            <input type="text" name="nome_mae" class="form-control" id="mae" placeholder="..." value="" required>
+                                            <input type="text" name="nome_mae" class="form-control" id="nome_mae" placeholder="..." value="" required>
                                             <div class="invalid-feedback">
                                                 <?= $info_parent_required ?>.
                                             </div>
